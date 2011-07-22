@@ -1,0 +1,16 @@
+
+
+.. _example_basics.py:
+
+
+=======================
+Basics of vizualization
+=======================
+
+
+
+**Python source code:** :download:`basics.py <basics.py>`
+
+.. literalinclude:: basics.py
+    :lines: 7-
+    

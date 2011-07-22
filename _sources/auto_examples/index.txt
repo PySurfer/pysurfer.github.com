@@ -1,0 +1,30 @@
+
+Examples
+========
+
+.. _examples-index:
+
+
+Introductory examples to PySurfer.
+
+
+
+.. toctree::
+
+    ./plot_basics
+    ./plot_fmri_activation
+    ./plot_fmri_conjunction
+    ./plot_fmri_contours
+    ./plot_foci
+    ./plot_montage
+    ./plot_morphometry
+    ./plot_parcellation
+    ./plot_show_view
+    ./rotate_animation
+    ./save_views
+
+
+
+
+.. toctree::
+
