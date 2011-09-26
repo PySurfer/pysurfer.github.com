@@ -7,13 +7,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer v0.1 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer v0.2 documentation</title>
     <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.1',
+        VERSION:     '0.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="PySurfer v0.1 documentation" href="../index.html" />
+    <link rel="top" title="PySurfer v0.2 documentation" href="../index.html" />
     <link rel="up" title="Examples" href="index.html" />
     <link rel="next" title="Make a multiview image" href="plot_montage.html" />
     <link rel="prev" title="Display Activation Contours" href="plot_fmri_contours.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="plot_fmri_contours.html" title="Display Activation Contours"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">PySurfer v0.1 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer v0.2 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Examples</a> &raquo;</li> 
       </ul>
     </div>
@@ -139,7 +139,7 @@ according to coordinates or vertex ids.</p>
 <span class="sd">First, we load in the Destrieux parcellation annotation file.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="n">annot_path</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subjects_dir</span><span class="p">,</span> <span class="n">subject_id</span><span class="p">,</span> <span class="s">&quot;label/lh.aparc.a2009s.annot&quot;</span><span class="p">)</span>
-<span class="n">ids</span><span class="p">,</span> <span class="n">ctab</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read_annot</span><span class="p">(</span><span class="n">annot_path</span><span class="p">)</span>
+<span class="n">ids</span><span class="p">,</span> <span class="n">ctab</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read_annot</span><span class="p">(</span><span class="n">annot_path</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Then, find 10 random vertices within the STS.</span>
@@ -179,7 +179,7 @@ according to coordinates or vertex ids.</p>
         <li class="right" >
           <a href="plot_fmri_contours.html" title="Display Activation Contours"
              >previous</a> |</li>
-        <li><a href="../index.html">PySurfer v0.1 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer v0.2 documentation</a> &raquo;</li>
           <li><a href="index.html" >Examples</a> &raquo;</li> 
       </ul>
     </div>
