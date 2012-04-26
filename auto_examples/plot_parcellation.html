@@ -7,13 +7,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer v0.2 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer v0.3 documentation</title>
     <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.2',
+        VERSION:     '0.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,10 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="PySurfer v0.2 documentation" href="../index.html" />
+    <link rel="top" title="PySurfer v0.3 documentation" href="../index.html" />
     <link rel="up" title="Examples" href="index.html" />
-    <link rel="next" title="Show the different brain views" href="plot_show_view.html" />
-    <link rel="prev" title="Overlay Morphometry Data" href="plot_morphometry.html" /> 
+    <link rel="next" title="Display Probabilistic Labels" href="plot_probabilistic_label.html" />
+    <link rel="prev" title="Display ROI Values" href="plot_parc_values.html" /> 
   </head>
   <body>
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
@@ -38,23 +38,23 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="plot_show_view.html" title="Show the different brain views"
+          <a href="plot_probabilistic_label.html" title="Display Probabilistic Labels"
              accesskey="N">next</a></li>
         <li class="right" >
-          <a href="plot_morphometry.html" title="Overlay Morphometry Data"
+          <a href="plot_parc_values.html" title="Display ROI Values"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">PySurfer v0.2 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer v0.3 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Examples</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="plot_morphometry.html"
-                        title="previous chapter">Overlay Morphometry Data</a></p>
+  <p class="topless"><a href="plot_parc_values.html"
+                        title="previous chapter">Display ROI Values</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="plot_show_view.html"
-                        title="next chapter">Show the different brain views</a></p>
+  <p class="topless"><a href="plot_probabilistic_label.html"
+                        title="next chapter">Display Probabilistic Labels</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -95,7 +95,9 @@
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Bring up the visualization</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="n">subject_id</span><span class="p">,</span> <span class="n">hemi</span><span class="p">,</span> <span class="n">surface</span><span class="p">)</span>
+<span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="n">subject_id</span><span class="p">,</span> <span class="n">hemi</span><span class="p">,</span> <span class="n">surface</span><span class="p">,</span>
+              <span class="n">config_opts</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;cortex&quot;</span><span class="p">:</span> <span class="s">&quot;bone&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;background&quot;</span><span class="p">:</span> <span class="s">&quot;ivory&quot;</span><span class="p">})</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Display the &#39;aparc&#39; parcellation borders.</span>
@@ -110,7 +112,7 @@
 <span class="n">brain</span><span class="o">.</span><span class="n">add_annotation</span><span class="p">(</span><span class="s">&quot;aparc&quot;</span><span class="p">,</span> <span class="n">borders</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">You may also provide a full path to an annotation file </span>
+<span class="sd">You may also provide a full path to an annotation file</span>
 <span class="sd">at an arbitray location on the disc.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="n">subjects_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">&quot;SUBJECTS_DIR&quot;</span><span class="p">]</span>
@@ -130,12 +132,12 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="plot_show_view.html" title="Show the different brain views"
+          <a href="plot_probabilistic_label.html" title="Display Probabilistic Labels"
              >next</a></li>
         <li class="right" >
-          <a href="plot_morphometry.html" title="Overlay Morphometry Data"
+          <a href="plot_parc_values.html" title="Display ROI Values"
              >previous</a> |</li>
-        <li><a href="../index.html">PySurfer v0.2 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer v0.3 documentation</a> &raquo;</li>
           <li><a href="index.html" >Examples</a> &raquo;</li> 
       </ul>
     </div>

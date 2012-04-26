@@ -19,7 +19,9 @@ surface = 'inflated'
 """
 Bring up the visualization
 """
-brain = Brain(subject_id, hemi, surface)
+brain = Brain(subject_id, hemi, surface,
+              config_opts={"cortex": "bone",
+                           "background": "ivory"})
 
 """
 Display the 'aparc' parcellation borders.
@@ -34,7 +36,7 @@ You can also display the regions with "filled in" colors
 brain.add_annotation("aparc", borders=False)
 
 """
-You may also provide a full path to an annotation file 
+You may also provide a full path to an annotation file
 at an arbitray location on the disc.
 """
 subjects_dir = os.environ["SUBJECTS_DIR"]

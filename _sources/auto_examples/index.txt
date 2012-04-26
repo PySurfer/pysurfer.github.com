@@ -5,8 +5,17 @@ Examples
 .. _examples-index:
 
 
-Introductory examples to PySurfer.
+This page offers a set of example scripts intended to demonstrate the
+functionality offered by PySurfer, from the most basic tasks to more complex 
+visualizations. 
 
+For each script that produces a figure, the image is automatically captured
+and displayed along with the code that generated it.
+
+Used PySurfer to present neuroimaging data in a way that isn't covered here?
+Please contribute_ it!
+
+.. _contribute: https://github.com/nipy/PySurfer
 
 
 .. toctree::
@@ -16,10 +25,15 @@ Introductory examples to PySurfer.
     ./plot_fmri_conjunction
     ./plot_fmri_contours
     ./plot_foci
-    ./plot_montage
+    ./plot_from_volume
+    ./plot_labels
+    ./plot_meg_inverse_solution
     ./plot_morphometry
+    ./plot_parc_values
     ./plot_parcellation
+    ./plot_probabilistic_label
     ./plot_show_view
+    ./plot_to_montage
     ./rotate_animation
     ./save_views
 

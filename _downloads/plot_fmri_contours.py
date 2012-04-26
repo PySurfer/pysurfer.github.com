@@ -17,8 +17,9 @@ Contour maps looks best with the "low_contrast" cortex
 colorscheme, so we will pass that as an option to the
 Brain constructor.
 """
-brain = Brain("fsaverage", "lh", "inflated", 
-              config_opts={'cortex': "low_contrast"})
+brain = Brain("fsaverage", "lh", "inflated",
+              config_opts={"cortex": "low_contrast",
+                           "background": "#151540"})
 
 """
 Get a path to the overlay file
@@ -39,10 +40,10 @@ So if we bring up another one, it will remove the original overlay
 behind the scenes for us.  Here let's specify a different number of
 contours and use a different line width.
 """
-brain.add_contour_overlay(overlay_file, 
-                          max=20, 
-                          n_contours=9, 
-                          line_width=2) 
+brain.add_contour_overlay(overlay_file,
+                          max=20,
+                          n_contours=9,
+                          line_width=2)
 
 """
 At the moment, the Brain object itself does not expose an interface

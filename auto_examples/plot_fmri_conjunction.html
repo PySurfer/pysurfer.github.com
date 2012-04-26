@@ -7,13 +7,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer v0.2 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer v0.3 documentation</title>
     <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.2',
+        VERSION:     '0.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="PySurfer v0.2 documentation" href="../index.html" />
+    <link rel="top" title="PySurfer v0.3 documentation" href="../index.html" />
     <link rel="up" title="Examples" href="index.html" />
     <link rel="next" title="Display Activation Contours" href="plot_fmri_contours.html" />
     <link rel="prev" title="Display fMRI Activation" href="plot_fmri_activation.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="plot_fmri_activation.html" title="Display fMRI Activation"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">PySurfer v0.2 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer v0.3 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Examples</a> &raquo;</li> 
       </ul>
     </div>
@@ -95,10 +95,11 @@ with PySurfer.</p>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Initialize the visualization.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="s">&quot;fsaverage&quot;</span><span class="p">,</span> <span class="s">&quot;lh&quot;</span><span class="p">,</span> <span class="s">&quot;inflated&quot;</span><span class="p">)</span>
+<span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="s">&quot;fsaverage&quot;</span><span class="p">,</span> <span class="s">&quot;lh&quot;</span><span class="p">,</span> <span class="s">&quot;inflated&quot;</span><span class="p">,</span>
+              <span class="n">config_opts</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s">&quot;white&quot;</span><span class="p">))</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Read both of the activation maps in using </span>
+<span class="sd">Read both of the activation maps in using</span>
 <span class="sd">surfer&#39;s io functions.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="n">data_dir</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;auto_examples&quot;</span><span class="p">,</span> <span class="s">&quot;data&quot;</span><span class="p">)</span>
@@ -171,7 +172,7 @@ with PySurfer.</p>
         <li class="right" >
           <a href="plot_fmri_activation.html" title="Display fMRI Activation"
              >previous</a> |</li>
-        <li><a href="../index.html">PySurfer v0.2 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer v0.3 documentation</a> &raquo;</li>
           <li><a href="index.html" >Examples</a> &raquo;</li> 
       </ul>
     </div>

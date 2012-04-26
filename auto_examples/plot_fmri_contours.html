@@ -7,13 +7,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer v0.2 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer v0.3 documentation</title>
     <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.2',
+        VERSION:     '0.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="PySurfer v0.2 documentation" href="../index.html" />
+    <link rel="top" title="PySurfer v0.3 documentation" href="../index.html" />
     <link rel="up" title="Examples" href="index.html" />
     <link rel="next" title="Plot Activation Foci" href="plot_foci.html" />
     <link rel="prev" title="Display a Conjunction Map" href="plot_fmri_conjunction.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="plot_fmri_conjunction.html" title="Display a Conjunction Map"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">PySurfer v0.2 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer v0.3 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Examples</a> &raquo;</li> 
       </ul>
     </div>
@@ -92,8 +92,9 @@
 <span class="sd">colorscheme, so we will pass that as an option to the</span>
 <span class="sd">Brain constructor.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="s">&quot;fsaverage&quot;</span><span class="p">,</span> <span class="s">&quot;lh&quot;</span><span class="p">,</span> <span class="s">&quot;inflated&quot;</span><span class="p">,</span> 
-              <span class="n">config_opts</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;cortex&#39;</span><span class="p">:</span> <span class="s">&quot;low_contrast&quot;</span><span class="p">})</span>
+<span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="s">&quot;fsaverage&quot;</span><span class="p">,</span> <span class="s">&quot;lh&quot;</span><span class="p">,</span> <span class="s">&quot;inflated&quot;</span><span class="p">,</span>
+              <span class="n">config_opts</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;cortex&quot;</span><span class="p">:</span> <span class="s">&quot;low_contrast&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;background&quot;</span><span class="p">:</span> <span class="s">&quot;#151540&quot;</span><span class="p">})</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Get a path to the overlay file</span>
@@ -114,10 +115,10 @@
 <span class="sd">behind the scenes for us.  Here let&#39;s specify a different number of</span>
 <span class="sd">contours and use a different line width.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">add_contour_overlay</span><span class="p">(</span><span class="n">overlay_file</span><span class="p">,</span> 
-                          <span class="nb">max</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> 
-                          <span class="n">n_contours</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> 
-                          <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> 
+<span class="n">brain</span><span class="o">.</span><span class="n">add_contour_overlay</span><span class="p">(</span><span class="n">overlay_file</span><span class="p">,</span>
+                          <span class="nb">max</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+                          <span class="n">n_contours</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>
+                          <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">At the moment, the Brain object itself does not expose an interface</span>
@@ -147,7 +148,7 @@
         <li class="right" >
           <a href="plot_fmri_conjunction.html" title="Display a Conjunction Map"
              >previous</a> |</li>
-        <li><a href="../index.html">PySurfer v0.2 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer v0.3 documentation</a> &raquo;</li>
           <li><a href="index.html" >Examples</a> &raquo;</li> 
       </ul>
     </div>
