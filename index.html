@@ -3,17 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer v0.3 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.4.dev documentation</title>
+    
     <link rel="stylesheet" href="_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.3',
+        VERSION:     '0.4.dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="PySurfer v0.3 documentation" href="#" />
+    <link rel="top" title="PySurfer 0.4.dev documentation" href="#" />
     <link rel="next" title="Installation and Dependencies" href="install.html" /> 
   </head>
   <body>
@@ -38,7 +41,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="install.html" title="Installation and Dependencies"
              accesskey="N">next</a></li>
-        <li><a href="#">PySurfer v0.3 documentation</a> &raquo;</li> 
+        <li><a href="#">PySurfer 0.4.dev documentation</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
@@ -63,7 +66,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -97,23 +100,24 @@ for writing scripts to efficiently explore complex datasets.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation and Dependencies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Examples</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="auto_examples/plot_basics.html">Basic Visualization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auto_examples/plot_fmri_activation.html">Display fMRI Activation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auto_examples/plot_fmri_conjunction.html">Display a Conjunction Map</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auto_examples/plot_fmri_contours.html">Display Activation Contours</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auto_examples/plot_foci.html">Plot Activation Foci</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auto_examples/plot_from_volume.html">Display Volume Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auto_examples/plot_labels.html">Display ROI Labels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auto_examples/plot_meg_inverse_solution.html">Plot MEG inverse solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auto_examples/plot_morphometry.html">Overlay Morphometry Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auto_examples/plot_parc_values.html">Display ROI Values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auto_examples/plot_parcellation.html">Using Annotation Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auto_examples/plot_probabilistic_label.html">Display Probabilistic Labels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auto_examples/plot_show_view.html">Show the different brain views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auto_examples/plot_to_montage.html">Make a multiview image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auto_examples/rotate_animation.html">Animate brain and save movie</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auto_examples/save_views.html">Save a set of views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_basics.html">Basic Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_fmri_activation.html">Display fMRI Activation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_fmri_conjunction.html">Display a Conjunction Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_fmri_contours.html">Display Activation Contours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_foci.html">Plot Activation Foci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_from_volume.html">Display Volume Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_label_foci.html">Plot a label generated at an activation foci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_labels.html">Display ROI Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_meg_inverse_solution.html">Plot MEG inverse solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_morphometry.html">Overlay Morphometry Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_parc_values.html">Display ROI Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_parcellation.html">Using Annotation Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_probabilistic_label.html">Display Probabilistic Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_show_view.html">Show the different brain views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/plot_to_montage.html">Make a multiview image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/rotate_animation.html">Animate brain and save movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/save_views.html">Save a set of views</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="documentation/index.html">Documentation</a><ul>
@@ -128,8 +132,9 @@ for writing scripts to efficiently explore complex datasets.</p>
 <div class="section" id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <p>Michael Waskom, Stanford University</p>
-<p>Alexandre Gramfort, Harvard Med. School MGH Martinos Center</p>
+<p>Alexandre Gramfort, Harvard Med. School MGH Martinos Center - INRIA</p>
 <p>Scott Burns, Harvard Med. School MGH Martinos Center</p>
+<p>Martin Luessi, Harvard Med. School MGH Martinos Center</p>
 </div>
 <div class="section" id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
@@ -144,7 +149,7 @@ mailing list. Please preface the subject line with &#8220;[PySurfer]&#8221;.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Mailing list:</th><td class="field-body"><a class="reference external" href="mailto:nipy-devel&#37;&#52;&#48;neuroimaging&#46;scipy&#46;org">nipy-devel<span>&#64;</span>neuroimaging<span>&#46;</span>scipy<span>&#46;</span>org</a> [<a class="reference external" href="http://mail.scipy.org/mailman/listinfo/nipy-devel">subscription</a>, <a class="reference external" href="http://mail.scipy.org/pipermail/nipy-devel">archive</a>]</td>
+<tr class="field-odd field"><th class="field-name">Mailing list:</th><td class="field-body"><a class="reference external" href="mailto:nipy-devel&#37;&#52;&#48;neuroimaging&#46;scipy&#46;org">nipy-devel<span>&#64;</span>neuroimaging<span>&#46;</span>scipy<span>&#46;</span>org</a> [<a class="reference external" href="http://mail.scipy.org/mailman/listinfo/nipy-devel">subscription</a>, <a class="reference external" href="http://mail.scipy.org/pipermail/nipy-devel">archive</a>]</td>
 </tr>
 </tbody>
 </table>
@@ -167,12 +172,12 @@ mailing list. Please preface the subject line with &#8220;[PySurfer]&#8221;.</p>
         <li class="right" style="margin-right: 10px">
           <a href="install.html" title="Installation and Dependencies"
              >next</a></li>
-        <li><a href="#">PySurfer v0.3 documentation</a> &raquo;</li> 
+        <li><a href="#">PySurfer 0.4.dev documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2011, Michael Waskom, Alexandre Gramfort, Scott Burns.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+        &copy; Copyright 2011-2012, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
     </div>
   </body>
 </html>
