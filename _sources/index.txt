@@ -19,7 +19,7 @@ Contents
     :maxdepth: 2
     
     install
-    auto_examples/index.rst
+    examples/index.rst
     documentation/index.rst
 
 Authors
@@ -27,9 +27,11 @@ Authors
 
 Michael Waskom, Stanford University
 
-Alexandre Gramfort, Harvard Med. School MGH Martinos Center
+Alexandre Gramfort, Harvard Med. School MGH Martinos Center - INRIA
 
 Scott Burns, Harvard Med. School MGH Martinos Center
+
+Martin Luessi, Harvard Med. School MGH Martinos Center
 
 License
 -------
