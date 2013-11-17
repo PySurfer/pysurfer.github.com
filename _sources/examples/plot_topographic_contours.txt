@@ -1,0 +1,24 @@
+
+
+.. _example_plot_topographic_contours.py:
+
+
+Display Activation Contours
+===========================
+
+Load a statistical overlay as a "topographic" contour map.
+
+
+
+
+.. image:: images/plot_topographic_contours.png
+    :align: center
+
+
+
+
+**Python source code:** :download:`plot_topographic_contours.py <plot_topographic_contours.py>`
+
+.. literalinclude:: plot_topographic_contours.py
+    :lines: 8-
+

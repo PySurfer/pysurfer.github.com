@@ -1,0 +1,25 @@
+
+
+.. _example_plot_label.py:
+
+
+Display ROI Labels
+==================
+
+Using PySurfer you can plot Freesurfer cortical labels on the surface
+with a large amount of control over the visual representation.
+
+
+
+
+.. image:: images/plot_label.png
+    :align: center
+
+
+
+
+**Python source code:** :download:`plot_label.py <plot_label.py>`
+
+.. literalinclude:: plot_label.py
+    :lines: 9-
+

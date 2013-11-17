@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.4 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.5.dev documentation</title>
     
     <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.4',
+        VERSION:     '0.5.dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,28 +26,28 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="PySurfer 0.4 documentation" href="../index.html" />
-    <link rel="up" title="Examples" href="index.html" />
-    <link rel="next" title="Display a Conjunction Map" href="plot_fmri_conjunction.html" />
+    <link rel="top" title="PySurfer 0.5.dev documentation" href="../index.html" />
+    <link rel="up" title="PySurfer Example Gallery" href="index.html" />
+    <link rel="next" title="Display an fMRI Volume" href="plot_fmri_activation_volume.html" />
     <link rel="prev" title="Basic Visualization" href="plot_basics.html" /> 
   </head>
   <body>
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
  <a href="../index.html">
-  <img src="../_static/banner.png" alt="PySurfer logo"  border="0" />
+  <img src="../_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
 </div>
 
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="plot_fmri_conjunction.html" title="Display a Conjunction Map"
+          <a href="plot_fmri_activation_volume.html" title="Display an fMRI Volume"
              accesskey="N">next</a></li>
         <li class="right" >
           <a href="plot_basics.html" title="Basic Visualization"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.4 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Examples</a> &raquo;</li> 
+        <li><a href="../index.html">PySurfer 0.5.dev documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
@@ -56,8 +56,8 @@
   <p class="topless"><a href="plot_basics.html"
                         title="previous chapter">Basic Visualization</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="plot_fmri_conjunction.html"
-                        title="next chapter">Display a Conjunction Map</a></p>
+  <p class="topless"><a href="plot_fmri_activation_volume.html"
+                        title="next chapter">Display an fMRI Volume</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -81,28 +81,28 @@
             
   <div class="section" id="display-fmri-activation">
 <span id="example-plot-fmri-activation-py"></span><h1>Display fMRI Activation<a class="headerlink" href="#display-fmri-activation" title="Permalink to this headline">¶</a></h1>
-<p>Load a statistical overlay on the inflated surface.</p>
+<p>The most straightforward way to plot activations is when you already have
+a map of them defined on the Freesurfer surface. This map can be stored in any
+file format that Nibabel can understand.</p>
 <img alt="../_images/plot_fmri_activation.png" class="align-center" src="../_images/plot_fmri_activation.png" />
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_fmri_activation.py"><tt class="xref download docutils literal"><span class="pre">plot_fmri_activation.py</span></tt></a></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">__doc__</span>
 
-<span class="kn">import</span> <span class="nn">os.path</span> <span class="kn">as</span> <span class="nn">op</span>
 <span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <span class="n">Brain</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Bring up the visualization</span>
+<span class="sd">Bring up the visualization window.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="s">&quot;fsaverage&quot;</span><span class="p">,</span> <span class="s">&quot;lh&quot;</span><span class="p">,</span> <span class="s">&quot;inflated&quot;</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Get a path to the overlay file.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">overlay_file</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;example_data&quot;</span><span class="p">,</span> <span class="s">&quot;lh.sig.nii.gz&quot;</span><span class="p">)</span>
+<span class="n">overlay_file</span> <span class="o">=</span> <span class="s">&quot;example_data/lh.sig.nii.gz&quot;</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Display the overlay on the surface using the defaults</span>
-<span class="sd">to control thresholding and colorbar saturation.</span>
-<span class="sd">These can be set through your config file.</span>
+<span class="sd">Display the overlay on the surface using the defaults to control thresholding</span>
+<span class="sd">and colorbar saturation.  These can be set through your config file.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="n">brain</span><span class="o">.</span><span class="n">add_overlay</span><span class="p">(</span><span class="n">overlay_file</span><span class="p">)</span>
 
@@ -112,8 +112,8 @@
 <span class="n">brain</span><span class="o">.</span><span class="n">overlays</span><span class="p">[</span><span class="s">&quot;sig&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Now add the overlay again, but this time with set threshold</span>
-<span class="sd">and showing only the positive activations</span>
+<span class="sd">Now add the overlay again, but this time with set threshold and showing only</span>
+<span class="sd">the positive activations.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="n">brain</span><span class="o">.</span><span class="n">add_overlay</span><span class="p">(</span><span class="n">overlay_file</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">sign</span><span class="o">=</span><span class="s">&quot;pos&quot;</span><span class="p">)</span>
 </pre></div>
@@ -130,13 +130,13 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="plot_fmri_conjunction.html" title="Display a Conjunction Map"
+          <a href="plot_fmri_activation_volume.html" title="Display an fMRI Volume"
              >next</a></li>
         <li class="right" >
           <a href="plot_basics.html" title="Basic Visualization"
              >previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.4 documentation</a> &raquo;</li>
-          <li><a href="index.html" >Examples</a> &raquo;</li> 
+        <li><a href="../index.html">PySurfer 0.5.dev documentation</a> &raquo;</li>
+          <li><a href="index.html" >PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

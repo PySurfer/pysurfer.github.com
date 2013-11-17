@@ -3,21 +3,24 @@
 .. _example_plot_label_foci.py:
 
 
-============================================
-Plot a label generated at an activation foci
-============================================
+=======================
+Generate Surface Labels
+=======================
 
-Plot a spheroid at a position on the surface manifold
-according to an MNI coordinate, generate a label
-around it and plot it.
+Define a label that is centered on a specific vertex in the surface mesh. Plot
+that label and the focus that defines its center.
+
 
 
 
 .. image:: images/plot_label_foci.png
     :align: center
 
+
+
+
 **Python source code:** :download:`plot_label_foci.py <plot_label_foci.py>`
 
 .. literalinclude:: plot_label_foci.py
-    :lines: 11-
-    
+    :lines: 10-
+

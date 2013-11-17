@@ -10,11 +10,15 @@ Initialize a basic visualization session.
 
 
 
+
 .. image:: images/plot_basics.png
     :align: center
+
+
+
 
 **Python source code:** :download:`plot_basics.py <plot_basics.py>`
 
 .. literalinclude:: plot_basics.py
     :lines: 8-
-    
+

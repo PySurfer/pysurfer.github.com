@@ -3,18 +3,25 @@
 .. _example_plot_fmri_activation.py:
 
 
+=======================
 Display fMRI Activation
 =======================
 
-Load a statistical overlay on the inflated surface.
+The most straightforward way to plot activations is when you already have
+a map of them defined on the Freesurfer surface. This map can be stored in any
+file format that Nibabel can understand.
+
 
 
 
 .. image:: images/plot_fmri_activation.png
     :align: center
 
+
+
+
 **Python source code:** :download:`plot_fmri_activation.py <plot_fmri_activation.py>`
 
 .. literalinclude:: plot_fmri_activation.py
-    :lines: 8-
-    
+    :lines: 11-
+

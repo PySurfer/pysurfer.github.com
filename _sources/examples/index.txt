@@ -1,39 +1,201 @@
 
-Examples
-========
+.. raw:: html
 
-.. _examples-index:
 
+    <style type="text/css">
+
+    div#sidebarbutton {
+        display: none;
+    }
+
+    .figure {
+        float: left;
+        margin: 25px;
+        width: auto;
+        height: 250px;
+        width: 250px;
+    }
+
+    .figure img {
+        display: inline;
+        }
+
+    .figure .caption {
+        width: 230px;
+        text-align: center !important;
+    }
+    </style>
+
+
+
+
+PySurfer Example Gallery
+========================
 
 This page offers a set of example scripts intended to demonstrate the
-functionality offered by PySurfer, from the most basic tasks to more complex 
-visualizations. 
+functionality offered by PySurfer, from the most basic tasks to more complex
+visualizations.
 
-For each script that produces a figure, the image is automatically captured
-and displayed along with the code that generated it.
+For each script that produces a figure, the image is automatically captured and
+displayed along with the code that generated it.
 
-Used PySurfer to present neuroimaging data in a way that isn't covered here?
-Please contribute_ it!
+Used PySurfer to present neuroimaging data in a way that isn’t covered here?
+Please `contribute <https://github.com/nipy/PySurfer>`_ it!
 
-.. _contribute: https://github.com/nipy/PySurfer
 
+
+.. figure:: ./images/thumb/plot_basics_thumb.png
+   :target: ./plot_basics.html
+
+   :ref:`example_plot_basics.py`
 
 .. toctree::
+   :hidden:
 
-    ./plot_basics
-    ./plot_fmri_activation
-    ./plot_fmri_conjunction
-    ./plot_fmri_contours
-    ./plot_foci
-    ./plot_from_volume
-    ./plot_label_foci
-    ./plot_labels
-    ./plot_meg_inverse_solution
-    ./plot_morphometry
-    ./plot_parc_values
-    ./plot_parcellation
-    ./plot_probabilistic_label
-    ./plot_show_view
-    ./plot_to_montage
-    ./rotate_animation
-    ./save_views
+   ./plot_basics
+
+.. figure:: ./images/thumb/plot_fmri_activation_thumb.png
+   :target: ./plot_fmri_activation.html
+
+   :ref:`example_plot_fmri_activation.py`
+
+.. toctree::
+   :hidden:
+
+   ./plot_fmri_activation
+
+.. figure:: ./images/thumb/plot_fmri_activation_volume_thumb.png
+   :target: ./plot_fmri_activation_volume.html
+
+   :ref:`example_plot_fmri_activation_volume.py`
+
+.. toctree::
+   :hidden:
+
+   ./plot_fmri_activation_volume
+
+.. figure:: ./images/thumb/plot_fmri_conjunction_thumb.png
+   :target: ./plot_fmri_conjunction.html
+
+   :ref:`example_plot_fmri_conjunction.py`
+
+.. toctree::
+   :hidden:
+
+   ./plot_fmri_conjunction
+
+.. figure:: ./images/thumb/plot_foci_thumb.png
+   :target: ./plot_foci.html
+
+   :ref:`example_plot_foci.py`
+
+.. toctree::
+   :hidden:
+
+   ./plot_foci
+
+.. figure:: ./images/thumb/plot_freesurfer_normalization_thumb.png
+   :target: ./plot_freesurfer_normalization.html
+
+   :ref:`example_plot_freesurfer_normalization.py`
+
+.. toctree::
+   :hidden:
+
+   ./plot_freesurfer_normalization
+
+.. figure:: ./images/thumb/plot_label_thumb.png
+   :target: ./plot_label.html
+
+   :ref:`example_plot_label.py`
+
+.. toctree::
+   :hidden:
+
+   ./plot_label
+
+.. figure:: ./images/thumb/plot_label_foci_thumb.png
+   :target: ./plot_label_foci.html
+
+   :ref:`example_plot_label_foci.py`
+
+.. toctree::
+   :hidden:
+
+   ./plot_label_foci
+
+.. figure:: ./images/thumb/plot_meg_inverse_solution_thumb.png
+   :target: ./plot_meg_inverse_solution.html
+
+   :ref:`example_plot_meg_inverse_solution.py`
+
+.. toctree::
+   :hidden:
+
+   ./plot_meg_inverse_solution
+
+.. figure:: ./images/thumb/plot_morphometry_thumb.png
+   :target: ./plot_morphometry.html
+
+   :ref:`example_plot_morphometry.py`
+
+.. toctree::
+   :hidden:
+
+   ./plot_morphometry
+
+.. figure:: ./images/thumb/plot_parc_values_thumb.png
+   :target: ./plot_parc_values.html
+
+   :ref:`example_plot_parc_values.py`
+
+.. toctree::
+   :hidden:
+
+   ./plot_parc_values
+
+.. figure:: ./images/thumb/plot_parcellation_thumb.png
+   :target: ./plot_parcellation.html
+
+   :ref:`example_plot_parcellation.py`
+
+.. toctree::
+   :hidden:
+
+   ./plot_parcellation
+
+.. figure:: ./images/thumb/plot_probabilistic_label_thumb.png
+   :target: ./plot_probabilistic_label.html
+
+   :ref:`example_plot_probabilistic_label.py`
+
+.. toctree::
+   :hidden:
+
+   ./plot_probabilistic_label
+
+.. figure:: ./images/thumb/plot_resting_correlations_thumb.png
+   :target: ./plot_resting_correlations.html
+
+   :ref:`example_plot_resting_correlations.py`
+
+.. toctree::
+   :hidden:
+
+   ./plot_resting_correlations
+
+.. figure:: ./images/thumb/plot_topographic_contours_thumb.png
+   :target: ./plot_topographic_contours.html
+
+   :ref:`example_plot_topographic_contours.py`
+
+.. toctree::
+   :hidden:
+
+   ./plot_topographic_contours
+
+
+.. raw:: html
+
+    <div style="clear: both"></div>
+    

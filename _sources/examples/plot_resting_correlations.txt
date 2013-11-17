@@ -1,0 +1,28 @@
+
+
+.. _example_plot_resting_correlations.py:
+
+
+Display Resting-State Correlations
+==================================
+
+In this example, we show how to build up a complex visualization of a
+volume-based image showing resting-state correlations across the whole brain
+from a seed in the angular gyrus. We'll plot several views of both hemispheres
+in a single window and manipulate the colormap to best represent the nature of
+the data.
+
+
+
+
+.. image:: images/plot_resting_correlations.png
+    :align: center
+
+
+
+
+**Python source code:** :download:`plot_resting_correlations.py <plot_resting_correlations.py>`
+
+.. literalinclude:: plot_resting_correlations.py
+    :lines: 12-
+

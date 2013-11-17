@@ -11,11 +11,15 @@ the cortical reconstruction process.
 
 
 
+
 .. image:: images/plot_morphometry.png
     :align: center
+
+
+
 
 **Python source code:** :download:`plot_morphometry.py <plot_morphometry.py>`
 
 .. literalinclude:: plot_morphometry.py
     :lines: 9-
-    
+

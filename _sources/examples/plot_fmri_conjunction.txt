@@ -15,11 +15,15 @@ with PySurfer.
 
 
 
+
 .. image:: images/plot_fmri_conjunction.png
     :align: center
+
+
+
 
 **Python source code:** :download:`plot_fmri_conjunction.py <plot_fmri_conjunction.py>`
 
 .. literalinclude:: plot_fmri_conjunction.py
     :lines: 13-
-    
+
