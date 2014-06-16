@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.4 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.5 documentation</title>
     
     <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.4',
+        VERSION:     '0.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +24,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="PySurfer 0.4 documentation" href="../index.html" />
+    <link rel="top" title="PySurfer 0.5 documentation" href="../index.html" />
     <link rel="up" title="PySurfer Example Gallery" href="index.html" />
     <link rel="next" title="Display Resting-State Correlations" href="plot_resting_correlations.html" />
     <link rel="prev" title="Using Annotation Files" href="plot_parcellation.html" /> 
@@ -46,7 +44,7 @@
         <li class="right" >
           <a href="plot_parcellation.html" title="Using Annotation Files"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.4 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer 0.5 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
@@ -111,7 +109,7 @@ to help characterize the location of your data.</p>
 <span class="sd">overlay the label on an activation plot to asses whether it falls within that</span>
 <span class="sd">region.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">add_label</span><span class="p">(</span><span class="s">&quot;BA45&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;#F0F8FF&quot;</span><span class="p">,</span> <span class="n">borders</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">scalar_thresh</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">add_label</span><span class="p">(</span><span class="s">&quot;BA45&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;#F0F8FF&quot;</span><span class="p">,</span> <span class="n">borders</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">scalar_thresh</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">brain</span><span class="o">.</span><span class="n">add_label</span><span class="p">(</span><span class="s">&quot;BA45&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;#F0F8FF&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="n">scalar_thresh</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
@@ -124,13 +122,6 @@ to help characterize the location of your data.</p>
 <span class="n">ids</span><span class="p">,</span> <span class="n">probs</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read_label</span><span class="p">(</span><span class="n">label_file</span><span class="p">,</span> <span class="n">read_scalars</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">prob_field</span><span class="p">[</span><span class="n">ids</span><span class="p">]</span> <span class="o">=</span> <span class="n">probs</span>
 <span class="n">brain</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">prob_field</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s">&quot;RdPu&quot;</span><span class="p">)</span>
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Adjust the colorbar to represent the coarseness of the probability estimates</span>
-<span class="sd">more closely.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;colorbar&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">number_of_colors</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;colorbar&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">number_of_labels</span> <span class="o">=</span> <span class="mi">11</span>
 </pre></div>
 </div>
 </div>
@@ -150,13 +141,13 @@ to help characterize the location of your data.</p>
         <li class="right" >
           <a href="plot_parcellation.html" title="Using Annotation Files"
              >previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.4 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer 0.5 documentation</a> &raquo;</li>
           <li><a href="index.html" >PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2011-2013, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+        &copy; Copyright 2011-2014, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

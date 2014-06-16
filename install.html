@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.4 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.5 documentation</title>
     
     <link rel="stylesheet" href="_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
-        VERSION:     '0.4',
+        URL_ROOT:    './',
+        VERSION:     '0.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,9 +24,9 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="PySurfer 0.4 documentation" href="index.html" />
+    <link rel="top" title="PySurfer 0.5 documentation" href="index.html" />
     <link rel="next" title="PySurfer Example Gallery" href="examples/index.html" />
-    <link rel="prev" title="Introduction" href="index.html" /> 
+    <link rel="prev" title="What is PySurfer?" href="intro.html" /> 
   </head>
   <body>
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
@@ -43,16 +41,25 @@
           <a href="examples/index.html" title="PySurfer Example Gallery"
              accesskey="N">next</a></li>
         <li class="right" >
-          <a href="index.html" title="Introduction"
+          <a href="intro.html" title="What is PySurfer?"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">PySurfer 0.4 documentation</a> &raquo;</li> 
+        <li><a href="index.html">PySurfer 0.5 documentation</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installing and Getting Started</a><ul>
+<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li><a class="reference internal" href="#getting-started">Getting started</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Introduction</a></p>
+  <p class="topless"><a href="intro.html"
+                        title="previous chapter">What is PySurfer?</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="examples/index.html"
                         title="next chapter">PySurfer Example Gallery</a></p>
@@ -77,14 +84,31 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="installation-and-dependencies">
-<span id="install"></span><h1>Installation and Dependencies<a class="headerlink" href="#installation-and-dependencies" title="Permalink to this headline">¶</a></h1>
-<p>Installing PySurfer is quite simple with <a class="reference external" href="http://peak.telecommunity.com/DevCenter/EasyInstall">easy_install</a>:</p>
-<div class="highlight-python"><pre>easy_install -U pysurfer</pre>
+  <div class="section" id="installing-and-getting-started">
+<span id="install"></span><h1>Installing and Getting Started<a class="headerlink" href="#installing-and-getting-started" title="Permalink to this headline">¶</a></h1>
+<p>Installing PySurfer is quite simple with <a class="reference external" href="http://pypi.python.org/pypi/pip">pip</a>:</p>
+<div class="highlight-python"><div class="highlight"><pre>pip install pysurfer
+</pre></div>
 </div>
-<p>or <a class="reference external" href="http://pypi.python.org/pypi/pip">pip</a>:</p>
-<div class="highlight-python"><pre>pip install pysurfer</pre>
+<p>If you already have PySurfer installed, you can also use pip to update it:</p>
+<div class="highlight-python"><div class="highlight"><pre>pip install -U pysurfer
+</pre></div>
 </div>
+<p>If you&#8217;d like to install the development version, you have two options. You can
+use pip:</p>
+<div class="highlight-python"><div class="highlight"><pre>pip install git+git://github.com/nipy/pysurfer.git#egg=pysurfer
+</pre></div>
+</div>
+<p>Or you can clone the <a class="reference external" href="https://github.com/nipy/PySurfer">git repository</a> and
+install from the source directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py install
+</pre></div>
+</div>
+<p>If you don&#8217;t have pip, you can also install PySurfer with <a class="reference external" href="http://peak.telecommunity.com/DevCenter/EasyInstall">easy_install</a>, or use
+easy_install to get pip.</p>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<p>PySurfer requires Python 2.7, and it does not work on Python 3.</p>
 <p>To use PySurfer, you will need to have the following Python packages:</p>
 <ul class="simple">
 <li><a class="reference external" href="http://www.scipy.org/NumPy">numpy</a></li>
@@ -93,17 +117,43 @@
 <li><a class="reference external" href="http://nipy.sourceforge.net/nibabel/">nibabel</a></li>
 <li><a class="reference external" href="http://mayavi.sourceforge.net/">mayavi</a></li>
 <li><a class="reference external" href="http://matplotlib.sourceforge.net">matplotlib</a></li>
-<li><a class="reference external" href="http://www.pythonware.com/products/pil/">PIL</a></li>
 </ul>
-<p>An easy option to get all of these packages is to use the Enthought
-Python Distribution (<a class="reference external" href="http://www.enthought.com/products/epd.php">EPD</a>) which is free for academic use.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For optimal results and performance make sure IPython is invoked using the
-best GUI back end. In an EPD environment on Mac OS X this would be WX,
-so <cite>ipython &#8211;pylab wx</cite>. On Linux Debian / Ubuntu (Neurodebian) QT seems
-to be more appropriate, so <cite>ipython &#8211;pylab qt</cite>. Reports for other platforms
-and distributions are appreciated.</p>
+<p>Some functions also make use of the Python Imaging Library (<a class="reference external" href="http://www.pythonware.com/products/pil/">PIL</a>), although
+it&#8217;s not mandatory.</p>
+<p>An easy option to set up this environment is the <a class="reference external" href="https://store.continuum.io/cshop/anaconda/">Anaconda</a> distribution, which
+is free and ships with many of the required packages. If you use Anaconda,
+you&#8217;ll need to install Mayavi separately. This can be done using the <tt class="docutils literal"><span class="pre">conda</span></tt>
+command:</p>
+<div class="highlight-python"><div class="highlight"><pre>conda install mayavi
+</pre></div>
+</div>
+<p>You&#8217;ll also need to install nibabel, which can be done using <tt class="docutils literal"><span class="pre">pip</span></tt> as above.</p>
+<p>Another option for getting set up is the Enthough <a class="reference external" href="https://www.enthought.com/products/canopy/">Canopy</a> environment, which is
+similar to Anaconda and free for academic use.</p>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>PySurfer generally works out of the box on Linux systems. Getting started on
+OSX can be a bit more difficult. We have had success using the Anaconda
+distribution with the additional step of setting the environment variable
+<tt class="docutils literal"><span class="pre">QT_API</span></tt> to <tt class="docutils literal"><span class="pre">pyqt</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre>export QT_API=pyqt
+</pre></div>
+</div>
+<p>If you&#8217;re using Canopy, you need to do something similar with the
+<tt class="docutils literal"><span class="pre">ETS_TOOLKIT</span></tt> variable:</p>
+<div class="highlight-python"><div class="highlight"><pre>export ETS_TOOLKIT=qt4
+</pre></div>
+</div>
+<p>If you want to use PySurfer interactively, you should do so in <a class="reference external" href="http://ipython.scipy.org">ipython</a>. After
+starting ipython (either in the terminal, qtconsole, or notebook), you have to
+activate the correct GUI backend, which is probably qt:</p>
+<div class="highlight-python"><div class="highlight"><pre>%gui qt
+</pre></div>
+</div>
+<p>This will allow you to have an open PySurfer window while still being able to
+execute code in the console/notebook.</p>
+<p>If you are having trouble getting started using PySurfer, please describe the problem on the <a class="reference external" href="http://projects.scipy.org/mailman/listinfo/nipy-devel">nipy mailing list</a>.</p>
 </div>
 </div>
 
@@ -120,14 +170,14 @@ and distributions are appreciated.</p>
           <a href="examples/index.html" title="PySurfer Example Gallery"
              >next</a></li>
         <li class="right" >
-          <a href="index.html" title="Introduction"
+          <a href="intro.html" title="What is PySurfer?"
              >previous</a> |</li>
-        <li><a href="index.html">PySurfer 0.4 documentation</a> &raquo;</li> 
+        <li><a href="index.html">PySurfer 0.5 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2011-2013, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+        &copy; Copyright 2011-2014, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

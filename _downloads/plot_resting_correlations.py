@@ -9,7 +9,7 @@ in a single window and manipulate the colormap to best represent the nature of
 the data.
 
 """
-print __doc__
+print(__doc__)
 
 import os
 from surfer import Brain, io
@@ -47,20 +47,13 @@ We want to use an appropriate color map for these data: a divergent map that
 is centered on 0, which is a meaningful transition-point as it marks the change
 from negative correlations to positive correlations.
 
-We'll also plot the map with some transparency so that we can see through to the
-underlying anatomy.
+We'll also plot the map with some transparency so that we can see through to
+the underlying anatomy.
 """
-brain.add_data(surf_data_lh, -.7, .7, colormap="RdBu", alpha=.75, hemi='lh')
-brain.add_data(surf_data_rh, -.7, .7, colormap="RdBu", alpha=.75, hemi='rh')
-
-"""
-We'll next flip the colormap so negative correlations are blue and positive
-correlations are red, which is better aligned with the conventions in fMRI
-visualization.
-"""
-for hemi in ["lh", "rh"]:
-    for cbar in brain.data_dict[hemi]["colorbars"]:
-        cbar.reverse_lut = True
+brain.add_data(surf_data_lh, -.7, .7, colormap="coolwarm", alpha=.75,
+               hemi='lh')
+brain.add_data(surf_data_rh, -.7, .7, colormap="coolwarm", alpha=.75,
+               hemi='rh')
 
 """
 This overlay represents resting-state correlations with a

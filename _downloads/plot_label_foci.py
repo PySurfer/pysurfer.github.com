@@ -7,7 +7,7 @@ Define a label that is centered on a specific vertex in the surface mesh. Plot
 that label and the focus that defines its center.
 
 """
-print __doc__
+print(__doc__)
 
 from surfer import Brain, utils
 
@@ -57,7 +57,7 @@ surface by finding the vertex on the "white" mesh that is closest to the
 coordinate of the point we want to display.
 """
 brain.add_foci([coord], map_surface="white", coords_as_verts=True,
-                color="mediumblue")
+               color="mediumblue")
 
 """
 Set the camera position to show the extent of the labels.

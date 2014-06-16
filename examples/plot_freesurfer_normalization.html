@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.4 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.5 documentation</title>
     
     <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.4',
+        VERSION:     '0.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +24,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="PySurfer 0.4 documentation" href="../index.html" />
+    <link rel="top" title="PySurfer 0.5 documentation" href="../index.html" />
     <link rel="up" title="PySurfer Example Gallery" href="index.html" />
     <link rel="next" title="Display ROI Labels" href="plot_label.html" />
     <link rel="prev" title="Plot Activation Foci" href="plot_foci.html" /> 
@@ -46,7 +44,7 @@
         <li class="right" >
           <a href="plot_foci.html" title="Plot Activation Foci"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.4 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer 0.5 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
@@ -105,7 +103,8 @@ with the underlying data that you should investigate.</p>
     <span class="n">curv_bin</span> <span class="o">=</span> <span class="p">(</span><span class="n">curv</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
 
     <span class="c"># Add the data as a contour overlay, but turn off the colorbar</span>
-    <span class="n">brain</span><span class="o">.</span><span class="n">add_contour_overlay</span><span class="p">(</span><span class="n">curv_bin</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.15</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="n">hemi</span><span class="p">)</span>
+    <span class="n">brain</span><span class="o">.</span><span class="n">add_contour_overlay</span><span class="p">(</span><span class="n">curv_bin</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">n_contours</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                              <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="n">hemi</span><span class="p">)</span>
     <span class="n">brain</span><span class="o">.</span><span class="n">contour_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s">&quot;colorbar&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">False</span>
 
 <span class="n">brain</span><span class="o">.</span><span class="n">show_view</span><span class="p">(</span><span class="s">&quot;dorsal&quot;</span><span class="p">)</span>
@@ -128,13 +127,13 @@ with the underlying data that you should investigate.</p>
         <li class="right" >
           <a href="plot_foci.html" title="Plot Activation Foci"
              >previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.4 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer 0.5 documentation</a> &raquo;</li>
           <li><a href="index.html" >PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2011-2013, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+        &copy; Copyright 2011-2014, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

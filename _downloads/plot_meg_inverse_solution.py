@@ -5,12 +5,12 @@ Plot MEG inverse solution
 Data were computed using mne-python (http://martinos.org/mne)
 
 """
-print __doc__
+print(__doc__)
 
 import os
 import numpy as np
 
-from surfer import Brain, TimeViewer
+from surfer import Brain
 from surfer.io import read_stc
 
 """
@@ -29,8 +29,8 @@ brain = Brain(subject_id, hemi, surface,
 read MNE dSPM inverse solution
 """
 for hemi in ['lh', 'rh']:
-    stc_fname = os.path.join('example_data',
-                             'meg_source_estimate-' + hemi + '.stc')
+    stc_fname = os.path.join('example_data/meg_source_estimate-'
+                             + hemi + '.stc')
     stc = read_stc(stc_fname)
 
     """
@@ -62,10 +62,11 @@ for hemi in ['lh', 'rh']:
 """
 scale colormap and set time (index) to display
 """
-brain.set_data_time_index(2)
 brain.scale_data_colormap(fmin=13, fmid=18, fmax=22, transparent=True)
+brain.set_data_time_index(2)
 
 """
-uncomment this line to use the interactive TimeViewer GUI
+uncomment these lines to use the interactive TimeViewer GUI
 """
-#viewer = TimeViewer(brain)
+# from surfer import TimeViewer
+# viewer = TimeViewer(brain)

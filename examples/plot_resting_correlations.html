@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.4 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.5 documentation</title>
     
     <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.4',
+        VERSION:     '0.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +24,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="PySurfer 0.4 documentation" href="../index.html" />
+    <link rel="top" title="PySurfer 0.5 documentation" href="../index.html" />
     <link rel="up" title="PySurfer Example Gallery" href="index.html" />
     <link rel="next" title="Display Activation Contours" href="plot_topographic_contours.html" />
     <link rel="prev" title="Display Probabilistic Labels" href="plot_probabilistic_label.html" /> 
@@ -46,7 +44,7 @@
         <li class="right" >
           <a href="plot_probabilistic_label.html" title="Display Probabilistic Labels"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.4 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer 0.5 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
@@ -88,7 +86,7 @@ in a single window and manipulate the colormap to best represent the nature of
 the data.</p>
 <img alt="../_images/plot_resting_correlations.png" class="align-center" src="../_images/plot_resting_correlations.png" />
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_resting_correlations.py"><tt class="xref download docutils literal"><span class="pre">plot_resting_correlations.py</span></tt></a></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">__doc__</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">__doc__</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <span class="n">Brain</span><span class="p">,</span> <span class="n">io</span>
@@ -126,20 +124,13 @@ the data.</p>
 <span class="sd">is centered on 0, which is a meaningful transition-point as it marks the change</span>
 <span class="sd">from negative correlations to positive correlations.</span>
 
-<span class="sd">We&#39;ll also plot the map with some transparency so that we can see through to the</span>
-<span class="sd">underlying anatomy.</span>
+<span class="sd">We&#39;ll also plot the map with some transparency so that we can see through to</span>
+<span class="sd">the underlying anatomy.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">surf_data_lh</span><span class="p">,</span> <span class="o">-.</span><span class="mi">7</span><span class="p">,</span> <span class="o">.</span><span class="mi">7</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s">&quot;RdBu&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">75</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="s">&#39;lh&#39;</span><span class="p">)</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">surf_data_rh</span><span class="p">,</span> <span class="o">-.</span><span class="mi">7</span><span class="p">,</span> <span class="o">.</span><span class="mi">7</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s">&quot;RdBu&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">75</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="s">&#39;rh&#39;</span><span class="p">)</span>
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">We&#39;ll next flip the colormap so negative correlations are blue and positive</span>
-<span class="sd">correlations are red, which is better aligned with the conventions in fMRI</span>
-<span class="sd">visualization.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="k">for</span> <span class="n">hemi</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;lh&quot;</span><span class="p">,</span> <span class="s">&quot;rh&quot;</span><span class="p">]:</span>
-    <span class="k">for</span> <span class="n">cbar</span> <span class="ow">in</span> <span class="n">brain</span><span class="o">.</span><span class="n">data_dict</span><span class="p">[</span><span class="n">hemi</span><span class="p">][</span><span class="s">&quot;colorbars&quot;</span><span class="p">]:</span>
-        <span class="n">cbar</span><span class="o">.</span><span class="n">reverse_lut</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">surf_data_lh</span><span class="p">,</span> <span class="o">-.</span><span class="mi">7</span><span class="p">,</span> <span class="o">.</span><span class="mi">7</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s">&quot;coolwarm&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">75</span><span class="p">,</span>
+               <span class="n">hemi</span><span class="o">=</span><span class="s">&#39;lh&#39;</span><span class="p">)</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">surf_data_rh</span><span class="p">,</span> <span class="o">-.</span><span class="mi">7</span><span class="p">,</span> <span class="o">.</span><span class="mi">7</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s">&quot;coolwarm&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">75</span><span class="p">,</span>
+               <span class="n">hemi</span><span class="o">=</span><span class="s">&#39;rh&#39;</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">This overlay represents resting-state correlations with a</span>
@@ -166,13 +157,13 @@ the data.</p>
         <li class="right" >
           <a href="plot_probabilistic_label.html" title="Display Probabilistic Labels"
              >previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.4 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer 0.5 documentation</a> &raquo;</li>
           <li><a href="index.html" >PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2011-2013, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+        &copy; Copyright 2011-2014, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>
