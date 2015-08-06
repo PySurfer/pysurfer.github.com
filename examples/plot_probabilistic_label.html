@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.5 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.6 documentation</title>
     
     <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.5',
+        VERSION:     '0.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="PySurfer 0.5 documentation" href="../index.html" />
+    <link rel="top" title="PySurfer 0.6 documentation" href="../index.html" />
     <link rel="up" title="PySurfer Example Gallery" href="index.html" />
     <link rel="next" title="Display Resting-State Correlations" href="plot_resting_correlations.html" />
     <link rel="prev" title="Using Annotation Files" href="plot_parcellation.html" /> 
@@ -44,7 +44,7 @@
         <li class="right" >
           <a href="plot_parcellation.html" title="Using Annotation Files"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.5 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer 0.6 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
@@ -87,10 +87,18 @@ to help characterize the location of your data.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">environ</span>
 <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <span class="n">Brain</span><span class="p">,</span> <span class="n">io</span>
+<span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <span class="n">Brain</span>
+<span class="kn">from</span> <span class="nn">nibabel.freesurfer</span> <span class="kn">import</span> <span class="n">read_label</span>
 
-<span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="s">&quot;fsaverage&quot;</span><span class="p">,</span> <span class="s">&quot;lh&quot;</span><span class="p">,</span> <span class="s">&quot;inflated&quot;</span><span class="p">,</span>
-              <span class="n">config_opts</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">cortex</span><span class="o">=</span><span class="s">&quot;low_contrast&quot;</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">__doc__</span><span class="p">)</span>
+
+<span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="s">&quot;fsaverage&quot;</span><span class="p">,</span> <span class="s">&quot;lh&quot;</span><span class="p">,</span> <span class="s">&quot;inflated&quot;</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Show the morphometry with a continuous grayscale colormap.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">add_morphometry</span><span class="p">(</span><span class="s">&quot;curv&quot;</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s">&quot;binary&quot;</span><span class="p">,</span>
+                      <span class="nb">min</span><span class="o">=-.</span><span class="mi">8</span><span class="p">,</span> <span class="nb">max</span><span class="o">=.</span><span class="mi">8</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">The easiest way to label any vertex that could be in the region is with</span>
@@ -119,7 +127,7 @@ to help characterize the location of your data.</p>
 <span class="n">label_file</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">subjects_dir</span><span class="p">,</span> <span class="s">&quot;fsaverage&quot;</span><span class="p">,</span> <span class="s">&quot;label&quot;</span><span class="p">,</span> <span class="s">&quot;lh.BA6.label&quot;</span><span class="p">)</span>
 
 <span class="n">prob_field</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">brain</span><span class="o">.</span><span class="n">_geo</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-<span class="n">ids</span><span class="p">,</span> <span class="n">probs</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read_label</span><span class="p">(</span><span class="n">label_file</span><span class="p">,</span> <span class="n">read_scalars</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">ids</span><span class="p">,</span> <span class="n">probs</span> <span class="o">=</span> <span class="n">read_label</span><span class="p">(</span><span class="n">label_file</span><span class="p">,</span> <span class="n">read_scalars</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">prob_field</span><span class="p">[</span><span class="n">ids</span><span class="p">]</span> <span class="o">=</span> <span class="n">probs</span>
 <span class="n">brain</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">prob_field</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s">&quot;RdPu&quot;</span><span class="p">)</span>
 </pre></div>
@@ -141,13 +149,13 @@ to help characterize the location of your data.</p>
         <li class="right" >
           <a href="plot_parcellation.html" title="Using Annotation Files"
              >previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.5 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer 0.6 documentation</a> &raquo;</li>
           <li><a href="index.html" >PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2011-2014, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>

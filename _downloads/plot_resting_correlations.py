@@ -9,14 +9,14 @@ in a single window and manipulate the colormap to best represent the nature of
 the data.
 
 """
-print(__doc__)
-
 import os
 from surfer import Brain, io
 
+print(__doc__)
+
 """Bring up the visualization"""
-brain = Brain("fsaverage", "split", "inflated", views=['lat', 'med'],
-              config_opts=dict(background="white"))
+brain = Brain("fsaverage", "split", "inflated",
+              views=['lat', 'med'], background="white")
 
 """Project the volume file and return as an array"""
 mri_file = "example_data/resting_corr.nii.gz"

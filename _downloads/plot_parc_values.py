@@ -8,12 +8,12 @@ each region of some parcellation and display those values on the surface to
 quickly summarize the analysis.
 
 """
-print(__doc__)
-
 import os
 import numpy as np
 import nibabel as nib
 from surfer import Brain
+
+print(__doc__)
 
 subject_id = "fsaverage"
 hemi = "lh"
@@ -22,8 +22,7 @@ surface = "inflated"
 """
 Bring up the visualization.
 """
-brain = Brain(subject_id, hemi, surface,
-              config_opts=dict(background="white"))
+brain = Brain(subject_id, hemi, surface, background="white")
 
 """
 Read in the Buckner resting state network annotation. (This requires a

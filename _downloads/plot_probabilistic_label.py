@@ -11,10 +11,18 @@ to help characterize the location of your data.
 from os import environ
 from os.path import join
 import numpy as np
-from surfer import Brain, io
+from surfer import Brain
+from nibabel.freesurfer import read_label
 
-brain = Brain("fsaverage", "lh", "inflated",
-              config_opts=dict(cortex="low_contrast"))
+print(__doc__)
+
+brain = Brain("fsaverage", "lh", "inflated")
+
+"""
+Show the morphometry with a continuous grayscale colormap.
+"""
+brain.add_morphometry("curv", colormap="binary",
+                      min=-.8, max=.8, colorbar=False)
 
 """
 The easiest way to label any vertex that could be in the region is with
@@ -43,6 +51,6 @@ subjects_dir = environ["SUBJECTS_DIR"]
 label_file = join(subjects_dir, "fsaverage", "label", "lh.BA6.label")
 
 prob_field = np.zeros_like(brain._geo.x)
-ids, probs = io.read_label(label_file, read_scalars=True)
+ids, probs = read_label(label_file, read_scalars=True)
 prob_field[ids] = probs
 brain.add_data(prob_field, thresh=1e-5, colormap="RdPu")

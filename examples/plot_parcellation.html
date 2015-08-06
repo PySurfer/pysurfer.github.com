@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.5 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.6 documentation</title>
     
     <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.5',
+        VERSION:     '0.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="PySurfer 0.5 documentation" href="../index.html" />
+    <link rel="top" title="PySurfer 0.6 documentation" href="../index.html" />
     <link rel="up" title="PySurfer Example Gallery" href="index.html" />
     <link rel="next" title="Display Probabilistic Labels" href="plot_probabilistic_label.html" />
     <link rel="prev" title="Display ROI Values" href="plot_parc_values.html" /> 
@@ -44,7 +44,7 @@
         <li class="right" >
           <a href="plot_parc_values.html" title="Display ROI Values"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.5 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer 0.6 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
@@ -82,12 +82,11 @@
 <p>Display a Freesurfer cortical parcellation from an annotation file.</p>
 <img alt="../_images/plot_parcellation.png" class="align-center" src="../_images/plot_parcellation.png" />
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_parcellation.py"><tt class="xref download docutils literal"><span class="pre">plot_parcellation.py</span></tt></a></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">__doc__</span><span class="p">)</span>
-
-<span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
 <span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <span class="n">Brain</span>
 
+<span class="k">print</span><span class="p">(</span><span class="n">__doc__</span><span class="p">)</span>
 
 <span class="n">subject_id</span> <span class="o">=</span> <span class="s">&#39;fsaverage&#39;</span>
 <span class="n">hemi</span> <span class="o">=</span> <span class="s">&#39;both&#39;</span>
@@ -98,8 +97,7 @@
 <span class="sd">Bring up the visualization</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="n">subject_id</span><span class="p">,</span> <span class="n">hemi</span><span class="p">,</span> <span class="n">surface</span><span class="p">,</span> <span class="n">views</span><span class="o">=</span><span class="n">view</span><span class="p">,</span>
-              <span class="n">config_opts</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;cortex&quot;</span><span class="p">:</span> <span class="s">&quot;bone&quot;</span><span class="p">,</span>
-                           <span class="s">&quot;background&quot;</span><span class="p">:</span> <span class="s">&quot;ivory&quot;</span><span class="p">})</span>
+              <span class="n">cortex</span><span class="o">=</span><span class="s">&quot;bone&quot;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s">&quot;ivory&quot;</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Display the &#39;aparc&#39; parcellation borders.</span>
@@ -142,13 +140,13 @@
         <li class="right" >
           <a href="plot_parc_values.html" title="Display ROI Values"
              >previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.5 documentation</a> &raquo;</li>
+        <li><a href="../index.html">PySurfer 0.6 documentation</a> &raquo;</li>
           <li><a href="index.html" >PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2011-2014, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>
