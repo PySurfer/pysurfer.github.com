@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.6 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.7 documentation</title>
     
     <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6',
+        VERSION:     '0.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,18 +24,18 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="PySurfer 0.6 documentation" href="../index.html" />
+    <link rel="top" title="PySurfer 0.7 documentation" href="../index.html" />
     <link rel="up" title="PySurfer Example Gallery" href="index.html" />
     <link rel="next" title="Display ROI Values" href="plot_parc_values.html" />
     <link rel="prev" title="Plot MEG inverse solution" href="plot_meg_inverse_solution.html" /> 
   </head>
-  <body>
+  <body role="document">
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
  <a href="../index.html">
   <img src="../_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -44,11 +44,11 @@
         <li class="right" >
           <a href="plot_meg_inverse_solution.html" title="Plot MEG inverse solution"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.6 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">PySurfer Example Gallery</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.7 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="plot_meg_inverse_solution.html"
@@ -56,7 +56,7 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="plot_parc_values.html"
                         title="next chapter">Display ROI Values</a></p>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -75,20 +75,20 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="overlay-morphometry-data">
 <span id="example-plot-morphometry-py"></span><h1>Overlay Morphometry Data<a class="headerlink" href="#overlay-morphometry-data" title="Permalink to this headline">¶</a></h1>
 <p>Display morphometry files generated during
 the cortical reconstruction process.</p>
 <img alt="../_images/plot_morphometry.png" class="align-center" src="../_images/plot_morphometry.png" />
-<p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_morphometry.py"><tt class="xref download docutils literal"><span class="pre">plot_morphometry.py</span></tt></a></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <span class="n">Brain</span>
+<p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_morphometry.py"><code class="xref download docutils literal"><span class="pre">plot_morphometry.py</span></code></a></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <span class="n">Brain</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">__doc__</span><span class="p">)</span>
 
-<span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="s">&quot;fsaverage&quot;</span><span class="p">,</span> <span class="s">&quot;both&quot;</span><span class="p">,</span> <span class="s">&quot;pial&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">=</span><span class="s">&quot;frontal&quot;</span><span class="p">,</span>
-              <span class="n">background</span><span class="o">=</span><span class="s">&quot;dimgray&quot;</span><span class="p">)</span>
+<span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="s2">&quot;fsaverage&quot;</span><span class="p">,</span> <span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="s2">&quot;pial&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">=</span><span class="s2">&quot;frontal&quot;</span><span class="p">,</span>
+              <span class="n">background</span><span class="o">=</span><span class="s2">&quot;dimgray&quot;</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Because the morphometry files generated by</span>
@@ -98,7 +98,7 @@ the cortical reconstruction process.</p>
 <span class="sd">Here, we&#39;ll look at cortical curvatuve values,</span>
 <span class="sd">and plot them for both hemispheres.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">add_morphometry</span><span class="p">(</span><span class="s">&quot;curv&quot;</span><span class="p">)</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">add_morphometry</span><span class="p">(</span><span class="s2">&quot;curv&quot;</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Each of the possible values is displayed in an</span>
@@ -106,13 +106,13 @@ the cortical reconstruction process.</p>
 <span class="sd">display in grayscale. Here we only plot the</span>
 <span class="sd">left hemisphere.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">add_morphometry</span><span class="p">(</span><span class="s">&quot;sulc&quot;</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="s">&#39;lh&#39;</span><span class="p">,</span> <span class="n">grayscale</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">add_morphometry</span><span class="p">(</span><span class="s2">&quot;sulc&quot;</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;lh&#39;</span><span class="p">,</span> <span class="n">grayscale</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">You can also use a custom colormap and tweak its range.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">add_morphometry</span><span class="p">(</span><span class="s">&quot;thickness&quot;</span><span class="p">,</span>
-                      <span class="n">colormap</span><span class="o">=</span><span class="s">&quot;PuBuGn&quot;</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">add_morphometry</span><span class="p">(</span><span class="s2">&quot;thickness&quot;</span><span class="p">,</span>
+                      <span class="n">colormap</span><span class="o">=</span><span class="s2">&quot;PuBuGn&quot;</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -123,7 +123,7 @@ the cortical reconstruction process.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -132,13 +132,13 @@ the cortical reconstruction process.</p>
         <li class="right" >
           <a href="plot_meg_inverse_solution.html" title="Plot MEG inverse solution"
              >previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.6 documentation</a> &raquo;</li>
-          <li><a href="index.html" >PySurfer Example Gallery</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.7 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2011-2014, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.
     </div>
   </body>
 </html>

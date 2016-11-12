@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.7 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="PySurfer 0.7 documentation" href="../index.html" />
+    <link rel="up" title="PySurfer Example Gallery" href="index.html" />
+    <link rel="next" title="Detailed Documentation" href="../documentation/index.html" />
+    <link rel="prev" title="Display Activation Contours" href="plot_topographic_contours.html" /> 
+  </head>
+  <body role="document">
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+ <a href="../index.html">
+  <img src="../_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../documentation/index.html" title="Detailed Documentation"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="plot_topographic_contours.html" title="Display Activation Contours"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.7 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">PySurfer Example Gallery</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="plot_topographic_contours.html"
+                        title="previous chapter">Display Activation Contours</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../documentation/index.html"
+                        title="next chapter">Detailed Documentation</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="plot-transparent-brain">
+<span id="example-plot-transparent-brain-py"></span><h1>Plot Transparent Brain<a class="headerlink" href="#plot-transparent-brain" title="Permalink to this headline">¶</a></h1>
+<p>Plot a transparent brain to visualize foci below the surface.</p>
+<img alt="../_images/plot_transparent_brain.png" class="align-center" src="../_images/plot_transparent_brain.png" />
+<p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_transparent_brain.py"><code class="xref download docutils literal"><span class="pre">plot_transparent_brain.py</span></code></a></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <span class="n">Brain</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">__doc__</span><span class="p">)</span>
+
+<span class="n">subject_id</span> <span class="o">=</span> <span class="s2">&quot;fsaverage&quot;</span>
+<span class="n">subjects_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;SUBJECTS_DIR&quot;</span><span class="p">]</span>
+
+<span class="sd">&quot;&quot;&quot;To render a transparent brain, we are specifying an alpha &lt;</span>
+<span class="sd">1.0. This allows us to visualize foci that are not on the cortical</span>
+<span class="sd">surface. When the brain see-through, rendering of binary curvature is</span>
+<span class="sd">distracting, so we specify a color, rather than a color map as the</span>
+<span class="sd">argument for cortex:</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="n">subject_id</span><span class="p">,</span> <span class="s2">&quot;lh&quot;</span><span class="p">,</span> <span class="s2">&quot;pial&quot;</span><span class="p">,</span> <span class="n">cortex</span><span class="o">=</span><span class="s1">&#39;ivory&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;Here&#39;s a set of stereotaxic foci in the MNI coordinate system that</span>
+<span class="sd">are not on the cortical surface which we want to display.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">coords</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+          <span class="p">[</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+          <span class="p">[</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">20</span><span class="p">]]</span>
+
+<span class="sd">&quot;&quot;&quot;Now we plot the foci in the brain. Because the foci are not on the</span>
+<span class="sd">cortical surface, they are only visible when alpha is set to &lt; 1.0 in</span>
+<span class="sd">the call to Brain.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">add_foci</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../documentation/index.html" title="Detailed Documentation"
+             >next</a></li>
+        <li class="right" >
+          <a href="plot_topographic_contours.html" title="Display Activation Contours"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.7 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >PySurfer Example Gallery</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2014, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+
+
+.. _example_plot_transparent_brain.py:
+
+
+=======================
+Plot Transparent Brain
+=======================
+
+Plot a transparent brain to visualize foci below the surface.
+
+
+
+
+.. image:: images/plot_transparent_brain.png
+    :align: center
+
+
+
+
+**Python source code:** :download:`plot_transparent_brain.py <plot_transparent_brain.py>`
+
+.. literalinclude:: plot_transparent_brain.py
+    :lines: 9-
+

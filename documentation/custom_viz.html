@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.6 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.7 documentation</title>
     
     <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6',
+        VERSION:     '0.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,18 +24,18 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="PySurfer 0.6 documentation" href="../index.html" />
+    <link rel="top" title="PySurfer 0.7 documentation" href="../index.html" />
     <link rel="up" title="Detailed Documentation" href="index.html" />
     <link rel="next" title="Working with a split-screen brain" href="split_brain.html" />
     <link rel="prev" title="The command-line interface" href="command_line.html" /> 
   </head>
-  <body>
+  <body role="document">
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
  <a href="../index.html">
   <img src="../_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -44,11 +44,11 @@
         <li class="right" >
           <a href="command_line.html" title="The command-line interface"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.6 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Detailed Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.7 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Detailed Documentation</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
@@ -67,7 +67,7 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="split_brain.html"
                         title="next chapter">Working with a split-screen brain</a></p>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -86,7 +86,7 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="customizing-the-visualization">
 <span id="custom-viz"></span><h1>Customizing the Visualization<a class="headerlink" href="#customizing-the-visualization" title="Permalink to this headline">¶</a></h1>
@@ -104,38 +104,38 @@ color).</p>
 <div class="section" id="changing-the-display-size">
 <h2>Changing the display size<a class="headerlink" href="#changing-the-display-size" title="Permalink to this headline">¶</a></h2>
 <p>The default display window is 800px by 800px, but this can be configured
-using the <tt class="docutils literal"><span class="pre">size</span></tt> keyword argument in the Brain constructor. <tt class="docutils literal"><span class="pre">size</span></tt>
+using the <code class="docutils literal"><span class="pre">size</span></code> keyword argument in the Brain constructor. <code class="docutils literal"><span class="pre">size</span></code>
 should either be a single number to make a square window, or a pair of
-values, <tt class="docutils literal"><span class="pre">(width,</span> <span class="pre">height)</span></tt>, to make a rectangular window.</p>
+values, <code class="docutils literal"><span class="pre">(width,</span> <span class="pre">height)</span></code>, to make a rectangular window.</p>
 </div>
 <div class="section" id="changing-the-curvature-color-scheme">
 <h2>Changing the curvature color scheme<a class="headerlink" href="#changing-the-curvature-color-scheme" title="Permalink to this headline">¶</a></h2>
-<p>By default, a new <tt class="xref py py-class docutils literal"><span class="pre">Brain</span></tt> instance displays the binarized
+<p>By default, a new <code class="xref py py-class docutils literal"><span class="pre">Brain</span></code> instance displays the binarized
 cortical curvature values, so you can see which patches of cortex
-are gyri and which are sulci (pass <tt class="docutils literal"><span class="pre">curv=False</span></tt> to the
-<tt class="xref py py-class docutils literal"><span class="pre">Brain</span></tt> constructor, or use the <tt class="docutils literal"><span class="pre">-no-curv</span></tt> switch in the
+are gyri and which are sulci (pass <code class="docutils literal"><span class="pre">curv=False</span></code> to the
+<code class="xref py py-class docutils literal"><span class="pre">Brain</span></code> constructor, or use the <code class="docutils literal"><span class="pre">-no-curv</span></code> switch in the
 command-line interface to turn this off). There are four preset
 themes for the curvature color scheme, which you can pass to the
-<tt class="docutils literal"><span class="pre">cortex</span></tt> parameter in the <tt class="xref py py-class docutils literal"><span class="pre">Brain</span></tt> constructor: <tt class="docutils literal"><span class="pre">classic</span></tt>,
-<tt class="docutils literal"><span class="pre">bone</span></tt>, <tt class="docutils literal"><span class="pre">high_contrast</span></tt>, and <tt class="docutils literal"><span class="pre">low_contrast</span></tt>:</p>
+<code class="docutils literal"><span class="pre">cortex</span></code> parameter in the <code class="xref py py-class docutils literal"><span class="pre">Brain</span></code> constructor: <code class="docutils literal"><span class="pre">classic</span></code>,
+<code class="docutils literal"><span class="pre">bone</span></code>, <code class="docutils literal"><span class="pre">high_contrast</span></code>, and <code class="docutils literal"><span class="pre">low_contrast</span></code>:</p>
 <img alt="../_images/cortex_options.png" src="../_images/cortex_options.png" />
 <p>Note that, in each theme, the darker color signifies sulci.</p>
 <p>It&#8217;s also possible to customize this further by passing the name of
 a mayavi colormap or a colormap name along with the endpoints of the
 colormap and whether it should be reversed.</p>
 <p>Additionally, you can load a continuous curvature map with the
-<tt class="xref py py-func docutils literal"><span class="pre">add_morphometry()</span></tt> method.</p>
+<code class="xref py py-func docutils literal"><span class="pre">add_morphometry()</span></code> method.</p>
 </div>
 <div class="section" id="how-to-use-these-themes">
 <h2>How to use these themes<a class="headerlink" href="#how-to-use-these-themes" title="Permalink to this headline">¶</a></h2>
 <p>These options can be selected either as keyword arguments to the
-<tt class="xref py py-class docutils literal"><span class="pre">Brain</span></tt> constructor,</p>
-<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [1]: </span><span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <span class="n">Brain</span>
-<span class="gp">In [2]: </span><span class="n">b</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="s">&#39;fsaverage&#39;</span><span class="p">,</span> <span class="s">&#39;lh&#39;</span><span class="p">,</span> <span class="s">&#39;inflated&#39;</span><span class="p">,</span> <span class="n">cortex</span><span class="o">=</span><span class="s">&#39;bone&#39;</span><span class="p">)</span>
+<code class="xref py py-class docutils literal"><span class="pre">Brain</span></code> constructor,</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <span class="n">Brain</span>
+<span class="gp">In [2]: </span><span class="n">b</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="s1">&#39;fsaverage&#39;</span><span class="p">,</span> <span class="s1">&#39;lh&#39;</span><span class="p">,</span> <span class="s1">&#39;inflated&#39;</span><span class="p">,</span> <span class="n">cortex</span><span class="o">=</span><span class="s1">&#39;bone&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or as options in the command-line interface:</p>
-<div class="highlight-python"><div class="highlight"><pre>pysurfer fsaverage lh inflated -background slategray -size 400
+<div class="highlight-python"><div class="highlight"><pre><span></span>pysurfer fsaverage lh inflated -background slategray -size 400
 </pre></div>
 </div>
 </div>
@@ -147,7 +147,7 @@ colormap and whether it should be reversed.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -156,13 +156,13 @@ colormap and whether it should be reversed.</p>
         <li class="right" >
           <a href="command_line.html" title="The command-line interface"
              >previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.6 documentation</a> &raquo;</li>
-          <li><a href="index.html" >Detailed Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.7 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Detailed Documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2011-2014, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.
     </div>
   </body>
 </html>

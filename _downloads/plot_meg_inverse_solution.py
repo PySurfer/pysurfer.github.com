@@ -25,6 +25,14 @@ create Brain object for visualization
 brain = Brain(subject_id, hemi, surface, size=(800, 400))
 
 """
+label for time annotation in milliseconds
+"""
+
+
+def time_label(t):
+    return 'time=%0.2f ms' % (t * 1e3)
+
+"""
 read MNE dSPM inverse solution
 """
 for hemi in ['lh', 'rh']:
@@ -42,7 +50,7 @@ for hemi in ['lh', 'rh']:
     time points (in seconds)
     """
     time = np.linspace(stc['tmin'], stc['tmin'] + data.shape[1] * stc['tstep'],
-                       data.shape[1])
+                       data.shape[1], endpoint=False)
 
     """
     colormap to use
@@ -50,19 +58,21 @@ for hemi in ['lh', 'rh']:
     colormap = 'hot'
 
     """
-    label for time annotation in milliseconds
+    add data and set the initial time displayed to 100 ms
     """
-    time_label = lambda t: 'time=%0.2f ms' % (t * 1e3)
-
     brain.add_data(data, colormap=colormap, vertices=vertices,
                    smoothing_steps=10, time=time, time_label=time_label,
-                   hemi=hemi)
+                   hemi=hemi, initial_time=0.1)
 
 """
-scale colormap and set time (index) to display
+scale colormap
 """
-brain.set_data_time_index(2)
 brain.scale_data_colormap(fmin=13, fmid=18, fmax=22, transparent=True)
+
+"""
+To change the time displayed to 80 ms uncomment this line
+"""
+# brain.set_time(0.08)
 
 """
 uncomment these lines to use the interactive TimeViewer GUI

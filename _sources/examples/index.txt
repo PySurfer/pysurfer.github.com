@@ -196,6 +196,16 @@ Please `contribute <https://github.com/nipy/PySurfer>`_ it!
 
    ./plot_topographic_contours
 
+.. figure:: ./images/thumb/plot_transparent_brain_thumb.png
+   :target: ./plot_transparent_brain.html
+
+   :ref:`example_plot_transparent_brain.py`
+
+.. toctree::
+   :hidden:
+
+   ./plot_transparent_brain
+
 
 .. raw:: html
 

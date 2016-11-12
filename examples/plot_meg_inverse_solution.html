@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.6 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.7 documentation</title>
     
     <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6',
+        VERSION:     '0.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,18 +24,18 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="PySurfer 0.6 documentation" href="../index.html" />
+    <link rel="top" title="PySurfer 0.7 documentation" href="../index.html" />
     <link rel="up" title="PySurfer Example Gallery" href="index.html" />
     <link rel="next" title="Overlay Morphometry Data" href="plot_morphometry.html" />
     <link rel="prev" title="Generate Surface Labels" href="plot_label_foci.html" /> 
   </head>
-  <body>
+  <body role="document">
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
  <a href="../index.html">
   <img src="../_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -44,11 +44,11 @@
         <li class="right" >
           <a href="plot_label_foci.html" title="Generate Surface Labels"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.6 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">PySurfer Example Gallery</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.7 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="plot_label_foci.html"
@@ -56,7 +56,7 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="plot_morphometry.html"
                         title="next chapter">Overlay Morphometry Data</a></p>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -75,14 +75,14 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="plot-meg-inverse-solution">
 <span id="example-plot-meg-inverse-solution-py"></span><h1>Plot MEG inverse solution<a class="headerlink" href="#plot-meg-inverse-solution" title="Permalink to this headline">¶</a></h1>
 <p>Data were computed using mne-python (<a class="reference external" href="http://martinos.org/mne">http://martinos.org/mne</a>)</p>
 <img alt="../_images/plot_meg_inverse_solution.png" class="align-center" src="../_images/plot_meg_inverse_solution.png" />
-<p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_meg_inverse_solution.py"><tt class="xref download docutils literal"><span class="pre">plot_meg_inverse_solution.py</span></tt></a></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
+<p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_meg_inverse_solution.py"><code class="xref download docutils literal"><span class="pre">plot_meg_inverse_solution.py</span></code></a></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 <span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <span class="n">Brain</span>
@@ -93,8 +93,8 @@
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">define subject, surface and hemisphere(s) to plot</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">subject_id</span><span class="p">,</span> <span class="n">surface</span> <span class="o">=</span> <span class="s">&#39;fsaverage&#39;</span><span class="p">,</span> <span class="s">&#39;inflated&#39;</span>
-<span class="n">hemi</span> <span class="o">=</span> <span class="s">&#39;split&#39;</span>
+<span class="n">subject_id</span><span class="p">,</span> <span class="n">surface</span> <span class="o">=</span> <span class="s1">&#39;fsaverage&#39;</span><span class="p">,</span> <span class="s1">&#39;inflated&#39;</span>
+<span class="n">hemi</span> <span class="o">=</span> <span class="s1">&#39;split&#39;</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">create Brain object for visualization</span>
@@ -102,50 +102,60 @@
 <span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="n">subject_id</span><span class="p">,</span> <span class="n">hemi</span><span class="p">,</span> <span class="n">surface</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">400</span><span class="p">))</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">label for time annotation in milliseconds</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">time_label</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39;time=</span><span class="si">%0.2f</span><span class="s1"> ms&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">read MNE dSPM inverse solution</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="k">for</span> <span class="n">hemi</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;lh&#39;</span><span class="p">,</span> <span class="s">&#39;rh&#39;</span><span class="p">]:</span>
-    <span class="n">stc_fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;example_data/meg_source_estimate-&#39;</span> <span class="o">+</span>
-                             <span class="n">hemi</span> <span class="o">+</span> <span class="s">&#39;.stc&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">hemi</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;lh&#39;</span><span class="p">,</span> <span class="s1">&#39;rh&#39;</span><span class="p">]:</span>
+    <span class="n">stc_fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;example_data/meg_source_estimate-&#39;</span> <span class="o">+</span>
+                             <span class="n">hemi</span> <span class="o">+</span> <span class="s1">&#39;.stc&#39;</span><span class="p">)</span>
     <span class="n">stc</span> <span class="o">=</span> <span class="n">read_stc</span><span class="p">(</span><span class="n">stc_fname</span><span class="p">)</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    data and vertices for which the data is defined</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">stc</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">]</span>
-    <span class="n">vertices</span> <span class="o">=</span> <span class="n">stc</span><span class="p">[</span><span class="s">&#39;vertices&#39;</span><span class="p">]</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">stc</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+    <span class="n">vertices</span> <span class="o">=</span> <span class="n">stc</span><span class="p">[</span><span class="s1">&#39;vertices&#39;</span><span class="p">]</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    time points (in seconds)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">stc</span><span class="p">[</span><span class="s">&#39;tmin&#39;</span><span class="p">],</span> <span class="n">stc</span><span class="p">[</span><span class="s">&#39;tmin&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">stc</span><span class="p">[</span><span class="s">&#39;tstep&#39;</span><span class="p">],</span>
-                       <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">stc</span><span class="p">[</span><span class="s1">&#39;tmin&#39;</span><span class="p">],</span> <span class="n">stc</span><span class="p">[</span><span class="s1">&#39;tmin&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">stc</span><span class="p">[</span><span class="s1">&#39;tstep&#39;</span><span class="p">],</span>
+                       <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">endpoint</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    colormap to use</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">colormap</span> <span class="o">=</span> <span class="s">&#39;hot&#39;</span>
+    <span class="n">colormap</span> <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    label for time annotation in milliseconds</span>
+<span class="sd">    add data and set the initial time displayed to 100 ms</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">time_label</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="s">&#39;time=</span><span class="si">%0.2f</span><span class="s"> ms&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">)</span>
-
     <span class="n">brain</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span> <span class="n">vertices</span><span class="o">=</span><span class="n">vertices</span><span class="p">,</span>
                    <span class="n">smoothing_steps</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="n">time</span><span class="p">,</span> <span class="n">time_label</span><span class="o">=</span><span class="n">time_label</span><span class="p">,</span>
-                   <span class="n">hemi</span><span class="o">=</span><span class="n">hemi</span><span class="p">)</span>
+                   <span class="n">hemi</span><span class="o">=</span><span class="n">hemi</span><span class="p">,</span> <span class="n">initial_time</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">scale colormap and set time (index) to display</span>
+<span class="sd">scale colormap</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">set_data_time_index</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">brain</span><span class="o">.</span><span class="n">scale_data_colormap</span><span class="p">(</span><span class="n">fmin</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">fmid</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">fmax</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">To change the time displayed to 80 ms uncomment this line</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># brain.set_time(0.08)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">uncomment these lines to use the interactive TimeViewer GUI</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="c"># from surfer import TimeViewer</span>
-<span class="c"># viewer = TimeViewer(brain)</span>
+<span class="c1"># from surfer import TimeViewer</span>
+<span class="c1"># viewer = TimeViewer(brain)</span>
 </pre></div>
 </div>
 </div>
@@ -156,7 +166,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -165,13 +175,13 @@
         <li class="right" >
           <a href="plot_label_foci.html" title="Generate Surface Labels"
              >previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.6 documentation</a> &raquo;</li>
-          <li><a href="index.html" >PySurfer Example Gallery</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.7 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2011-2014, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.
     </div>
   </body>
 </html>

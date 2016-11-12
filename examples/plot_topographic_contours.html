@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.6 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.7 documentation</title>
     
     <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6',
+        VERSION:     '0.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,39 +24,39 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="PySurfer 0.6 documentation" href="../index.html" />
+    <link rel="top" title="PySurfer 0.7 documentation" href="../index.html" />
     <link rel="up" title="PySurfer Example Gallery" href="index.html" />
-    <link rel="next" title="Detailed Documentation" href="../documentation/index.html" />
+    <link rel="next" title="Plot Transparent Brain" href="plot_transparent_brain.html" />
     <link rel="prev" title="Display Resting-State Correlations" href="plot_resting_correlations.html" /> 
   </head>
-  <body>
+  <body role="document">
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
  <a href="../index.html">
   <img src="../_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../documentation/index.html" title="Detailed Documentation"
+          <a href="plot_transparent_brain.html" title="Plot Transparent Brain"
              accesskey="N">next</a></li>
         <li class="right" >
           <a href="plot_resting_correlations.html" title="Display Resting-State Correlations"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.6 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">PySurfer Example Gallery</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.7 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="plot_resting_correlations.html"
                         title="previous chapter">Display Resting-State Correlations</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../documentation/index.html"
-                        title="next chapter">Detailed Documentation</a></p>
-<div id="searchbox" style="display: none">
+  <p class="topless"><a href="plot_transparent_brain.html"
+                        title="next chapter">Plot Transparent Brain</a></p>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -75,14 +75,14 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="display-activation-contours">
 <span id="example-plot-topographic-contours-py"></span><h1>Display Activation Contours<a class="headerlink" href="#display-activation-contours" title="Permalink to this headline">¶</a></h1>
 <p>Load a statistical overlay as a &#8220;topographic&#8221; contour map.</p>
 <img alt="../_images/plot_topographic_contours.png" class="align-center" src="../_images/plot_topographic_contours.png" />
-<p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_topographic_contours.py"><tt class="xref download docutils literal"><span class="pre">plot_topographic_contours.py</span></tt></a></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os.path</span> <span class="kn">as</span> <span class="nn">op</span>
+<p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_topographic_contours.py"><code class="xref download docutils literal"><span class="pre">plot_topographic_contours.py</span></code></a></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os.path</span> <span class="kn">as</span> <span class="nn">op</span>
 <span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <span class="n">Brain</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">__doc__</span><span class="p">)</span>
@@ -93,13 +93,13 @@
 <span class="sd">colorscheme, so we will pass that as an option to the</span>
 <span class="sd">Brain constructor.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="s">&quot;fsaverage&quot;</span><span class="p">,</span> <span class="s">&quot;lh&quot;</span><span class="p">,</span> <span class="s">&quot;inflated&quot;</span><span class="p">,</span>
-              <span class="n">cortex</span><span class="o">=</span><span class="s">&quot;low_contrast&quot;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s">&quot;#151540&quot;</span><span class="p">)</span>
+<span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="s2">&quot;fsaverage&quot;</span><span class="p">,</span> <span class="s2">&quot;lh&quot;</span><span class="p">,</span> <span class="s2">&quot;inflated&quot;</span><span class="p">,</span>
+              <span class="n">cortex</span><span class="o">=</span><span class="s2">&quot;low_contrast&quot;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;#151540&quot;</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Get a path to the overlay file</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">overlay_file</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;example_data&quot;</span><span class="p">,</span> <span class="s">&quot;lh.sig.nii.gz&quot;</span><span class="p">)</span>
+<span class="n">overlay_file</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;example_data&quot;</span><span class="p">,</span> <span class="s2">&quot;lh.sig.nii.gz&quot;</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Add the contour overlay with the default display settings</span>
@@ -129,22 +129,22 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../documentation/index.html" title="Detailed Documentation"
+          <a href="plot_transparent_brain.html" title="Plot Transparent Brain"
              >next</a></li>
         <li class="right" >
           <a href="plot_resting_correlations.html" title="Display Resting-State Correlations"
              >previous</a> |</li>
-        <li><a href="../index.html">PySurfer 0.6 documentation</a> &raquo;</li>
-          <li><a href="index.html" >PySurfer Example Gallery</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.7 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >PySurfer Example Gallery</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2011-2014, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.
     </div>
   </body>
 </html>
