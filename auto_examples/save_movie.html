@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.8.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.8.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Save a set of views" href="save_views.html" />
+    <link rel="prev" title="Animate brain and save movie" href="rotate_animation.html" /> 
+  </head>
+  <body role="document">
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+ <a href="../index.html">
+  <img src="../_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="save_views.html" title="Save a set of views"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="rotate_animation.html" title="Animate brain and save movie"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Example gallery</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="rotate_animation.html"
+                        title="previous chapter">Animate brain and save movie</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="save_views.html"
+                        title="next chapter">Save a set of views</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="create-movie-from-meg-inverse-solution">
+<span id="sphx-glr-auto-examples-save-movie-py"></span><h1>Create movie from  MEG inverse solution<a class="headerlink" href="#create-movie-from-meg-inverse-solution" title="Permalink to this headline">¶</a></h1>
+<p>Data were computed using mne-python (<a class="reference external" href="http://martinos.org/mne">http://martinos.org/mne</a>)</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a>
+<span class="kn">from</span> <span class="nn">surfer.io</span> <span class="kn">import</span> <a href="../generated/surfer.io.read_stc.html#surfer.io.read_stc" title="View documentation for surfer.io.read_stc"><span class="n">read_stc</span></a>
+
+<span class="k">print</span><span class="p">(</span><span class="n">__doc__</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">create Brain object for visualization</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">brain</span> <span class="o">=</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a><span class="p">(</span><span class="s1">&#39;fsaverage&#39;</span><span class="p">,</span> <span class="s1">&#39;split&#39;</span><span class="p">,</span> <span class="s1">&#39;inflated&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">400</span><span class="p">))</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">read and display MNE dSPM inverse solution</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">stc_fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;example_data&#39;</span><span class="p">,</span> <span class="s1">&#39;meg_source_estimate-</span><span class="si">%s</span><span class="s1">.stc&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">hemi</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;lh&#39;</span><span class="p">,</span> <span class="s1">&#39;rh&#39;</span><span class="p">]:</span>
+    <span class="n">stc</span> <span class="o">=</span> <a href="../generated/surfer.io.read_stc.html#surfer.io.read_stc" title="View documentation for surfer.io.read_stc"><span class="n">read_stc</span></a><span class="p">(</span><span class="n">stc_fname</span> <span class="o">%</span> <span class="n">hemi</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">stc</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+    <span class="n">times</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html#numpy.arange" title="View documentation for numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">stc</span><span class="p">[</span><span class="s1">&#39;tstep&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">stc</span><span class="p">[</span><span class="s1">&#39;tmin&#39;</span><span class="p">]</span>
+    <span class="n">brain</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;hot&#39;</span><span class="p">,</span> <span class="n">vertices</span><span class="o">=</span><span class="n">stc</span><span class="p">[</span><span class="s1">&#39;vertices&#39;</span><span class="p">],</span>
+                   <span class="n">smoothing_steps</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="n">times</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="n">hemi</span><span class="p">,</span>
+                   <span class="n">time_label</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> ms&#39;</span> <span class="o">%</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">)))</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">scale colormap</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">scale_data_colormap</span><span class="p">(</span><span class="n">fmin</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">fmid</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">fmax</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Save a movie. Use a large value for time_dilation because the sample stc only</span>
+<span class="sd">covers 30 ms.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">save_movie</span><span class="p">(</span><span class="s1">&#39;example_current.mov&#39;</span><span class="p">,</span> <span class="n">time_dilation</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="n">brain</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
+<div class="sphx-glr-footer docutils container">
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" href="../_downloads/save_movie.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">save_movie.py</span></code></a></div>
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" href="../_downloads/save_movie.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">save_movie.ipynb</span></code></a></div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="save_views.html" title="Save a set of views"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="rotate_animation.html" title="Animate brain and save movie"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Example gallery</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2012-2017, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+  </body>
+</html>

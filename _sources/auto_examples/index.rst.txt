@@ -1,0 +1,462 @@
+:orphan:
+
+.. _examples:
+
+Example gallery
+===============
+
+These example scripts demonstrate the functionality offered by PySurfer,
+from the most basic tasks to more complex visualizations.
+
+If you have used PySurfer to present neuroimaging data in a way that isn't
+covered here, please contribute_ it!
+
+.. contents:: Contents
+   :local:
+   :depth: 2
+
+.. _contribute: https://github.com/nipy/PySurfer
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Initialize a basic visualization session.">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_basics_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_basics.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_basics
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The most straightforward way to plot activations is when you already have a map of them defined...">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_fmri_activation_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_fmri_activation.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_fmri_activation
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="To plot data on the surface that is stored as a volume image, it is only slightly more complica...">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_fmri_activation_volume_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_fmri_activation_volume.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_fmri_activation_volume
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Show the overlap between two different activation maps.">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_fmri_conjunction_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_fmri_conjunction.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_fmri_conjunction
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Plot spheroids at positions on the surface manifold according to coordinates or vertex ids.">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_foci_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_foci.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_foci
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how PySurfer can be used to examine the quality of Freesurfer's curvature-dr...">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_freesurfer_normalization_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_freesurfer_normalization.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_freesurfer_normalization
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Using PySurfer you can plot Freesurfer cortical labels on the surface with a large amount of co...">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_label_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_label.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_label
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Define a label that is centered on a specific vertex in the surface mesh. Plot that label and t...">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_label_foci_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_label_foci.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_label_foci
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Data were computed using mne-python (http://martinos.org/mne)">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_meg_inverse_solution_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_meg_inverse_solution.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_meg_inverse_solution
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Display morphometry files generated during the cortical reconstruction process.">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_morphometry_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_morphometry.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_morphometry
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Here we demonstrate how to take the results of an ROI analysis performed within each region of ...">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_parc_values_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_parc_values.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_parc_values
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Display a Freesurfer cortical parcellation from an annotation file.">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_parcellation_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_parcellation.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_parcellation
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Freesurfer ships with some probabilistic labels of cytoarchitectonic and visual areas. Here we ...">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_probabilistic_label_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_probabilistic_label.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_probabilistic_label
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example, we show how to build up a complex visualization of a volume-based image showin...">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_resting_correlations_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_resting_correlations.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_resting_correlations
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Load a statistical overlay as a &quot;topographic&quot; contour map.">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_topographic_contours_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_topographic_contours.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_topographic_contours
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Plot a transparent brain to visualize foci below the surface.">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_transparent_brain_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_transparent_brain.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_transparent_brain
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Data were computed using mne-python (http://martinos.org/mne).">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_vector_meg_inverse_solution_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_vector_meg_inverse_solution.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_vector_meg_inverse_solution
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_rotate_animation_thumb.png
+
+        :ref:`sphx_glr_auto_examples_rotate_animation.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/rotate_animation
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Data were computed using mne-python (http://martinos.org/mne)">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_save_movie_thumb.png
+
+        :ref:`sphx_glr_auto_examples_save_movie.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/save_movie
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Save some views in png files.">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_save_views_thumb.png
+
+        :ref:`sphx_glr_auto_examples_save_views.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/save_views
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Among the views available are lateral, rostral, caudal, frontal etc.">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_show_views_thumb.png
+
+        :ref:`sphx_glr_auto_examples_show_views.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/show_views
+.. raw:: html
+
+    <div style='clear:both'></div>
+
+
+
+.. container:: sphx-glr-footer
+
+
+  .. container:: sphx-glr-download
+
+    :download:`Download all examples in Python source code: auto_examples_python.zip <//home/larsoner/custombuilds/PySurfer/doc/auto_examples/auto_examples_python.zip>`
+
+
+
+  .. container:: sphx-glr-download
+
+    :download:`Download all examples in Jupyter notebooks: auto_examples_jupyter.zip <//home/larsoner/custombuilds/PySurfer/doc/auto_examples/auto_examples_jupyter.zip>`
+
+.. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.readthedocs.io>`_

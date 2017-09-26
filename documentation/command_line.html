@@ -6,26 +6,29 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.7 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="PySurfer 0.7 documentation" href="../index.html" />
-    <link rel="up" title="Detailed Documentation" href="index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Customizing the Visualization" href="custom_viz.html" />
     <link rel="prev" title="Detailed Documentation" href="index.html" /> 
   </head>
@@ -39,13 +42,16 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
           <a href="custom_viz.html" title="Customizing the Visualization"
-             accesskey="N">next</a></li>
+             accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Detailed Documentation"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.7 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Detailed Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Detailed Documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -69,14 +75,11 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -99,7 +102,7 @@ terminal, through which the visualization can be manipulated.</p>
 <p>Initializing a simple visualization session is quite easy. Simply call
 <code class="docutils literal"><span class="pre">pysurfer</span></code> with three positional arguments: the subject_id, the
 hemisphere, and the surface geometry to visualize:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>pysurfer fsaverage lh inflated
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pysurfer</span> <span class="n">fsaverage</span> <span class="n">lh</span> <span class="n">inflated</span>
 </pre></div>
 </div>
 <p>which will open a viewing session that looks like this:</p>
@@ -114,11 +117,11 @@ mouse and keyboard to interact with a Mayavi scence.</p>
 <p>When pysurfer finishes loading the visualization, it initializes an
 IPython session in terminal, which allows for a more comprehensive
 interaction with the scene. The IPython interactive namespace will
-include a <code class="docutils literal"><span class="pre">brain</span></code> variable, which is bound to the <code class="xref py py-class docutils literal"><span class="pre">viz.Brain</span></code>
+include a <code class="docutils literal"><span class="pre">brain</span></code> variable, which is bound to the <a class="reference internal" href="../generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain"><code class="xref py py-class docutils literal"><span class="pre">Brain</span></code></a>
 object underlying the visualization. For convenience, the <code class="docutils literal"><span class="pre">b</span></code> variable
 is also mapped to this object. (As a reminder, you can always type
 <code class="docutils literal"><span class="pre">whos</span></code> in an IPython prompt to see the contents of the interactive
-namespace.) See the <code class="xref py py-class docutils literal"><span class="pre">viz.Brain</span></code> documentation for full information
+namespace.) See the <a class="reference internal" href="../generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain"><code class="xref py py-class docutils literal"><span class="pre">Brain</span></code></a> documentation for full information
 about how to control the visualization in this way.</p>
 </div>
 <div class="section" id="other-command-line-options">
@@ -127,7 +130,7 @@ about how to control the visualization in this way.</p>
 from the command-line. To get a full documentation of the command-line
 interface, simply type <code class="docutils literal"><span class="pre">pysurfer</span></code> at a terminal prompt and hit enter.
 For convenience, this usage message is reproduced below.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>usage: pysurfer subject_id hemisphere surface [options]
+<div class="highlight-default"><div class="highlight"><pre><span></span>usage: pysurfer subject_id hemisphere surface [options]
 
 PySurfer is a package for visualization and interaction with cortical
 surface representations of neuroimaging data from Freesurfer.
@@ -150,6 +153,7 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
+  -no-curv              do not display the binarized surface curvature
   -morphometry MEAS     load morphometry file (e.g. thickness, curvature)
   -annotation ANNOT     load annotation (by name or filepath)
   -label LABEL          load label (by name or filepath
@@ -160,11 +164,9 @@ optional arguments:
   -max MAX              overlay saturation point
   -sign {abs,pos,neg}   overlay sign
   -name NAME            name to use for the overlay
-  -size [SIZE]          size of the display window (in pixels)
+  -size SIZE            size of the display window (in pixels)
   -background COLOR     background color for display
-  -foreground COLOR     foreground color for display
-  -cortex COLOR         colormap or color for rendering the cortex
-  -alpha COLOR          specifies opacity for the cortical surface
+  -cortex COLOR         colormap for binary cortex curvature
   -title TITLE          title to use for the figure
   -views [VIEWS [VIEWS ...]]
                         view list (space-separated) to use
@@ -183,18 +185,21 @@ optional arguments:
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
           <a href="custom_viz.html" title="Customizing the Visualization"
-             >next</a></li>
+             >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Detailed Documentation"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.7 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >Detailed Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Detailed Documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2011-2014, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.
+        &#169; Copyright 2012-2017, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

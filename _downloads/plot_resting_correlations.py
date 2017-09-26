@@ -10,7 +10,7 @@ the data.
 
 """
 import os
-from surfer import Brain, io
+from surfer import Brain, project_volume_data
 
 print(__doc__)
 
@@ -22,8 +22,8 @@ brain = Brain("fsaverage", "split", "inflated",
 mri_file = "example_data/resting_corr.nii.gz"
 reg_file = os.path.join(os.environ["FREESURFER_HOME"],
                         "average/mni152.register.dat")
-surf_data_lh = io.project_volume_data(mri_file, "lh", reg_file)
-surf_data_rh = io.project_volume_data(mri_file, "rh", reg_file)
+surf_data_lh = project_volume_data(mri_file, "lh", reg_file)
+surf_data_rh = project_volume_data(mri_file, "rh", reg_file)
 
 """
 You can pass this array to the add_overlay method for a typical activation
@@ -50,9 +50,9 @@ from negative correlations to positive correlations.
 We'll also plot the map with some transparency so that we can see through to
 the underlying anatomy.
 """
-brain.add_data(surf_data_lh, -.7, .7, colormap="coolwarm", alpha=.75,
+brain.add_data(surf_data_lh, -.7, .7, colormap="vlag", alpha=.75,
                hemi='lh')
-brain.add_data(surf_data_rh, -.7, .7, colormap="coolwarm", alpha=.75,
+brain.add_data(surf_data_rh, -.7, .7, colormap="vlag", alpha=.75,
                hemi='rh')
 
 """

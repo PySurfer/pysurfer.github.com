@@ -4,9 +4,9 @@ Animate brain and save movie
 ============================
 
 """
-print __doc__
-
 from surfer import Brain
+
+print(__doc__)
 
 sub = 'fsaverage'
 hemi = 'lh'
@@ -32,4 +32,4 @@ brain.animate(['l', 'l'], n_steps=10, fname='simple_animation.avi')
 try:
     brain.animate(['l', 'd'])
 except ValueError as e:
-    print e
+    print(e)

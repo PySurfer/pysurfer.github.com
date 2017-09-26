@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.8.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.8.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="surfer.io.read_scalar_data" href="surfer.io.read_scalar_data.html" />
+    <link rel="prev" title="surfer.Brain" href="surfer.Brain.html" /> 
+  </head>
+  <body role="document">
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+ <a href="../index.html">
+  <img src="../_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="surfer.io.read_scalar_data.html" title="surfer.io.read_scalar_data"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="surfer.Brain.html" title="surfer.Brain"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../python_reference.html" accesskey="U">Python API Reference</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">surfer.project_volume_data</a><ul>
+<li><a class="reference internal" href="#examples-using-surfer-project-volume-data">Examples using <code class="docutils literal"><span class="pre">surfer.project_volume_data</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="surfer.Brain.html"
+                        title="previous chapter">surfer.Brain</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="surfer.io.read_scalar_data.html"
+                        title="next chapter">surfer.io.read_scalar_data</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="surfer-project-volume-data">
+<h1>surfer.project_volume_data<a class="headerlink" href="#surfer-project-volume-data" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="surfer.project_volume_data">
+<code class="descclassname">surfer.</code><code class="descname">project_volume_data</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/utils.py#L365-L384"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.project_volume_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample MRI volume onto cortical manifold.</p>
+<p>Note: this requires Freesurfer to be installed with correct
+SUBJECTS_DIR definition (it uses mri_vol2surf internally).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filepath</strong> : string</p>
+<blockquote>
+<div><p>Volume file to resample (equivalent to &#8211;mov)</p>
+</div></blockquote>
+<p><strong>hemi</strong> : [lh, rh]</p>
+<blockquote>
+<div><p>Hemisphere target</p>
+</div></blockquote>
+<p><strong>reg_file</strong> : string</p>
+<blockquote>
+<div><p>Path to TKreg style affine matrix file</p>
+</div></blockquote>
+<p><strong>subject_id</strong> : string</p>
+<blockquote>
+<div><p>Use if file is in register with subject&#8217;s orig.mgz</p>
+</div></blockquote>
+<p><strong>projmeth</strong> : [frac, dist]</p>
+<blockquote>
+<div><p>Projection arg should be understood as fraction of cortical
+thickness or as an absolute distance (in mm)</p>
+</div></blockquote>
+<p><strong>projsum</strong> : [avg, max, point]</p>
+<blockquote>
+<div><p>Average over projection samples, take max, or take point sample</p>
+</div></blockquote>
+<p><strong>projarg</strong> : single float or sequence of three floats</p>
+<blockquote>
+<div><p>Single float for point sample, sequence for avg/max specifying
+start, stop, and step</p>
+</div></blockquote>
+<p><strong>surf</strong> : string</p>
+<blockquote>
+<div><p>Target surface</p>
+</div></blockquote>
+<p><strong>smooth_fwhm</strong> : float</p>
+<blockquote>
+<div><p>FWHM of surface-based smoothing to apply; 0 skips smoothing</p>
+</div></blockquote>
+<p><strong>mask_label</strong> : string</p>
+<blockquote>
+<div><p>Path to label file to constrain projection; otherwise uses cortex</p>
+</div></blockquote>
+<p><strong>target_subject</strong> : string</p>
+<blockquote>
+<div><p>Subject to warp data to in surface space after projection</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool, str, int, or None</p>
+<blockquote class="last">
+<div><p>If not None, override default verbose level (see surfer.verbose).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="section" id="examples-using-surfer-project-volume-data">
+<h2>Examples using <code class="docutils literal"><span class="pre">surfer.project_volume_data</span></code><a class="headerlink" href="#examples-using-surfer-project-volume-data" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-thumbcontainer" tooltip="To plot data on the surface that is stored as a volume image, it is only slightly more complica..."><div class="figure" id="id1">
+<img alt="../_images/sphx_glr_plot_fmri_activation_volume_thumb.png" src="../_images/sphx_glr_plot_fmri_activation_volume_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/plot_fmri_activation_volume.html#sphx-glr-auto-examples-plot-fmri-activation-volume-py"><span class="std std-ref">Display an fMRI Volume</span></a></span></p>
+</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we show how to build up a complex visualization of a volume-based image showin..."><div class="figure" id="id2">
+<img alt="../_images/sphx_glr_plot_resting_correlations_thumb.png" src="../_images/sphx_glr_plot_resting_correlations_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/plot_resting_correlations.html#sphx-glr-auto-examples-plot-resting-correlations-py"><span class="std std-ref">Display Resting-State Correlations</span></a></span></p>
+</div>
+</div><div style='clear:both'></div></div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="surfer.io.read_scalar_data.html" title="surfer.io.read_scalar_data"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="surfer.Brain.html" title="surfer.Brain"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../python_reference.html" >Python API Reference</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2012-2017, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+  </body>
+</html>

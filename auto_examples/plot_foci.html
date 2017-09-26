@@ -1,71 +1,75 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer v0.3 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.8.0 documentation</title>
+    
     <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.3',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="PySurfer v0.3 documentation" href="../index.html" />
-    <link rel="up" title="Examples" href="index.html" />
-    <link rel="next" title="Display Volume Data" href="plot_from_volume.html" />
-    <link rel="prev" title="Display Activation Contours" href="plot_fmri_contours.html" /> 
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Plot Freesurfer Normalization" href="plot_freesurfer_normalization.html" />
+    <link rel="prev" title="Display a Conjunction Map" href="plot_fmri_conjunction.html" /> 
   </head>
-  <body>
+  <body role="document">
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
  <a href="../index.html">
-  <img src="../_static/banner.png" alt="PySurfer logo"  border="0" />
+  <img src="../_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="plot_from_volume.html" title="Display Volume Data"
-             accesskey="N">next</a></li>
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
         <li class="right" >
-          <a href="plot_fmri_contours.html" title="Display Activation Contours"
+          <a href="plot_freesurfer_normalization.html" title="Plot Freesurfer Normalization"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="plot_fmri_conjunction.html" title="Display a Conjunction Map"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">PySurfer v0.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Examples</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Example gallery</a> &#187;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="plot_fmri_contours.html"
-                        title="previous chapter">Display Activation Contours</a></p>
+  <p class="topless"><a href="plot_fmri_conjunction.html"
+                        title="previous chapter">Display a Conjunction Map</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="plot_from_volume.html"
-                        title="next chapter">Display Volume Data</a></p>
-<div id="searchbox" style="display: none">
+  <p class="topless"><a href="plot_freesurfer_normalization.html"
+                        title="next chapter">Plot Freesurfer Normalization</a></p>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -74,30 +78,29 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="plot-activation-foci">
-<span id="example-plot-foci-py"></span><h1>Plot Activation Foci<a class="headerlink" href="#plot-activation-foci" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-auto-examples-plot-foci-py"></span><h1>Plot Activation Foci<a class="headerlink" href="#plot-activation-foci" title="Permalink to this headline">¶</a></h1>
 <p>Plot spheroids at positions on the surface manifold
 according to coordinates or vertex ids.</p>
-<img alt="../_images/plot_foci.png" class="align-center" src="../_images/plot_foci.png" />
-<p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_foci.py"><tt class="xref download docutils literal"><span class="pre">plot_foci.py</span></tt></a></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">__doc__</span>
-
-<span class="kn">import</span> <span class="nn">os</span>
+<img alt="../_images/sphx_glr_plot_foci_001.png" class="align-center" src="../_images/sphx_glr_plot_foci_001.png" />
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">os.path</span> <span class="kn">as</span> <span class="nn">op</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">arange</span>
-<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">permutation</span>
-<span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <span class="n">Brain</span>
-<span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <span class="n">io</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html#numpy.arange" title="View documentation for numpy.arange"><span class="n">arange</span></a>
+<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.random.permutation.html#numpy.random.permutation" title="View documentation for numpy.random.permutation"><span class="n">permutation</span></a>
+<span class="kn">import</span> <span class="nn">nibabel</span> <span class="kn">as</span> <span class="nn">nib</span>
+<span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a>
 
-<span class="n">subject_id</span> <span class="o">=</span> <span class="s">&quot;fsaverage&quot;</span>
-<span class="n">subjects_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">&quot;SUBJECTS_DIR&quot;</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">__doc__</span><span class="p">)</span>
+
+<span class="n">subject_id</span> <span class="o">=</span> <span class="s2">&quot;fsaverage&quot;</span>
+<span class="n">subjects_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;SUBJECTS_DIR&quot;</span><span class="p">]</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Bring up the visualization.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="n">subject_id</span><span class="p">,</span> <span class="s">&quot;lh&quot;</span><span class="p">,</span> <span class="s">&quot;inflated&quot;</span><span class="p">)</span>
+<span class="n">brain</span> <span class="o">=</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a><span class="p">(</span><span class="n">subject_id</span><span class="p">,</span> <span class="s2">&quot;lh&quot;</span><span class="p">,</span> <span class="s2">&quot;inflated&quot;</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">First we&#39;ll get a set of stereotaxic foci in the MNI</span>
@@ -121,7 +124,7 @@ according to coordinates or vertex ids.</p>
 <span class="sd">You can use any valid matplotlib color for the foci; the</span>
 <span class="sd">default is white.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">add_foci</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">map_surface</span><span class="o">=</span><span class="s">&quot;white&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;gold&quot;</span><span class="p">)</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">add_foci</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">map_surface</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gold&quot;</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">You can also plot foci with a set of surface vertex ids.</span>
@@ -135,10 +138,10 @@ according to coordinates or vertex ids.</p>
 <span class="sd">First, we load in the Destrieux parcellation annotation file</span>
 <span class="sd">and find 10 random vertices within the STS.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">annot_path</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subjects_dir</span><span class="p">,</span> <span class="n">subject_id</span><span class="p">,</span> <span class="s">&quot;label/lh.aparc.a2009s.annot&quot;</span><span class="p">)</span>
-<span class="n">ids</span><span class="p">,</span> <span class="n">ctab</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read_annot</span><span class="p">(</span><span class="n">annot_path</span><span class="p">)</span>
-<span class="n">verts</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">))</span>
-<span class="n">coords</span> <span class="o">=</span> <span class="n">permutation</span><span class="p">(</span><span class="n">verts</span><span class="p">[</span><span class="n">ids</span> <span class="o">==</span> <span class="mi">74</span><span class="p">])[:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">annot_path</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subjects_dir</span><span class="p">,</span> <span class="n">subject_id</span><span class="p">,</span> <span class="s2">&quot;label/lh.aparc.a2009s.annot&quot;</span><span class="p">)</span>
+<span class="n">ids</span><span class="p">,</span> <span class="n">ctab</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">freesurfer</span><span class="o">.</span><span class="n">read_annot</span><span class="p">(</span><span class="n">annot_path</span><span class="p">)</span>
+<span class="n">verts</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html#numpy.arange" title="View documentation for numpy.arange"><span class="n">arange</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">))</span>
+<span class="n">coords</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.random.permutation.html#numpy.random.permutation" title="View documentation for numpy.random.permutation"><span class="n">permutation</span></a><span class="p">(</span><span class="n">verts</span><span class="p">[</span><span class="n">ids</span> <span class="o">==</span> <span class="mi">74</span><span class="p">])[:</span><span class="mi">10</span><span class="p">]</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">You can also control the size of the focus glpyhs.</span>
@@ -152,9 +155,17 @@ according to coordinates or vertex ids.</p>
 <span class="sd">center each sphereoid at its vertex id.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="n">brain</span><span class="o">.</span><span class="n">add_foci</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">coords_as_verts</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-               <span class="n">scale_factor</span><span class="o">=</span><span class="n">scale_factor</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;#A52A2A&quot;</span><span class="p">)</span>
+               <span class="n">scale_factor</span><span class="o">=</span><span class="n">scale_factor</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#A52A2A&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.518 seconds)</p>
+<div class="sphx-glr-footer docutils container">
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" href="../_downloads/plot_foci.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_foci.py</span></code></a></div>
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" href="../_downloads/plot_foci.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_foci.ipynb</span></code></a></div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 
 
@@ -163,22 +174,25 @@ according to coordinates or vertex ids.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="plot_from_volume.html" title="Display Volume Data"
-             >next</a></li>
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
         <li class="right" >
-          <a href="plot_fmri_contours.html" title="Display Activation Contours"
+          <a href="plot_freesurfer_normalization.html" title="Plot Freesurfer Normalization"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="plot_fmri_conjunction.html" title="Display a Conjunction Map"
              >previous</a> |</li>
-        <li><a href="../index.html">PySurfer v0.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >Examples</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Example gallery</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2011, Michael Waskom, Alexandre Gramfort, Scott Burns.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2012-2017, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

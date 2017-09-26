@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.8.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.8.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Detailed Documentation" href="../documentation/index.html" />
+    <link rel="prev" title="Save a set of views" href="save_views.html" /> 
+  </head>
+  <body role="document">
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+ <a href="../index.html">
+  <img src="../_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../documentation/index.html" title="Detailed Documentation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="save_views.html" title="Save a set of views"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Example gallery</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="save_views.html"
+                        title="previous chapter">Save a set of views</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../documentation/index.html"
+                        title="next chapter">Detailed Documentation</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="show-the-different-brain-views">
+<span id="sphx-glr-auto-examples-show-views-py"></span><h1>Show the different brain views<a class="headerlink" href="#show-the-different-brain-views" title="Permalink to this headline">¶</a></h1>
+<p>Among the views available are lateral, rostral, caudal, frontal etc.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a>
+
+<span class="k">print</span><span class="p">(</span><span class="n">__doc__</span><span class="p">)</span>
+
+<span class="n">sub</span> <span class="o">=</span> <span class="s1">&#39;fsaverage&#39;</span>
+<span class="n">hemi</span> <span class="o">=</span> <span class="s1">&#39;both&#39;</span>
+<span class="n">surf</span> <span class="o">=</span> <span class="s1">&#39;inflated&#39;</span>
+
+<span class="n">brain</span> <span class="o">=</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a><span class="p">(</span><span class="n">sub</span><span class="p">,</span> <span class="n">hemi</span><span class="p">,</span> <span class="n">surf</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>show all views</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">brain</span><span class="o">.</span><span class="n">show_view</span><span class="p">(</span><span class="s1">&#39;lateral&#39;</span><span class="p">)</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">show_view</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">show_view</span><span class="p">(</span><span class="s1">&#39;rostral&#39;</span><span class="p">)</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">show_view</span><span class="p">(</span><span class="s1">&#39;caudal&#39;</span><span class="p">)</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">show_view</span><span class="p">(</span><span class="s1">&#39;ve&#39;</span><span class="p">)</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">show_view</span><span class="p">(</span><span class="s1">&#39;frontal&#39;</span><span class="p">)</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">show_view</span><span class="p">(</span><span class="s1">&#39;par&#39;</span><span class="p">)</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">show_view</span><span class="p">(</span><span class="s1">&#39;dor&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>More advanced parameters</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">brain</span><span class="o">.</span><span class="n">show_view</span><span class="p">({</span><span class="s1">&#39;distance&#39;</span><span class="p">:</span> <span class="mi">432</span><span class="p">})</span>
+<span class="c1"># with great power comes great responsibility</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">show_view</span><span class="p">({</span><span class="s1">&#39;azimuth&#39;</span><span class="p">:</span> <span class="mi">135</span><span class="p">,</span> <span class="s1">&#39;elevation&#39;</span><span class="p">:</span> <span class="mi">79</span><span class="p">},</span> <span class="n">roll</span><span class="o">=</span><span class="mi">107</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
+<div class="sphx-glr-footer docutils container">
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" href="../_downloads/show_views.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">show_views.py</span></code></a></div>
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" href="../_downloads/show_views.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">show_views.ipynb</span></code></a></div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../documentation/index.html" title="Detailed Documentation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="save_views.html" title="Save a set of views"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Example gallery</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2012-2017, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+  </body>
+</html>

@@ -16,13 +16,14 @@ print(__doc__)
 """
 define subject, surface and hemisphere(s) to plot
 """
-subject_id, surface = 'fsaverage', 'inflated'
-hemi = 'split'
+subject_id, surf = 'fsaverage', 'inflated'
+hemi = 'lh'
 
 """
 create Brain object for visualization
 """
-brain = Brain(subject_id, hemi, surface, size=(800, 400))
+brain = Brain(subject_id, hemi, surf, size=(400, 400),
+              interaction='terrain')
 
 """
 label for time annotation in milliseconds
@@ -32,11 +33,12 @@ label for time annotation in milliseconds
 def time_label(t):
     return 'time=%0.2f ms' % (t * 1e3)
 
+
 """
 read MNE dSPM inverse solution
 """
-for hemi in ['lh', 'rh']:
-    stc_fname = os.path.join('example_data/meg_source_estimate-' +
+for hemi in ['lh']:  # , 'rh']:
+    stc_fname = os.path.join('example_data', 'meg_source_estimate-' +
                              hemi + '.stc')
     stc = read_stc(stc_fname)
 
@@ -61,7 +63,7 @@ for hemi in ['lh', 'rh']:
     add data and set the initial time displayed to 100 ms
     """
     brain.add_data(data, colormap=colormap, vertices=vertices,
-                   smoothing_steps=10, time=time, time_label=time_label,
+                   smoothing_steps=5, time=time, time_label=time_label,
                    hemi=hemi, initial_time=0.1)
 
 """

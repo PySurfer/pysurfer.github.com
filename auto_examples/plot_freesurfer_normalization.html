@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.8.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.8.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Display ROI Labels" href="plot_label.html" />
+    <link rel="prev" title="Plot Activation Foci" href="plot_foci.html" /> 
+  </head>
+  <body role="document">
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+ <a href="../index.html">
+  <img src="../_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="plot_label.html" title="Display ROI Labels"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="plot_foci.html" title="Plot Activation Foci"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Example gallery</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="plot_foci.html"
+                        title="previous chapter">Plot Activation Foci</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="plot_label.html"
+                        title="next chapter">Display ROI Labels</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="plot-freesurfer-normalization">
+<span id="sphx-glr-auto-examples-plot-freesurfer-normalization-py"></span><h1>Plot Freesurfer Normalization<a class="headerlink" href="#plot-freesurfer-normalization" title="Permalink to this headline">¶</a></h1>
+<p>This example shows how PySurfer can be used to examine the quality of
+Freesurfer&#8217;s curvature-driven normalization to a common template.</p>
+<p>We are going to plot the contour of the subject&#8217;s curvature estimate after
+transforming that map into the common space (this step is performed outside
+of PySurfer using the Freesurfer program <code class="docutils literal"><span class="pre">mri_surf2surf</span></code>).</p>
+<p>With a perfect transformation, the contour lines should follow the light/dark
+gray boundary on the fsaverage surface. Large deviations may reflect problems
+with the underlying data that you should investigate.</p>
+<img alt="../_images/sphx_glr_plot_freesurfer_normalization_001.png" class="align-center" src="../_images/sphx_glr_plot_freesurfer_normalization_001.png" />
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nibabel</span> <span class="kn">as</span> <span class="nn">nib</span>
+<span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a>
+
+<span class="k">print</span><span class="p">(</span><span class="n">__doc__</span><span class="p">)</span>
+
+<span class="n">brain</span> <span class="o">=</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a><span class="p">(</span><span class="s2">&quot;fsaverage&quot;</span><span class="p">,</span> <span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="s2">&quot;inflated&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">hemi</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;lh&quot;</span><span class="p">,</span> <span class="s2">&quot;rh&quot;</span><span class="p">]:</span>
+
+    <span class="c1"># This file was created with mri_surf2surf</span>
+    <span class="n">curv</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;example_data/</span><span class="si">%s</span><span class="s2">.curv.fsaverage.mgz&quot;</span> <span class="o">%</span> <span class="n">hemi</span><span class="p">)</span>
+
+    <span class="c1"># Binarize the curvature at 0</span>
+    <span class="n">curv_bin</span> <span class="o">=</span> <span class="p">(</span><span class="n">curv</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+
+    <span class="c1"># Add the data as a contour overlay, but turn off the colorbar</span>
+    <span class="n">brain</span><span class="o">.</span><span class="n">add_contour_overlay</span><span class="p">(</span><span class="n">curv_bin</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">n_contours</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                              <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="n">hemi</span><span class="p">)</span>
+    <span class="n">brain</span><span class="o">.</span><span class="n">contour_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;colorbar&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="n">brain</span><span class="o">.</span><span class="n">show_view</span><span class="p">(</span><span class="s2">&quot;dorsal&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  1.582 seconds)</p>
+<div class="sphx-glr-footer docutils container">
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" href="../_downloads/plot_freesurfer_normalization.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_freesurfer_normalization.py</span></code></a></div>
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" href="../_downloads/plot_freesurfer_normalization.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_freesurfer_normalization.ipynb</span></code></a></div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="plot_label.html" title="Display ROI Labels"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="plot_foci.html" title="Plot Activation Foci"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Example gallery</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2012-2017, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+  </body>
+</html>

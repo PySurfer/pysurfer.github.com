@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.8.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.8.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Plot MEG inverse solution" href="plot_meg_inverse_solution.html" />
+    <link rel="prev" title="Display ROI Labels" href="plot_label.html" /> 
+  </head>
+  <body role="document">
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+ <a href="../index.html">
+  <img src="../_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="plot_meg_inverse_solution.html" title="Plot MEG inverse solution"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="plot_label.html" title="Display ROI Labels"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Example gallery</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="plot_label.html"
+                        title="previous chapter">Display ROI Labels</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="plot_meg_inverse_solution.html"
+                        title="next chapter">Plot MEG inverse solution</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="generate-surface-labels">
+<span id="sphx-glr-auto-examples-plot-label-foci-py"></span><h1>Generate Surface Labels<a class="headerlink" href="#generate-surface-labels" title="Permalink to this headline">¶</a></h1>
+<p>Define a label that is centered on a specific vertex in the surface mesh. Plot
+that label and the focus that defines its center.</p>
+<img alt="../_images/sphx_glr_plot_label_foci_001.png" class="align-center" src="../_images/sphx_glr_plot_label_foci_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Updating</span> <span class="n">smoothing</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">be</span> <span class="n">patient</span><span class="o">..</span>
+<span class="n">Smoothing</span> <span class="n">matrix</span> <span class="n">creation</span><span class="p">,</span> <span class="n">step</span> <span class="mi">1</span>
+<span class="n">Saving</span> <span class="n">label</span> <span class="p">:</span> <span class="n">example_data</span><span class="o">/</span><span class="n">coord</span><span class="o">-</span><span class="n">lh</span><span class="o">.</span><span class="n">label</span>
+<span class="n">Updating</span> <span class="n">smoothing</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">be</span> <span class="n">patient</span><span class="o">..</span>
+<span class="n">Smoothing</span> <span class="n">matrix</span> <span class="n">creation</span><span class="p">,</span> <span class="n">step</span> <span class="mi">1</span>
+<span class="n">Saving</span> <span class="n">label</span> <span class="p">:</span> <span class="n">example_data</span><span class="o">/</span><span class="n">coord</span><span class="o">-</span><span class="n">lh</span><span class="o">.</span><span class="n">label</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a><span class="p">,</span> <span class="n">utils</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">__doc__</span><span class="p">)</span>
+
+<span class="n">subject_id</span> <span class="o">=</span> <span class="s2">&quot;fsaverage&quot;</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Bring up the visualization.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">brain</span> <span class="o">=</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a><span class="p">(</span><span class="n">subject_id</span><span class="p">,</span> <span class="s2">&quot;lh&quot;</span><span class="p">,</span> <span class="s2">&quot;inflated&quot;</span><span class="p">,</span> <span class="n">cortex</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="bp">True</span><span class="p">))</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">First we&#39;ll identify a stereotaxic focus in the MNI coordinate system. This</span>
+<span class="sd">might be a peak activations from a volume based analysis.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">coord</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">43</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Next we grow a label along the surface around the neareset vertex to this</span>
+<span class="sd">coordinate in the white surface mesh. The `n_steps` argument controls the size</span>
+<span class="sd">of the resulting label.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<a href="../generated/surfer.utils.coord_to_label.html#surfer.utils.coord_to_label" title="View documentation for surfer.utils.coord_to_label"><span class="n">utils</span><span class="o">.</span><span class="n">coord_to_label</span></a><span class="p">(</span><span class="n">subject_id</span><span class="p">,</span> <span class="n">coord</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;example_data/coord&#39;</span><span class="p">,</span>
+                     <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;lh&#39;</span><span class="p">,</span> <span class="n">n_steps</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">map_surface</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">add_label</span><span class="p">(</span><span class="s1">&#39;example_data/coord-lh.label&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;darkseagreen&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Now we plot the focus on the inflated surface at the vertex identified in the</span>
+<span class="sd">previous step.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">add_foci</span><span class="p">([</span><span class="n">coord</span><span class="p">],</span> <span class="n">map_surface</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;mediumseagreen&quot;</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">We can also do this using a vertex index, perhaps defined as the peak</span>
+<span class="sd">activation in a surface analysis. This will be more accurate than using a</span>
+<span class="sd">volume-based focus.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">coord</span> <span class="o">=</span> <span class="mi">0</span>
+
+<a href="../generated/surfer.utils.coord_to_label.html#surfer.utils.coord_to_label" title="View documentation for surfer.utils.coord_to_label"><span class="n">utils</span><span class="o">.</span><span class="n">coord_to_label</span></a><span class="p">(</span><span class="n">subject_id</span><span class="p">,</span> <span class="n">coord</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;example_data/coord&#39;</span><span class="p">,</span>
+                     <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;lh&#39;</span><span class="p">,</span> <span class="n">n_steps</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">map_surface</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+                     <span class="n">coord_as_vert</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">add_label</span><span class="p">(</span><span class="s1">&#39;example_data/coord-lh.label&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;royalblue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Now we plot the foci on the inflated surface. We will map the foci onto the</span>
+<span class="sd">surface by finding the vertex on the &quot;white&quot; mesh that is closest to the</span>
+<span class="sd">coordinate of the point we want to display.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">add_foci</span><span class="p">([</span><span class="n">coord</span><span class="p">],</span> <span class="n">map_surface</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">coords_as_verts</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+               <span class="n">color</span><span class="o">=</span><span class="s2">&quot;mediumblue&quot;</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Set the camera position to show the extent of the labels.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">show_view</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">elevation</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mi">430</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  2.241 seconds)</p>
+<div class="sphx-glr-footer docutils container">
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" href="../_downloads/plot_label_foci.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_label_foci.py</span></code></a></div>
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" href="../_downloads/plot_label_foci.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_label_foci.ipynb</span></code></a></div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="plot_meg_inverse_solution.html" title="Plot MEG inverse solution"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="plot_label.html" title="Display ROI Labels"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Example gallery</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2012-2017, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+  </body>
+</html>

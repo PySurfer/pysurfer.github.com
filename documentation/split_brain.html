@@ -6,26 +6,30 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PySurfer Python Neuroimaging Visualization &mdash; PySurfer 0.7 documentation</title>
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="PySurfer 0.7 documentation" href="../index.html" />
-    <link rel="up" title="Detailed Documentation" href="index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python API Reference" href="../python_reference.html" />
     <link rel="prev" title="Customizing the Visualization" href="custom_viz.html" /> 
   </head>
   <body role="document">
@@ -38,10 +42,16 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../python_reference.html" title="Python API Reference"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
           <a href="custom_viz.html" title="Customizing the Visualization"
-             accesskey="P">previous</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.7 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Detailed Documentation</a> &raquo;</li> 
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Detailed Documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -58,17 +68,17 @@
   <h4>Previous topic</h4>
   <p class="topless"><a href="custom_viz.html"
                         title="previous chapter">Customizing the Visualization</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../python_reference.html"
+                        title="next chapter">Python API Reference</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -85,12 +95,12 @@
 Using this option will put views of the left hemisphere in consecutive
 vertical frames on the left, and views of the right hemisphere in
 consecutive vertical frames on the right. For example, running the following:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="s1">&#39;fsaverage&#39;</span><span class="p">,</span> <span class="s1">&#39;split&#39;</span><span class="p">,</span> <span class="s1">&#39;inflated&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;med&#39;</span><span class="p">])</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="s1">&#39;fsaverage&#39;</span><span class="p">,</span> <span class="s1">&#39;split&#39;</span><span class="p">,</span> <span class="s1">&#39;inflated&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;med&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>Will produce a window with two columns (hemispheres) and two rows (the
 lateral and medial views, respectively), shown below.</p>
-<img alt="documentation/../../_static/split_view.png" src="documentation/../../_static/split_view.png" />
+<img alt="../_images/split_view.png" src="../_images/split_view.png" />
 <div class="section" id="adding-and-displaying-data">
 <h2>Adding and displaying data<a class="headerlink" href="#adding-and-displaying-data" title="Permalink to this headline">¶</a></h2>
 <p>Data can be added to either hemisphere using the same functions that are
@@ -133,15 +143,21 @@ guarantee that drawing commands result in updated visual display.</p>
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../python_reference.html" title="Python API Reference"
+             >next</a> |</li>
+        <li class="right" >
           <a href="custom_viz.html" title="Customizing the Visualization"
-             >previous</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.7 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >Detailed Documentation</a> &raquo;</li> 
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Detailed Documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2011-2014, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.
+        &#169; Copyright 2012-2017, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

@@ -1,0 +1,12 @@
+surfer.io.read_scalar_data
+==========================
+
+.. currentmodule:: surfer.io
+
+.. autofunction:: read_scalar_data
+
+.. include:: surfer.io.read_scalar_data.examples
+
+.. raw:: html
+
+    <div style='clear:both'></div>
