@@ -1,38 +1,28 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.8.0 documentation</title>
-    
-    <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.9.0 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.8.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Customizing the Visualization" href="custom_viz.html" />
-    <link rel="prev" title="Detailed Documentation" href="index.html" /> 
-  </head>
-  <body role="document">
+    <link rel="prev" title="Detailed Documentation" href="index.html" />
+<link rel="stylesheet" href="../_static/navy.css " type="text/css" />
+
+  </head><body>
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
  <a href="../index.html">
   <img src="../_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
@@ -50,13 +40,13 @@
         <li class="right" >
           <a href="index.html" title="Detailed Documentation"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Detailed Documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">The command-line interface</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
@@ -74,12 +64,14 @@
                         title="next chapter">Customizing the Visualization</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -94,15 +86,15 @@
 <span id="command-line"></span><h1>The command-line interface<a class="headerlink" href="#the-command-line-interface" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>The command-line program <code class="docutils literal"><span class="pre">pysurfer</span></code> is designed to largely replicate
-Freesufer&#8217;s tksurfer command-line interface in the format and style
+<p>The command-line program <code class="docutils literal notranslate"><span class="pre">pysurfer</span></code> is designed to largely replicate
+Freesufer’s tksurfer command-line interface in the format and style
 of arguments it accepts. Like tksurfer, invoking it will initialize
 a visualization in an external window and begin an IPython session in the
 terminal, through which the visualization can be manipulated.</p>
 <p>Initializing a simple visualization session is quite easy. Simply call
-<code class="docutils literal"><span class="pre">pysurfer</span></code> with three positional arguments: the subject_id, the
+<code class="docutils literal notranslate"><span class="pre">pysurfer</span></code> with three positional arguments: the subject_id, the
 hemisphere, and the surface geometry to visualize:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pysurfer</span> <span class="n">fsaverage</span> <span class="n">lh</span> <span class="n">inflated</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pysurfer</span> <span class="n">fsaverage</span> <span class="n">lh</span> <span class="n">inflated</span>
 </pre></div>
 </div>
 <p>which will open a viewing session that looks like this:</p>
@@ -117,20 +109,20 @@ mouse and keyboard to interact with a Mayavi scence.</p>
 <p>When pysurfer finishes loading the visualization, it initializes an
 IPython session in terminal, which allows for a more comprehensive
 interaction with the scene. The IPython interactive namespace will
-include a <code class="docutils literal"><span class="pre">brain</span></code> variable, which is bound to the <a class="reference internal" href="../generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain"><code class="xref py py-class docutils literal"><span class="pre">Brain</span></code></a>
-object underlying the visualization. For convenience, the <code class="docutils literal"><span class="pre">b</span></code> variable
+include a <code class="docutils literal notranslate"><span class="pre">brain</span></code> variable, which is bound to the <a class="reference internal" href="../generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain"><code class="xref py py-class docutils literal notranslate"><span class="pre">Brain</span></code></a>
+object underlying the visualization. For convenience, the <code class="docutils literal notranslate"><span class="pre">b</span></code> variable
 is also mapped to this object. (As a reminder, you can always type
-<code class="docutils literal"><span class="pre">whos</span></code> in an IPython prompt to see the contents of the interactive
-namespace.) See the <a class="reference internal" href="../generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain"><code class="xref py py-class docutils literal"><span class="pre">Brain</span></code></a> documentation for full information
+<code class="docutils literal notranslate"><span class="pre">whos</span></code> in an IPython prompt to see the contents of the interactive
+namespace.) See the <a class="reference internal" href="../generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain"><code class="xref py py-class docutils literal notranslate"><span class="pre">Brain</span></code></a> documentation for full information
 about how to control the visualization in this way.</p>
 </div>
 <div class="section" id="other-command-line-options">
 <h2>Other command-line options<a class="headerlink" href="#other-command-line-options" title="Permalink to this headline">¶</a></h2>
 <p>As in tksurfer, most aspects of the visualization can be initialized
 from the command-line. To get a full documentation of the command-line
-interface, simply type <code class="docutils literal"><span class="pre">pysurfer</span></code> at a terminal prompt and hit enter.
+interface, simply type <code class="docutils literal notranslate"><span class="pre">pysurfer</span></code> at a terminal prompt and hit enter.
 For convenience, this usage message is reproduced below.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>usage: pysurfer subject_id hemisphere surface [options]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>usage: pysurfer subject_id hemisphere surface [options]
 
 PySurfer is a package for visualization and interaction with cortical
 surface representations of neuroimaging data from Freesurfer.
@@ -193,13 +185,13 @@ optional arguments:
         <li class="right" >
           <a href="index.html" title="Detailed Documentation"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >Detailed Documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2012-2017, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+        &#169; Copyright 2012-2018, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/b888962.
     </div>
   </body>
 </html>

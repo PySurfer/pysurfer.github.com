@@ -1,38 +1,28 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.8.0 documentation</title>
-    
-    <link rel="stylesheet" href="_static/navy.css" type="text/css" />
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.9.0 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.8.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Installing and Getting Started" href="install.html" />
-    <link rel="prev" title="Introduction" href="index.html" /> 
-  </head>
-  <body role="document">
+    <link rel="prev" title="Introduction" href="index.html" />
+<link rel="stylesheet" href="_static/navy.css " type="text/css" />
+
+  </head><body>
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
  <a href="index.html">
   <img src="_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
@@ -50,7 +40,7 @@
         <li class="right" >
           <a href="index.html" title="Introduction"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">PySurfer 0.8.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">PySurfer 0.9.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -63,12 +53,14 @@
                         title="next chapter">Installing and Getting Started</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -90,7 +82,7 @@ help you turn them into beautiful and reproducible graphics.</p>
 highly-accurate images of neuroimaging data. This is preferable to other
 approaches that use simple 3D renderings of a brain volume because the
 underlying topology of the cortex is a two-dimensional sheet.  PySurfer can
-read cortical models that have been processed using <a class="reference external" href="http://surfer.nmr.mgh.harvard.edu">Freesurfer</a> to &#8220;inflate&#8221;
+read cortical models that have been processed using <a class="reference external" href="http://surfer.nmr.mgh.harvard.edu">Freesurfer</a> to “inflate”
 the cortical folds and reveal activations that are buried within deep sulci.
 This presentation is much closer to how cortical areas are laid out, and it can
 help you understand and communicate your efforts to map functional or
@@ -101,11 +93,11 @@ ecosystem to manipulate and plot data in the same script or interactive
 session. The visualization is primarily controlled with a high-level API that
 allow you to draw a complex scene with just a few lines of code. This means
 that PySurfer is naturally scriptable. Once you have developed a basic
-visualization, it&#8217;s easy to add a for-loop and generate the same image for
+visualization, it’s easy to add a for-loop and generate the same image for
 every subject in your experiment. It also aids the reproducibility of graphics
 you create for conferences or papers, as each figure can be associated with a
 short script that shows exactly how the visualization was produced.</p>
-<p>To see a set of examples demonstrating some of PySurfer&#8217;s capabilities, you can
+<p>To see a set of examples demonstrating some of PySurfer’s capabilities, you can
 check out the <a class="reference internal" href="auto_examples/index.html#examples"><span class="std std-ref">example gallery</span></a>.</p>
 </div>
 
@@ -127,12 +119,12 @@ check out the <a class="reference internal" href="auto_examples/index.html#examp
         <li class="right" >
           <a href="index.html" title="Introduction"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">PySurfer 0.8.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">PySurfer 0.9.0 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2012-2017, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+        &#169; Copyright 2012-2018, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/b888962.
     </div>
   </body>
 </html>

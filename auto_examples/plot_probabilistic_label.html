@@ -1,38 +1,28 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.8.0 documentation</title>
-    
-    <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.9.0 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.8.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Display Resting-State Correlations" href="plot_resting_correlations.html" />
-    <link rel="prev" title="Using Annotation Files" href="plot_parcellation.html" /> 
-  </head>
-  <body role="document">
+    <link rel="prev" title="Using Annotation Files" href="plot_parcellation.html" />
+<link rel="stylesheet" href="../_static/navy.css " type="text/css" />
+
+  </head><body>
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
  <a href="../index.html">
   <img src="../_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
@@ -50,7 +40,7 @@
         <li class="right" >
           <a href="plot_parcellation.html" title="Using Annotation Files"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Example gallery</a> &#187;</li> 
       </ul>
     </div>
@@ -64,12 +54,14 @@
                         title="next chapter">Display Resting-State Correlations</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -80,19 +72,30 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="display-probabilistic-labels">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <span class="xref std std-ref">here</span> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="display-probabilistic-labels">
 <span id="sphx-glr-auto-examples-plot-probabilistic-label-py"></span><h1>Display Probabilistic Labels<a class="headerlink" href="#display-probabilistic-labels" title="Permalink to this headline">¶</a></h1>
 <p>Freesurfer ships with some probabilistic labels of cytoarchitectonic
 and visual areas. Here we show several ways to visualize these labels
 to help characterize the location of your data.</p>
-<img alt="../_images/sphx_glr_plot_probabilistic_label_001.png" class="align-center" src="../_images/sphx_glr_plot_probabilistic_label_001.png" />
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">environ</span>
+<img alt="../_images/sphx_glr_plot_probabilistic_label_001.png" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_probabilistic_label_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>colormap sequential: [0.00e+00, 5.00e-01, 1.00e+00] (opaque)
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">environ</span>
 <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a>
 <span class="kn">from</span> <span class="nn">nibabel.freesurfer</span> <span class="kn">import</span> <span class="n">read_label</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">__doc__</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
 
 <span class="n">brain</span> <span class="o">=</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a><span class="p">(</span><span class="s2">&quot;fsaverage&quot;</span><span class="p">,</span> <span class="s2">&quot;lh&quot;</span><span class="p">,</span> <span class="s2">&quot;inflated&quot;</span><span class="p">)</span>
 
@@ -134,12 +137,13 @@ to help characterize the location of your data.</p>
 <span class="n">brain</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">prob_field</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s2">&quot;RdPu&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  3.393 seconds)</p>
-<div class="sphx-glr-footer docutils container">
+<p><strong>Total running time of the script:</strong>
+.. _sphx_glr_download_auto_examples_plot_probabilistic_label.py:</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container">
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" href="../_downloads/plot_probabilistic_label.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_probabilistic_label.py</span></code></a></div>
+<a class="reference download internal" download="" href="../_downloads/6b08a7b10bfe3f61f5fa3822b6ba4993/plot_probabilistic_label.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_probabilistic_label.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" href="../_downloads/plot_probabilistic_label.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_probabilistic_label.ipynb</span></code></a></div>
+<a class="reference download internal" download="" href="../_downloads/dd56a7e0975800fff956d80df949fe79/plot_probabilistic_label.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_probabilistic_label.ipynb</span></code></a></div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
@@ -162,13 +166,13 @@ to help characterize the location of your data.</p>
         <li class="right" >
           <a href="plot_parcellation.html" title="Using Annotation Files"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >Example gallery</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2012-2017, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+        &#169; Copyright 2012-2018, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/b888962.
     </div>
   </body>
 </html>

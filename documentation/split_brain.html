@@ -1,38 +1,28 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.8.0 documentation</title>
-    
-    <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.9.0 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.8.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Python API Reference" href="../python_reference.html" />
-    <link rel="prev" title="Customizing the Visualization" href="custom_viz.html" /> 
-  </head>
-  <body role="document">
+    <link rel="prev" title="Customizing the Visualization" href="custom_viz.html" />
+<link rel="stylesheet" href="../_static/navy.css " type="text/css" />
+
+  </head><body>
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
  <a href="../index.html">
   <img src="../_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
@@ -50,13 +40,13 @@
         <li class="right" >
           <a href="custom_viz.html" title="Customizing the Visualization"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Detailed Documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Working with a split-screen brain</a><ul>
 <li><a class="reference internal" href="#adding-and-displaying-data">Adding and displaying data</a></li>
@@ -73,12 +63,14 @@
                         title="next chapter">Python API Reference</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -91,11 +83,11 @@
             
   <div class="section" id="working-with-a-split-screen-brain">
 <span id="split-brain"></span><h1>Working with a split-screen brain<a class="headerlink" href="#working-with-a-split-screen-brain" title="Permalink to this headline">¶</a></h1>
-<p>The split-screen view can be activated by using the argument <code class="docutils literal"><span class="pre">hemi='split'</span></code>.
+<p>The split-screen view can be activated by using the argument <code class="docutils literal notranslate"><span class="pre">hemi='split'</span></code>.
 Using this option will put views of the left hemisphere in consecutive
 vertical frames on the left, and views of the right hemisphere in
 consecutive vertical frames on the right. For example, running the following:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="s1">&#39;fsaverage&#39;</span><span class="p">,</span> <span class="s1">&#39;split&#39;</span><span class="p">,</span> <span class="s1">&#39;inflated&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;med&#39;</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brain</span> <span class="o">=</span> <span class="n">Brain</span><span class="p">(</span><span class="s1">&#39;fsaverage&#39;</span><span class="p">,</span> <span class="s1">&#39;split&#39;</span><span class="p">,</span> <span class="s1">&#39;inflated&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;med&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>Will produce a window with two columns (hemispheres) and two rows (the
@@ -104,15 +96,15 @@ lateral and medial views, respectively), shown below.</p>
 <div class="section" id="adding-and-displaying-data">
 <h2>Adding and displaying data<a class="headerlink" href="#adding-and-displaying-data" title="Permalink to this headline">¶</a></h2>
 <p>Data can be added to either hemisphere using the same functions that are
-normally used, e.g. <code class="docutils literal"><span class="pre">add_data</span></code>, <code class="docutils literal"><span class="pre">add_overlay</span></code>, <code class="docutils literal"><span class="pre">add_morphometry</span></code>.
+normally used, e.g. <code class="docutils literal notranslate"><span class="pre">add_data</span></code>, <code class="docutils literal notranslate"><span class="pre">add_overlay</span></code>, <code class="docutils literal notranslate"><span class="pre">add_morphometry</span></code>.
 The objects are automatically shown on all views of the brain. When
-calling these functions, the <code class="docutils literal"><span class="pre">hemi</span></code> keyword argument can be set to
-<code class="docutils literal"><span class="pre">hemi='lh'</span></code> or <code class="docutils literal"><span class="pre">hemi='rh'</span></code> to specify the hemisphere to plot to.
-In some instances (e.g., <code class="docutils literal"><span class="pre">add_morphometry</span></code>), if no keyword argument
+calling these functions, the <code class="docutils literal notranslate"><span class="pre">hemi</span></code> keyword argument can be set to
+<code class="docutils literal notranslate"><span class="pre">hemi='lh'</span></code> or <code class="docutils literal notranslate"><span class="pre">hemi='rh'</span></code> to specify the hemisphere to plot to.
+In some instances (e.g., <code class="docutils literal notranslate"><span class="pre">add_morphometry</span></code>), if no keyword argument
 is provided, PySurfer will attempt to load data or both hemispheres
 automtically.</p>
-<p>Note that the <code class="docutils literal"><span class="pre">show_view</span></code> method accepts arguments for the <code class="docutils literal"><span class="pre">row</span></code> and
-<code class="docutils literal"><span class="pre">col</span></code> values, which allow the user to control which <code class="docutils literal"><span class="pre">Brain</span></code> panel
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">show_view</span></code> method accepts arguments for the <code class="docutils literal notranslate"><span class="pre">row</span></code> and
+<code class="docutils literal notranslate"><span class="pre">col</span></code> values, which allow the user to control which <code class="docutils literal notranslate"><span class="pre">Brain</span></code> panel
 gets the updated view.</p>
 </div>
 <div class="section" id="caveats">
@@ -121,14 +113,14 @@ gets the updated view.</p>
 TraitsUI framework. However, due to some limitations in the implementation
 of TraitsUI, there is no guarantee that a set of scripted commands will
 result in a painted window when the user may think it will. For
-example, making a series of calls to <code class="docutils literal"><span class="pre">brain.add_label()</span></code> followed by
-<code class="docutils literal"><span class="pre">brain.save_image('out.png')</span></code> may result in some or all of the labels
-being absent from the saved <code class="docutils literal"><span class="pre">out.png</span></code>. While we have implemented some
+example, making a series of calls to <code class="docutils literal notranslate"><span class="pre">brain.add_label()</span></code> followed by
+<code class="docutils literal notranslate"><span class="pre">brain.save_image('out.png')</span></code> may result in some or all of the labels
+being absent from the saved <code class="docutils literal notranslate"><span class="pre">out.png</span></code>. While we have implemented some
 workarounds to help prevent this occurrance, we cannot guarantee it will
 work. Thus we recommend that for critical non-interactive plotting (e.g.,
 if scripting figure generation for a paper) only a single view is used
-with <code class="docutils literal"><span class="pre">hemi</span></code> set to <code class="docutils literal"><span class="pre">'lh'</span></code>, <code class="docutils literal"><span class="pre">'rh'</span></code>, or <code class="docutils literal"><span class="pre">'both'</span></code>. This will use a single,
-pure Mayavi window, thereby bypassing TraisUI entirely &#8211; this helps
+with <code class="docutils literal notranslate"><span class="pre">hemi</span></code> set to <code class="docutils literal notranslate"><span class="pre">'lh'</span></code>, <code class="docutils literal notranslate"><span class="pre">'rh'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'both'</span></code>. This will use a single,
+pure Mayavi window, thereby bypassing TraisUI entirely – this helps
 guarantee that drawing commands result in updated visual display.</p>
 </div>
 </div>
@@ -151,13 +143,13 @@ guarantee that drawing commands result in updated visual display.</p>
         <li class="right" >
           <a href="custom_viz.html" title="Customizing the Visualization"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >Detailed Documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2012-2017, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+        &#169; Copyright 2012-2018, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/b888962.
     </div>
   </body>
 </html>

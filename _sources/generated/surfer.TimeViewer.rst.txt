@@ -1,0 +1,10 @@
+surfer.TimeViewer
+=================
+
+.. currentmodule:: surfer
+
+.. autoclass:: TimeViewer
+   :no-inherited-members:
+
+   
+   

@@ -1,37 +1,27 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.8.0 documentation</title>
-    
-    <link rel="stylesheet" href="_static/navy.css" type="text/css" />
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.9.0 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.8.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="What is PySurfer?" href="intro.html" /> 
-  </head>
-  <body role="document">
+    <link rel="next" title="What is PySurfer?" href="intro.html" />
+<link rel="stylesheet" href="_static/navy.css " type="text/css" />
+
+  </head><body>
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
  <a href="#">
   <img src="_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
@@ -46,12 +36,12 @@
         <li class="right" >
           <a href="intro.html" title="What is PySurfer?"
              accesskey="N">next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">PySurfer 0.8.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">PySurfer 0.9.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
+  <h3><a href="#">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Introduction</a><ul>
 <li><a class="reference internal" href="#more-information">More Information</a></li>
@@ -68,12 +58,14 @@
                         title="next chapter">What is PySurfer?</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -89,7 +81,7 @@
 <p>PySurfer is a Python library for visualizing cortical surface representations
 of neuroimaging data. The package is primarily intended for use with
 <a class="reference external" href="http://surfer.nmr.mgh.harvard.edu/">Freesurfer</a>, but it can plot data that
-are drawn from a variety of sources. PySurfer extends <a class="reference external" href="http://github.enthought.com/mayavi/mayavi/index.html">Mayavi&#8217;s</a> powerful rendering
+are drawn from a variety of sources. PySurfer extends <a class="reference external" href="http://github.enthought.com/mayavi/mayavi/index.html">Mayavi’s</a> powerful rendering
 engine with a high-level interface for working with MRI and MEG data.</p>
 <div class="section" id="more-information">
 <h2>More Information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
@@ -106,8 +98,8 @@ engine with a high-level interface for working with MRI and MEG data.</p>
 <div class="section" id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Michael Waskom, Stanford University</li>
-<li>Alexandre Gramfort, Telecom ParisTech - CNRS, CEA - Neurospin</li>
+<li>Michael Waskom, New-York University (NYU)</li>
+<li>Alexandre Gramfort, Inria, CEA - Neurospin</li>
 <li>Scott Burns, Vanderbilt University</li>
 <li>Martin Luessi, Harvard Medical School MGH Martinos Center</li>
 <li>Eric Larson, University of Washington ILABS</li>
@@ -121,7 +113,7 @@ engine with a high-level interface for working with MRI and MEG data.</p>
 <h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
 <p>If you have problems installing the software or questions about usage,
 documentation or something else related to PySurfer, you can post to the NiPy
-mailing list. Please preface the subject line with &#8220;[PySurfer]&#8221;.</p>
+mailing list. Please preface the subject line with “[PySurfer]”.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -152,12 +144,12 @@ mailing list. Please preface the subject line with &#8220;[PySurfer]&#8221;.</p>
         <li class="right" >
           <a href="intro.html" title="What is PySurfer?"
              >next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">PySurfer 0.8.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">PySurfer 0.9.0 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2012-2017, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+        &#169; Copyright 2012-2018, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/b888962.
     </div>
   </body>
 </html>

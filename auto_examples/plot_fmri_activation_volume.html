@@ -1,38 +1,28 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.8.0 documentation</title>
-    
-    <link rel="stylesheet" href="../_static/navy.css" type="text/css" />
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.9.0 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.8.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Display a Conjunction Map" href="plot_fmri_conjunction.html" />
-    <link rel="prev" title="Display fMRI Activation" href="plot_fmri_activation.html" /> 
-  </head>
-  <body role="document">
+    <link rel="prev" title="Display fMRI Activation" href="plot_fmri_activation.html" />
+<link rel="stylesheet" href="../_static/navy.css " type="text/css" />
+
+  </head><body>
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
  <a href="../index.html">
   <img src="../_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
@@ -50,7 +40,7 @@
         <li class="right" >
           <a href="plot_fmri_activation.html" title="Display fMRI Activation"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Example gallery</a> &#187;</li> 
       </ul>
     </div>
@@ -64,12 +54,14 @@
                         title="next chapter">Display a Conjunction Map</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -80,28 +72,33 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="display-an-fmri-volume">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <span class="xref std std-ref">here</span> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="display-an-fmri-volume">
 <span id="sphx-glr-auto-examples-plot-fmri-activation-volume-py"></span><h1>Display an fMRI Volume<a class="headerlink" href="#display-an-fmri-volume" title="Permalink to this headline">¶</a></h1>
 <p>To plot data on the surface that is stored as a volume image, it is only
-slightly more complicated. You&#8217;ll have to use the function
-<code class="docutils literal"><span class="pre">surfer.project_volume_data</span></code>, which makes an external call to the Freesurfer
-program <code class="docutils literal"><span class="pre">mri_vol2surf</span></code>.</p>
+slightly more complicated. You’ll have to use the function
+<code class="docutils literal notranslate"><span class="pre">surfer.project_volume_data</span></code>, which makes an external call to the Freesurfer
+program <code class="docutils literal notranslate"><span class="pre">mri_vol2surf</span></code>.</p>
 <p>Note: In PySurfer versions 0.4 and lower, the project_volume_data function must
-be imported from <code class="docutils literal"><span class="pre">surfer.io</span></code>.</p>
-<img alt="../_images/sphx_glr_plot_fmri_activation_volume_001.png" class="align-center" src="../_images/sphx_glr_plot_fmri_activation_volume_001.png" />
+be imported from <code class="docutils literal notranslate"><span class="pre">surfer.io</span></code>.</p>
+<img alt="../_images/sphx_glr_plot_fmri_activation_volume_001.png" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_fmri_activation_volume_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">mri_vol2surf</span> <span class="o">--</span><span class="n">mov</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">larsoner</span><span class="o">/</span><span class="n">custombuilds</span><span class="o">/</span><span class="n">PySurfer</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">example_data</span><span class="o">/</span><span class="n">zstat</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span> <span class="o">--</span><span class="n">hemi</span> <span class="n">lh</span> <span class="o">--</span><span class="n">surf</span> <span class="n">white</span> <span class="o">--</span><span class="n">reg</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">larsoner</span><span class="o">/</span><span class="n">custombuilds</span><span class="o">/</span><span class="n">freesurfer</span><span class="o">/</span><span class="n">current</span><span class="o">/</span><span class="n">average</span><span class="o">/</span><span class="n">mni152</span><span class="o">.</span><span class="n">register</span><span class="o">.</span><span class="n">dat</span> <span class="o">--</span><span class="n">projfrac</span><span class="o">-</span><span class="n">avg</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mf">0.1</span> <span class="o">--</span><span class="n">surf</span><span class="o">-</span><span class="n">fwhm</span> <span class="mi">3</span> <span class="o">--</span><span class="n">o</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">pysurfer</span><span class="o">-</span><span class="n">v2sa4hvMP</span><span class="o">.</span><span class="n">mgz</span>
-<span class="n">mri_vol2surf</span> <span class="o">--</span><span class="n">mov</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">larsoner</span><span class="o">/</span><span class="n">custombuilds</span><span class="o">/</span><span class="n">PySurfer</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">example_data</span><span class="o">/</span><span class="n">zstat</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span> <span class="o">--</span><span class="n">hemi</span> <span class="n">lh</span> <span class="o">--</span><span class="n">surf</span> <span class="n">white</span> <span class="o">--</span><span class="n">regheader</span> <span class="n">fsaverage</span> <span class="o">--</span><span class="n">projfrac</span><span class="o">-</span><span class="n">avg</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mf">0.1</span> <span class="o">--</span><span class="n">surf</span><span class="o">-</span><span class="n">fwhm</span> <span class="mf">0.5</span> <span class="o">--</span><span class="n">o</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">pysurfer</span><span class="o">-</span><span class="n">v2sM7CRlh</span><span class="o">.</span><span class="n">mgz</span>
-<span class="n">mri_vol2surf</span> <span class="o">--</span><span class="n">mov</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">larsoner</span><span class="o">/</span><span class="n">custombuilds</span><span class="o">/</span><span class="n">PySurfer</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">example_data</span><span class="o">/</span><span class="n">mask</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span> <span class="o">--</span><span class="n">hemi</span> <span class="n">lh</span> <span class="o">--</span><span class="n">surf</span> <span class="n">white</span> <span class="o">--</span><span class="n">regheader</span> <span class="n">fsaverage</span> <span class="o">--</span><span class="n">projfrac</span><span class="o">-</span><span class="nb">max</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mf">0.1</span> <span class="o">--</span><span class="n">o</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">pysurfer</span><span class="o">-</span><span class="n">v2shaBfoZ</span><span class="o">.</span><span class="n">mgz</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>mri_vol2surf --mov /home/larsoner/python/PySurfer/examples/example_data/zstat.nii.gz --hemi lh --surf white --reg /home/larsoner/applications/freesurfer-6/average/mni152.register.dat --projfrac-avg 0 1 0.1 --surf-fwhm 3 --o /tmp/pysurfer-v2s8fz1fdnk.mgz
+mri_vol2surf --mov /home/larsoner/python/PySurfer/examples/example_data/zstat.nii.gz --hemi lh --surf white --regheader fsaverage --projfrac-avg 0 1 0.1 --surf-fwhm 0.5 --o /tmp/pysurfer-v2su_74n9qm.mgz
+mri_vol2surf --mov /home/larsoner/python/PySurfer/examples/example_data/mask.nii.gz --hemi lh --surf white --regheader fsaverage --projfrac-max 0 1 0.1 --o /tmp/pysurfer-v2sree401kk.mgz
+colormap sequential: [0.00e+00, 5.00e+00, 1.00e+01] (opaque)
 </pre></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a><span class="p">,</span> <a href="../generated/surfer.project_volume_data.html#surfer.project_volume_data" title="View documentation for surfer.project_volume_data"><span class="n">project_volume_data</span></a>
 
-<span class="k">print</span><span class="p">(</span><span class="n">__doc__</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Bring up the visualization window.</span>
@@ -166,12 +163,13 @@ be imported from <code class="docutils literal"><span class="pre">surfer.io</spa
 <span class="n">brain</span><span class="o">.</span><span class="n">show_view</span><span class="p">(</span><span class="s2">&quot;medial&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  6.579 seconds)</p>
-<div class="sphx-glr-footer docutils container">
+<p><strong>Total running time of the script:</strong>
+.. _sphx_glr_download_auto_examples_plot_fmri_activation_volume.py:</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container">
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" href="../_downloads/plot_fmri_activation_volume.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_fmri_activation_volume.py</span></code></a></div>
+<a class="reference download internal" download="" href="../_downloads/aa712040be2ca0766626e8313a56308b/plot_fmri_activation_volume.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_fmri_activation_volume.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" href="../_downloads/plot_fmri_activation_volume.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_fmri_activation_volume.ipynb</span></code></a></div>
+<a class="reference download internal" download="" href="../_downloads/935022d0852853f7e00efab262856742/plot_fmri_activation_volume.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_fmri_activation_volume.ipynb</span></code></a></div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
@@ -194,13 +192,13 @@ be imported from <code class="docutils literal"><span class="pre">surfer.io</spa
         <li class="right" >
           <a href="plot_fmri_activation.html" title="Display fMRI Activation"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.8.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >Example gallery</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2012-2017, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+        &#169; Copyright 2012-2018, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/b888962.
     </div>
   </body>
 </html>
