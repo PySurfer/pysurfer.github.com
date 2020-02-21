@@ -1,20 +1,20 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.9.0 documentation</title>
+    <meta charset="utf-8" />
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.10.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -40,11 +40,19 @@
         <li class="right" >
           <a href="../install.html" title="Installing and Getting Started"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.10.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Example gallery</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#pysurfer-example-data">PySurfer Example Data</a></li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="../install.html"
                         title="previous chapter">Installing and Getting Started</a></p>
@@ -52,13 +60,11 @@
   <p class="topless"><a href="plot_basics.html"
                         title="next chapter">Basic Visualization</a></p>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -72,150 +78,161 @@
           <div class="body" role="main">
             
   <div class="section" id="example-gallery">
-<span id="examples"></span><h1>Example gallery<a class="headerlink" href="#example-gallery" title="Permalink to this headline">¶</a></h1>
+<span id="examples"></span><span id="sphx-glr-auto-examples"></span><h1>Example gallery<a class="headerlink" href="#example-gallery" title="Permalink to this headline">¶</a></h1>
 <p>These example scripts demonstrate the functionality offered by PySurfer,
 from the most basic tasks to more complex visualizations.</p>
 <p>If you have used PySurfer to present neuroimaging data in a way that isn’t
 covered here, please <a class="reference external" href="https://github.com/nipy/PySurfer">contribute</a> it!</p>
-<div class="sphx-glr-thumbcontainer" tooltip="Initialize a basic visualization session."><div class="figure" id="id1">
+<div class="sphx-glr-thumbcontainer" tooltip="Initialize a basic visualization session."><div class="figure align-default" id="id1">
 <img alt="../_images/sphx_glr_plot_basics_thumb.png" src="../_images/sphx_glr_plot_basics_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_basics.html#sphx-glr-auto-examples-plot-basics-py"><span class="std std-ref">Basic Visualization</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_basics.html#sphx-glr-auto-examples-plot-basics-py"><span class="std std-ref">Basic Visualization</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="In this example, each vertex on a 3D brain is plotted with a different RGBA value. Hue varies a..."><div class="figure" id="id2">
+<div class="sphx-glr-thumbcontainer" tooltip="In this example, each vertex on a 3D brain is plotted with a different RGBA value. Hue varies a..."><div class="figure align-default" id="id2">
 <img alt="../_images/sphx_glr_plot_custom_colors_thumb.png" src="../_images/sphx_glr_plot_custom_colors_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_custom_colors.html#sphx-glr-auto-examples-plot-custom-colors-py"><span class="std std-ref">Plot RGBA values on brain surface</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_custom_colors.html#sphx-glr-auto-examples-plot-custom-colors-py"><span class="std std-ref">Plot RGBA values on brain surface</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="The most straightforward way to plot activations is when you already have a map of them defined..."><div class="figure" id="id3">
+<div class="sphx-glr-thumbcontainer" tooltip="The most straightforward way to plot activations is when you already have a map of them defined..."><div class="figure align-default" id="id3">
 <img alt="../_images/sphx_glr_plot_fmri_activation_thumb.png" src="../_images/sphx_glr_plot_fmri_activation_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_fmri_activation.html#sphx-glr-auto-examples-plot-fmri-activation-py"><span class="std std-ref">Display fMRI Activation</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_fmri_activation.html#sphx-glr-auto-examples-plot-fmri-activation-py"><span class="std std-ref">Display fMRI Activation</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="To plot data on the surface that is stored as a volume image, it is only slightly more complica..."><div class="figure" id="id4">
+<div class="sphx-glr-thumbcontainer" tooltip="To plot data on the surface that is stored as a volume image, it is only slightly more complica..."><div class="figure align-default" id="id4">
 <img alt="../_images/sphx_glr_plot_fmri_activation_volume_thumb.png" src="../_images/sphx_glr_plot_fmri_activation_volume_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_fmri_activation_volume.html#sphx-glr-auto-examples-plot-fmri-activation-volume-py"><span class="std std-ref">Display an fMRI Volume</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_fmri_activation_volume.html#sphx-glr-auto-examples-plot-fmri-activation-volume-py"><span class="std std-ref">Display an fMRI Volume</span></a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="Show the overlap between two different activation maps."><div class="figure" id="id5">
+<div class="sphx-glr-thumbcontainer" tooltip="Show the overlap between two different activation maps."><div class="figure align-default" id="id5">
 <img alt="../_images/sphx_glr_plot_fmri_conjunction_thumb.png" src="../_images/sphx_glr_plot_fmri_conjunction_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_fmri_conjunction.html#sphx-glr-auto-examples-plot-fmri-conjunction-py"><span class="std std-ref">Display a Conjunction Map</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_fmri_conjunction.html#sphx-glr-auto-examples-plot-fmri-conjunction-py"><span class="std std-ref">Display a Conjunction Map</span></a></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="Plot spheroids at positions on the surface manifold according to coordinates or vertex ids."><div class="figure" id="id6">
+<div class="sphx-glr-thumbcontainer" tooltip="Plot spheroids at positions on the surface manifold according to coordinates or vertex ids."><div class="figure align-default" id="id6">
 <img alt="../_images/sphx_glr_plot_foci_thumb.png" src="../_images/sphx_glr_plot_foci_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_foci.html#sphx-glr-auto-examples-plot-foci-py"><span class="std std-ref">Plot Activation Foci</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_foci.html#sphx-glr-auto-examples-plot-foci-py"><span class="std std-ref">Plot Activation Foci</span></a></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="This example shows how PySurfer can be used to examine the quality of Freesurfer&#x27;s curvature-dr..."><div class="figure" id="id7">
+<div class="sphx-glr-thumbcontainer" tooltip="This example shows how PySurfer can be used to examine the quality of Freesurfer&#x27;s curvature-dr..."><div class="figure align-default" id="id7">
 <img alt="../_images/sphx_glr_plot_freesurfer_normalization_thumb.png" src="../_images/sphx_glr_plot_freesurfer_normalization_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_freesurfer_normalization.html#sphx-glr-auto-examples-plot-freesurfer-normalization-py"><span class="std std-ref">Plot Freesurfer Normalization</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_freesurfer_normalization.html#sphx-glr-auto-examples-plot-freesurfer-normalization-py"><span class="std std-ref">Plot Freesurfer Normalization</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="Using PySurfer you can plot Freesurfer cortical labels on the surface with a large amount of co..."><div class="figure" id="id8">
+<div class="sphx-glr-thumbcontainer" tooltip="Using PySurfer you can plot Freesurfer cortical labels on the surface with a large amount of co..."><div class="figure align-default" id="id8">
 <img alt="../_images/sphx_glr_plot_label_thumb.png" src="../_images/sphx_glr_plot_label_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_label.html#sphx-glr-auto-examples-plot-label-py"><span class="std std-ref">Display ROI Labels</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_label.html#sphx-glr-auto-examples-plot-label-py"><span class="std std-ref">Display ROI Labels</span></a></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="Define a label that is centered on a specific vertex in the surface mesh. Plot that label and t..."><div class="figure" id="id9">
+<div class="sphx-glr-thumbcontainer" tooltip="Define a label that is centered on a specific vertex in the surface mesh. Plot that label and t..."><div class="figure align-default" id="id9">
 <img alt="../_images/sphx_glr_plot_label_foci_thumb.png" src="../_images/sphx_glr_plot_label_foci_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_label_foci.html#sphx-glr-auto-examples-plot-label-foci-py"><span class="std std-ref">Generate Surface Labels</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_label_foci.html#sphx-glr-auto-examples-plot-label-foci-py"><span class="std std-ref">Generate Surface Labels</span></a></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="Data were computed using mne-python (http://martinos.org/mne)"><div class="figure" id="id10">
+<div class="sphx-glr-thumbcontainer" tooltip="Data were computed using mne-python (http://martinos.org/mne)"><div class="figure align-default" id="id10">
 <img alt="../_images/sphx_glr_plot_meg_inverse_solution_thumb.png" src="../_images/sphx_glr_plot_meg_inverse_solution_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_meg_inverse_solution.html#sphx-glr-auto-examples-plot-meg-inverse-solution-py"><span class="std std-ref">Plot MEG inverse solution</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_meg_inverse_solution.html#sphx-glr-auto-examples-plot-meg-inverse-solution-py"><span class="std std-ref">Plot MEG inverse solution</span></a></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="Display morphometry files generated during the cortical reconstruction process."><div class="figure" id="id11">
+<div class="sphx-glr-thumbcontainer" tooltip="Display morphometry files generated during the cortical reconstruction process."><div class="figure align-default" id="id11">
 <img alt="../_images/sphx_glr_plot_morphometry_thumb.png" src="../_images/sphx_glr_plot_morphometry_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_morphometry.html#sphx-glr-auto-examples-plot-morphometry-py"><span class="std std-ref">Overlay Morphometry Data</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_morphometry.html#sphx-glr-auto-examples-plot-morphometry-py"><span class="std std-ref">Overlay Morphometry Data</span></a></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="Here we demonstrate how to take the results of an ROI analysis performed within each region of ..."><div class="figure" id="id12">
+<div class="sphx-glr-thumbcontainer" tooltip="Here we demonstrate how to take the results of an ROI analysis performed within each region of ..."><div class="figure align-default" id="id12">
 <img alt="../_images/sphx_glr_plot_parc_values_thumb.png" src="../_images/sphx_glr_plot_parc_values_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_parc_values.html#sphx-glr-auto-examples-plot-parc-values-py"><span class="std std-ref">Display ROI Values</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_parc_values.html#sphx-glr-auto-examples-plot-parc-values-py"><span class="std std-ref">Display ROI Values</span></a></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="Display a Freesurfer cortical parcellation from an annotation file."><div class="figure" id="id13">
+<div class="sphx-glr-thumbcontainer" tooltip="Display a Freesurfer cortical parcellation from an annotation file."><div class="figure align-default" id="id13">
 <img alt="../_images/sphx_glr_plot_parcellation_thumb.png" src="../_images/sphx_glr_plot_parcellation_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_parcellation.html#sphx-glr-auto-examples-plot-parcellation-py"><span class="std std-ref">Using Annotation Files</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_parcellation.html#sphx-glr-auto-examples-plot-parcellation-py"><span class="std std-ref">Using Annotation Files</span></a></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="Freesurfer ships with some probabilistic labels of cytoarchitectonic and visual areas. Here we ..."><div class="figure" id="id14">
+<div class="sphx-glr-thumbcontainer" tooltip="Freesurfer ships with some probabilistic labels of cytoarchitectonic and visual areas. Here we ..."><div class="figure align-default" id="id14">
 <img alt="../_images/sphx_glr_plot_probabilistic_label_thumb.png" src="../_images/sphx_glr_plot_probabilistic_label_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_probabilistic_label.html#sphx-glr-auto-examples-plot-probabilistic-label-py"><span class="std std-ref">Display Probabilistic Labels</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_probabilistic_label.html#sphx-glr-auto-examples-plot-probabilistic-label-py"><span class="std std-ref">Display Probabilistic Labels</span></a></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="In this example, we show how to build up a complex visualization of a volume-based image showin..."><div class="figure" id="id15">
+<div class="sphx-glr-thumbcontainer" tooltip="In this example, we show how to build up a complex visualization of a volume-based image showin..."><div class="figure align-default" id="id15">
 <img alt="../_images/sphx_glr_plot_resting_correlations_thumb.png" src="../_images/sphx_glr_plot_resting_correlations_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_resting_correlations.html#sphx-glr-auto-examples-plot-resting-correlations-py"><span class="std std-ref">Display Resting-State Correlations</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_resting_correlations.html#sphx-glr-auto-examples-plot-resting-correlations-py"><span class="std std-ref">Display Resting-State Correlations</span></a></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="Load a statistical overlay as a &quot;topographic&quot; contour map."><div class="figure" id="id16">
+<div class="sphx-glr-thumbcontainer" tooltip="Load a statistical overlay as a &quot;topographic&quot; contour map."><div class="figure align-default" id="id16">
 <img alt="../_images/sphx_glr_plot_topographic_contours_thumb.png" src="../_images/sphx_glr_plot_topographic_contours_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_topographic_contours.html#sphx-glr-auto-examples-plot-topographic-contours-py"><span class="std std-ref">Display Activation Contours</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_topographic_contours.html#sphx-glr-auto-examples-plot-topographic-contours-py"><span class="std std-ref">Display Activation Contours</span></a></span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="Plot a transparent brain to visualize foci below the surface."><div class="figure" id="id17">
+<div class="sphx-glr-thumbcontainer" tooltip="Plot a transparent brain to visualize foci below the surface."><div class="figure align-default" id="id17">
 <img alt="../_images/sphx_glr_plot_transparent_brain_thumb.png" src="../_images/sphx_glr_plot_transparent_brain_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_transparent_brain.html#sphx-glr-auto-examples-plot-transparent-brain-py"><span class="std std-ref">Plot Transparent Brain</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_transparent_brain.html#sphx-glr-auto-examples-plot-transparent-brain-py"><span class="std std-ref">Plot Transparent Brain</span></a></span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="Data were computed using mne-python (http://martinos.org/mne)."><div class="figure" id="id18">
+<div class="sphx-glr-thumbcontainer" tooltip="Data were computed using mne-python (http://martinos.org/mne)."><div class="figure align-default" id="id18">
 <img alt="../_images/sphx_glr_plot_vector_meg_inverse_solution_thumb.png" src="../_images/sphx_glr_plot_vector_meg_inverse_solution_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_vector_meg_inverse_solution.html#sphx-glr-auto-examples-plot-vector-meg-inverse-solution-py"><span class="std std-ref">Plot vector-valued MEG inverse solution</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_vector_meg_inverse_solution.html#sphx-glr-auto-examples-plot-vector-meg-inverse-solution-py"><span class="std std-ref">Plot vector-valued MEG inverse solution</span></a></span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="Animate brain and save movie"><div class="figure" id="id19">
+<div class="sphx-glr-thumbcontainer" tooltip="Animate brain and save movie"><div class="figure align-default" id="id19">
 <img alt="../_images/sphx_glr_rotate_animation_thumb.png" src="../_images/sphx_glr_rotate_animation_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="rotate_animation.html#sphx-glr-auto-examples-rotate-animation-py"><span class="std std-ref">Animate brain and save movie</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="rotate_animation.html#sphx-glr-auto-examples-rotate-animation-py"><span class="std std-ref">Animate brain and save movie</span></a></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="Data were computed using mne-python (http://martinos.org/mne)"><div class="figure" id="id20">
+<div class="sphx-glr-thumbcontainer" tooltip="Data were computed using mne-python (http://martinos.org/mne)"><div class="figure align-default" id="id20">
 <img alt="../_images/sphx_glr_save_movie_thumb.png" src="../_images/sphx_glr_save_movie_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="save_movie.html#sphx-glr-auto-examples-save-movie-py"><span class="std std-ref">Create movie from  MEG inverse solution</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="save_movie.html#sphx-glr-auto-examples-save-movie-py"><span class="std std-ref">Create movie from  MEG inverse solution</span></a></span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="Save some views in png files."><div class="figure" id="id21">
+<div class="sphx-glr-thumbcontainer" tooltip="Save some views in png files."><div class="figure align-default" id="id21">
 <img alt="../_images/sphx_glr_save_views_thumb.png" src="../_images/sphx_glr_save_views_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="save_views.html#sphx-glr-auto-examples-save-views-py"><span class="std std-ref">Save a set of views</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="save_views.html#sphx-glr-auto-examples-save-views-py"><span class="std std-ref">Save a set of views</span></a></span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="Among the views available are lateral, rostral, caudal, frontal etc."><div class="figure" id="id22">
+<div class="sphx-glr-thumbcontainer" tooltip="Among the views available are lateral, rostral, caudal, frontal etc."><div class="figure align-default" id="id22">
 <img alt="../_images/sphx_glr_show_views_thumb.png" src="../_images/sphx_glr_show_views_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="show_views.html#sphx-glr-auto-examples-show-views-py"><span class="std std-ref">Show the different brain views</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="show_views.html#sphx-glr-auto-examples-show-views-py"><span class="std std-ref">Show the different brain views</span></a></span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div style='clear:both'></div><div class="sphx-glr-footer class sphx-glr-footer-gallery docutils container">
-<div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../_downloads/b587f070b4143c7a3dc3ec3cd5aba027/auto_examples_python.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">all</span> <span class="pre">examples</span> <span class="pre">in</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">auto_examples_python.zip</span></code></a></div>
-<div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../_downloads/70fffa6ecc5df7d4c5d12e7dfaa31d45/auto_examples_jupyter.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">all</span> <span class="pre">examples</span> <span class="pre">in</span> <span class="pre">Jupyter</span> <span class="pre">notebooks:</span> <span class="pre">auto_examples_jupyter.zip</span></code></a></div>
+<div class="sphx-glr-clear"></div><dl class="field-list simple" id="sphx-glr-auto-examples-example-data">
+<dt class="field-odd">orphan</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+<div class="section" id="pysurfer-example-data">
+<h1>PySurfer Example Data<a class="headerlink" href="#pysurfer-example-data" title="Permalink to this headline">¶</a></h1>
+<p>This directory contains a few lightweight files that support the automatic
+examples for PySurfer.</p>
+<div class="sphx-glr-clear"></div><div class="sphx-glr-footer class sphx-glr-footer-gallery docutils container">
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/b587f070b4143c7a3dc3ec3cd5aba027/auto_examples_python.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">all</span> <span class="pre">examples</span> <span class="pre">in</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">auto_examples_python.zip</span></code></a></p>
+</div>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/70fffa6ecc5df7d4c5d12e7dfaa31d45/auto_examples_jupyter.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">all</span> <span class="pre">examples</span> <span class="pre">in</span> <span class="pre">Jupyter</span> <span class="pre">notebooks:</span> <span class="pre">auto_examples_jupyter.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 
 
@@ -236,12 +253,12 @@ covered here, please <a class="reference external" href="https://github.com/nipy
         <li class="right" >
           <a href="../install.html" title="Installing and Getting Started"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.10.0 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2012-2018, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/b888962.
+        &#169; Copyright 2012-2020, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0+/4499fda.
     </div>
   </body>
 </html>

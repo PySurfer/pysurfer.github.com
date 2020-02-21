@@ -1,20 +1,20 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.9.0 documentation</title>
+    <meta charset="utf-8" />
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.10.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="plot_probabilistic_label.html" title="Display Probabilistic Labels"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Example gallery</a> &#187;</li> 
       </ul>
     </div>
@@ -53,13 +53,11 @@
   <p class="topless"><a href="plot_topographic_contours.html"
                         title="next chapter">Display Activation Contours</a></p>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -73,8 +71,8 @@
           <div class="body" role="main">
             
   <div class="sphx-glr-download-link-note admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Click <span class="xref std std-ref">here</span> to download the full example code</p>
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-plot-resting-correlations-py"><span class="std std-ref">here</span></a>     to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="display-resting-state-correlations">
 <span id="sphx-glr-auto-examples-plot-resting-correlations-py"></span><h1>Display Resting-State Correlations<a class="headerlink" href="#display-resting-state-correlations" title="Permalink to this headline">¶</a></h1>
@@ -84,18 +82,18 @@ from a seed in the angular gyrus. We’ll plot several views of both hemispheres
 in a single window and manipulate the colormap to best represent the nature of
 the data.</p>
 <ul class="sphx-glr-horizontal">
-<li><img alt="../_images/sphx_glr_plot_resting_correlations_001.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_plot_resting_correlations_001.png" />
+<li><img alt="../_images/sphx_glr_plot_resting_correlations_001.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_resting_correlations_001.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_resting_correlations_002.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_plot_resting_correlations_002.png" />
+<li><img alt="../_images/sphx_glr_plot_resting_correlations_002.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_resting_correlations_002.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_resting_correlations_003.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_plot_resting_correlations_003.png" />
+<li><img alt="../_images/sphx_glr_plot_resting_correlations_003.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_resting_correlations_003.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_resting_correlations_004.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_plot_resting_correlations_004.png" />
+<li><img alt="../_images/sphx_glr_plot_resting_correlations_004.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_resting_correlations_004.png" />
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>mri_vol2surf --mov /home/larsoner/python/PySurfer/examples/example_data/resting_corr.nii.gz --hemi lh --surf white --reg /home/larsoner/applications/freesurfer-6/average/mni152.register.dat --projfrac-avg 0 1 0.1 --surf-fwhm 3 --o /tmp/pysurfer-v2s7fjtwr9r.mgz
-mri_vol2surf --mov /home/larsoner/python/PySurfer/examples/example_data/resting_corr.nii.gz --hemi rh --surf white --reg /home/larsoner/applications/freesurfer-6/average/mni152.register.dat --projfrac-avg 0 1 0.1 --surf-fwhm 3 --o /tmp/pysurfer-v2ssieu0ye2.mgz
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>mri_vol2surf --mov /home/larsoner/python/PySurfer/examples/example_data/resting_corr.nii.gz --hemi lh --surf white --reg /home/larsoner/applications/freesurfer-6/average/mni152.register.dat --projfrac-avg 0 1 0.1 --surf-fwhm 3 --o /tmp/pysurfer-v2sy55r3m1u.mgz
+mri_vol2surf --mov /home/larsoner/python/PySurfer/examples/example_data/resting_corr.nii.gz --hemi rh --surf white --reg /home/larsoner/applications/freesurfer-6/average/mni152.register.dat --projfrac-avg 0 1 0.1 --surf-fwhm 3 --o /tmp/pysurfer-v2spedpkld9.mgz
 colormap divergent: center=0.00e+00, [0.00e+00, 3.50e-01, 7.00e-01] (opaque)
 colormap divergent: center=0.00e+00, [0.00e+00, 3.50e-01, 7.00e-01] (opaque)
 colormap divergent: center=0.00e+00, [2.00e-01, 5.00e-01, 7.00e-01] (transparent)
@@ -105,37 +103,37 @@ colormap divergent: center=0.00e+00, [0.00e+00, 3.50e-01, 7.00e-01] (transparent
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a><span class="p">,</span> <a href="../generated/surfer.project_volume_data.html#surfer.project_volume_data" title="View documentation for surfer.project_volume_data"><span class="n">project_volume_data</span></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">surfer</span> <span class="k">import</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-class"><span class="n">Brain</span></a><span class="p">,</span> <a href="../generated/surfer.project_volume_data.html#surfer.project_volume_data" title="surfer.project_volume_data" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-function"><span class="n">project_volume_data</span></a>
 
-<span class="k">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;Bring up the visualization&quot;&quot;&quot;</span>
-<span class="n">brain</span> <span class="o">=</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a><span class="p">(</span><span class="s2">&quot;fsaverage&quot;</span><span class="p">,</span> <span class="s2">&quot;split&quot;</span><span class="p">,</span> <span class="s2">&quot;inflated&quot;</span><span class="p">,</span>
+<a href="../generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">brain</span></a> <span class="o">=</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-class"><span class="n">Brain</span></a><span class="p">(</span><span class="s2">&quot;fsaverage&quot;</span><span class="p">,</span> <span class="s2">&quot;split&quot;</span><span class="p">,</span> <span class="s2">&quot;inflated&quot;</span><span class="p">,</span>
               <span class="n">views</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;med&#39;</span><span class="p">],</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;Project the volume file and return as an array&quot;&quot;&quot;</span>
 <span class="n">mri_file</span> <span class="o">=</span> <span class="s2">&quot;example_data/resting_corr.nii.gz&quot;</span>
 <span class="n">reg_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;FREESURFER_HOME&quot;</span><span class="p">],</span>
                         <span class="s2">&quot;average/mni152.register.dat&quot;</span><span class="p">)</span>
-<span class="n">surf_data_lh</span> <span class="o">=</span> <a href="../generated/surfer.project_volume_data.html#surfer.project_volume_data" title="View documentation for surfer.project_volume_data"><span class="n">project_volume_data</span></a><span class="p">(</span><span class="n">mri_file</span><span class="p">,</span> <span class="s2">&quot;lh&quot;</span><span class="p">,</span> <span class="n">reg_file</span><span class="p">)</span>
-<span class="n">surf_data_rh</span> <span class="o">=</span> <a href="../generated/surfer.project_volume_data.html#surfer.project_volume_data" title="View documentation for surfer.project_volume_data"><span class="n">project_volume_data</span></a><span class="p">(</span><span class="n">mri_file</span><span class="p">,</span> <span class="s2">&quot;rh&quot;</span><span class="p">,</span> <span class="n">reg_file</span><span class="p">)</span>
+<span class="n">surf_data_lh</span> <span class="o">=</span> <a href="../generated/surfer.project_volume_data.html#surfer.project_volume_data" title="surfer.project_volume_data" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-function"><span class="n">project_volume_data</span></a><span class="p">(</span><span class="n">mri_file</span><span class="p">,</span> <span class="s2">&quot;lh&quot;</span><span class="p">,</span> <span class="n">reg_file</span><span class="p">)</span>
+<span class="n">surf_data_rh</span> <span class="o">=</span> <a href="../generated/surfer.project_volume_data.html#surfer.project_volume_data" title="surfer.project_volume_data" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-function"><span class="n">project_volume_data</span></a><span class="p">(</span><span class="n">mri_file</span><span class="p">,</span> <span class="s2">&quot;rh&quot;</span><span class="p">,</span> <span class="n">reg_file</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">You can pass this array to the add_overlay method for a typical activation</span>
 <span class="sd">overlay (with thresholding, etc.).</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">add_overlay</span><span class="p">(</span><span class="n">surf_data_lh</span><span class="p">,</span> <span class="nb">min</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="nb">max</span><span class="o">=.</span><span class="mi">7</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;ang_corr_lh&quot;</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;lh&#39;</span><span class="p">)</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">add_overlay</span><span class="p">(</span><span class="n">surf_data_rh</span><span class="p">,</span> <span class="nb">min</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="nb">max</span><span class="o">=.</span><span class="mi">7</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;ang_corr_rh&quot;</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;rh&#39;</span><span class="p">)</span>
+<a href="../generated/surfer.Brain.html#surfer.Brain.add_overlay" title="surfer.Brain.add_overlay" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-method"><span class="n">brain</span><span class="o">.</span><span class="n">add_overlay</span></a><span class="p">(</span><span class="n">surf_data_lh</span><span class="p">,</span> <span class="nb">min</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="nb">max</span><span class="o">=.</span><span class="mi">7</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;ang_corr_lh&quot;</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;lh&#39;</span><span class="p">)</span>
+<a href="../generated/surfer.Brain.html#surfer.Brain.add_overlay" title="surfer.Brain.add_overlay" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-method"><span class="n">brain</span><span class="o">.</span><span class="n">add_overlay</span></a><span class="p">(</span><span class="n">surf_data_rh</span><span class="p">,</span> <span class="nb">min</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="nb">max</span><span class="o">=.</span><span class="mi">7</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;ang_corr_rh&quot;</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;rh&#39;</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">You can also pass it to add_data for more control</span>
 <span class="sd">over the visualization. Here we&#39;ll plot the whole</span>
 <span class="sd">range of correlations</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="k">for</span> <span class="n">overlay</span> <span class="ow">in</span> <span class="n">brain</span><span class="o">.</span><span class="n">overlays_dict</span><span class="p">[</span><span class="s2">&quot;ang_corr_lh&quot;</span><span class="p">]:</span>
+<span class="k">for</span> <span class="n">overlay</span> <span class="ow">in</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">brain</span></a><span class="o">.</span><span class="n">overlays_dict</span><span class="p">[</span><span class="s2">&quot;ang_corr_lh&quot;</span><span class="p">]:</span>
     <span class="n">overlay</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">overlay</span> <span class="ow">in</span> <span class="n">brain</span><span class="o">.</span><span class="n">overlays_dict</span><span class="p">[</span><span class="s2">&quot;ang_corr_rh&quot;</span><span class="p">]:</span>
+<span class="k">for</span> <span class="n">overlay</span> <span class="ow">in</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">brain</span></a><span class="o">.</span><span class="n">overlays_dict</span><span class="p">[</span><span class="s2">&quot;ang_corr_rh&quot;</span><span class="p">]:</span>
     <span class="n">overlay</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
@@ -144,8 +142,8 @@ colormap divergent: center=0.00e+00, [0.00e+00, 3.50e-01, 7.00e-01] (transparent
 <span class="sd">from negative correlations to positive correlations. By providing the &#39;center&#39;</span>
 <span class="sd">argument the add_data function automatically chooses a divergent colormap.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">surf_data_lh</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">7</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;lh&#39;</span><span class="p">)</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">surf_data_rh</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">7</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;rh&#39;</span><span class="p">)</span>
+<a href="../generated/surfer.Brain.html#surfer.Brain.add_data" title="surfer.Brain.add_data" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-method"><span class="n">brain</span><span class="o">.</span><span class="n">add_data</span></a><span class="p">(</span><span class="n">surf_data_lh</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">7</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;lh&#39;</span><span class="p">)</span>
+<a href="../generated/surfer.Brain.html#surfer.Brain.add_data" title="surfer.Brain.add_data" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-method"><span class="n">brain</span><span class="o">.</span><span class="n">add_data</span></a><span class="p">(</span><span class="n">surf_data_rh</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">7</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;rh&#39;</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">You can tune the data display by shifting the colormap around interesting</span>
@@ -154,13 +152,13 @@ colormap divergent: center=0.00e+00, [0.00e+00, 3.50e-01, 7.00e-01] (transparent
 <span class="sd">the colormap as follows. For more information see the help string of this</span>
 <span class="sd">function.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">scale_data_colormap</span><span class="p">(</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">7</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<a href="../generated/surfer.Brain.html#surfer.Brain.scale_data_colormap" title="surfer.Brain.scale_data_colormap" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-method"><span class="n">brain</span><span class="o">.</span><span class="n">scale_data_colormap</span></a><span class="p">(</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">7</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">You can also set the overall opacity of the displayed data while maintaining</span>
 <span class="sd">the transparency of the small values.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">scale_data_colormap</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">35</span><span class="p">,</span> <span class="o">.</span><span class="mi">7</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<a href="../generated/surfer.Brain.html#surfer.Brain.scale_data_colormap" title="surfer.Brain.scale_data_colormap" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-method"><span class="n">brain</span><span class="o">.</span><span class="n">scale_data_colormap</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">35</span><span class="p">,</span> <span class="o">.</span><span class="mi">7</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
                           <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
@@ -168,18 +166,19 @@ colormap divergent: center=0.00e+00, [0.00e+00, 3.50e-01, 7.00e-01] (transparent
 <span class="sd">seed in left angular gyrus. Let&#39;s plot that seed.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="n">seed_coords</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">67</span><span class="p">,</span> <span class="mi">36</span><span class="p">)</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">add_foci</span><span class="p">(</span><span class="n">seed_coords</span><span class="p">,</span> <span class="n">map_surface</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;lh&#39;</span><span class="p">)</span>
+<a href="../generated/surfer.Brain.html#surfer.Brain.add_foci" title="surfer.Brain.add_foci" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-method"><span class="n">brain</span><span class="o">.</span><span class="n">add_foci</span></a><span class="p">(</span><span class="n">seed_coords</span><span class="p">,</span> <span class="n">map_surface</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;lh&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong>
-.. _sphx_glr_download_auto_examples_plot_resting_correlations.py:</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container">
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.773 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-resting-correlations-py">
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../_downloads/7d47553e7dc79f74d4310d23badcfa41/plot_resting_correlations.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_resting_correlations.py</span></code></a></div>
-<div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../_downloads/730ad005f369643a7cc31cfc25f7e4ca/plot_resting_correlations.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_resting_correlations.ipynb</span></code></a></div>
+<p><a class="reference download internal" download="" href="../_downloads/97cddbc3e0a0447f354cf7ca353fbce3/plot_resting_correlations.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_resting_correlations.py</span></code></a></p>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/d11cd45c4ea54801881f48f5865c374d/plot_resting_correlations.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_resting_correlations.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 
 
@@ -200,13 +199,13 @@ colormap divergent: center=0.00e+00, [0.00e+00, 3.50e-01, 7.00e-01] (transparent
         <li class="right" >
           <a href="plot_probabilistic_label.html" title="Display Probabilistic Labels"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >Example gallery</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2012-2018, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/b888962.
+        &#169; Copyright 2012-2020, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0+/4499fda.
     </div>
   </body>
 </html>

@@ -1,23 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.9.0 documentation</title>
+    <meta charset="utf-8" />
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.10.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Changelog" href="../changes.html" />
     <link rel="prev" title="surfer.io.read_stc" href="surfer.io.read_stc.html" />
 <link rel="stylesheet" href="../_static/navy.css " type="text/css" />
 
@@ -34,9 +35,12 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
+          <a href="../changes.html" title="Changelog"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
           <a href="surfer.io.read_stc.html" title="surfer.io.read_stc"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../python_reference.html" accesskey="U">Python API Reference</a> &#187;</li> 
       </ul>
     </div>
@@ -53,14 +57,15 @@
   <h4>Previous topic</h4>
   <p class="topless"><a href="surfer.io.read_stc.html"
                         title="previous chapter">surfer.io.read_stc</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../changes.html"
+                        title="next chapter">Changelog</a></p>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -77,52 +82,39 @@
 <h1>surfer.utils.coord_to_label<a class="headerlink" href="#surfer-utils-coord-to-label" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="surfer.utils.coord_to_label">
-<code class="descclassname">surfer.utils.</code><code class="descname">coord_to_label</code><span class="sig-paren">(</span><em>subject_id</em>, <em>coord</em>, <em>label</em>, <em>hemi='lh'</em>, <em>n_steps=30</em>, <em>map_surface='white'</em>, <em>coord_as_vert=False</em>, <em>units='mm'</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/utils.py#L619-L673"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.utils.coord_to_label" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">surfer.utils.</code><code class="sig-name descname">coord_to_label</code><span class="sig-paren">(</span><em class="sig-param">subject_id</em>, <em class="sig-param">coord</em>, <em class="sig-param">label</em>, <em class="sig-param">hemi='lh'</em>, <em class="sig-param">n_steps=30</em>, <em class="sig-param">map_surface='white'</em>, <em class="sig-param">coord_as_vert=False</em>, <em class="sig-param">units='mm'</em>, <em class="sig-param">verbose=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/utils.py#L645-L699"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.utils.coord_to_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create label from MNI coordinate</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>subject_id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
-<dd><p class="first last">Use if file is in register with subject’s orig.mgz</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>subject_id</strong><span class="classifier">string</span></dt><dd><p>Use if file is in register with subject’s orig.mgz</p>
 </dd>
-<dt><strong>coord</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array of size 3 | int</span></dt>
-<dd><p class="first last">One coordinate in MNI space or the vertex index.</p>
+<dt><strong>coord</strong><span class="classifier">numpy array of size 3 | int</span></dt><dd><p>One coordinate in MNI space or the vertex index.</p>
 </dd>
-<dt><strong>label</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Label name</p>
+<dt><strong>label</strong><span class="classifier">str</span></dt><dd><p>Label name</p>
 </dd>
-<dt><strong>hemi</strong> <span class="classifier-delimiter">:</span> <span class="classifier">[lh, rh]</span></dt>
-<dd><p class="first last">Hemisphere target</p>
+<dt><strong>hemi</strong><span class="classifier">[lh, rh]</span></dt><dd><p>Hemisphere target</p>
 </dd>
-<dt><strong>n_steps</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of dilation iterations</p>
+<dt><strong>n_steps</strong><span class="classifier">int</span></dt><dd><p>Number of dilation iterations</p>
 </dd>
-<dt><strong>map_surface</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The surface name used to find the closest point</p>
+<dt><strong>map_surface</strong><span class="classifier">str</span></dt><dd><p>The surface name used to find the closest point</p>
 </dd>
-<dt><strong>coord_as_vert</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">whether the coords parameter should be interpreted as vertex ids</p>
+<dt><strong>coord_as_vert</strong><span class="classifier">bool</span></dt><dd><p>whether the coords parameter should be interpreted as vertex ids</p>
 </dd>
-<dt><strong>units</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Can be ‘m’ or ‘mm’ (default).</p>
+<dt><strong>units</strong><span class="classifier">str</span></dt><dd><p>Can be ‘m’ or ‘mm’ (default).</p>
 </dd>
-<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, str, int, or None</span></dt>
-<dd><p class="first last">If not None, override default verbose level (see surfer.verbose).</p>
+<dt><strong>verbose</strong><span class="classifier">bool, str, int, or None</span></dt><dd><p>If not None, override default verbose level (see surfer.verbose).</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <div class="section" id="examples-using-surfer-utils-coord-to-label">
 <h2>Examples using <code class="docutils literal notranslate"><span class="pre">surfer.utils.coord_to_label</span></code><a class="headerlink" href="#examples-using-surfer-utils-coord-to-label" title="Permalink to this headline">¶</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="Define a label that is centered on a specific vertex in the surface mesh. Plot that label and t..."><div class="figure" id="id1">
+<div class="sphx-glr-thumbcontainer" tooltip="Define a label that is centered on a specific vertex in the surface mesh. Plot that label and t..."><div class="figure align-default" id="id1">
 <img alt="../_images/sphx_glr_plot_label_foci_thumb.png" src="../_images/sphx_glr_plot_label_foci_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/plot_label_foci.html#sphx-glr-auto-examples-plot-label-foci-py"><span class="std std-ref">Generate Surface Labels</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/plot_label_foci.html#sphx-glr-auto-examples-plot-label-foci-py"><span class="std std-ref">Generate Surface Labels</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div><div style='clear:both'></div></div>
 </div>
@@ -140,15 +132,18 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
+          <a href="../changes.html" title="Changelog"
+             >next</a> |</li>
+        <li class="right" >
           <a href="surfer.io.read_stc.html" title="surfer.io.read_stc"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../python_reference.html" >Python API Reference</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2012-2018, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/b888962.
+        &#169; Copyright 2012-2020, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0+/4499fda.
     </div>
   </body>
 </html>

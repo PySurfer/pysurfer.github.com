@@ -1,20 +1,20 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.9.0 documentation</title>
+    <meta charset="utf-8" />
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.10.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="rotate_animation.html" title="Animate brain and save movie"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Example gallery</a> &#187;</li> 
       </ul>
     </div>
@@ -53,13 +53,11 @@
   <p class="topless"><a href="save_views.html"
                         title="next chapter">Save a set of views</a></p>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -73,33 +71,33 @@
           <div class="body" role="main">
             
   <div class="sphx-glr-download-link-note admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Click <span class="xref std std-ref">here</span> to download the full example code</p>
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-save-movie-py"><span class="std std-ref">here</span></a>     to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="create-movie-from-meg-inverse-solution">
 <span id="sphx-glr-auto-examples-save-movie-py"></span><h1>Create movie from  MEG inverse solution<a class="headerlink" href="#create-movie-from-meg-inverse-solution" title="Permalink to this headline">¶</a></h1>
 <p>Data were computed using mne-python (<a class="reference external" href="http://martinos.org/mne">http://martinos.org/mne</a>)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a>
-<span class="kn">from</span> <span class="nn">surfer.io</span> <span class="kn">import</span> <a href="../generated/surfer.io.read_stc.html#surfer.io.read_stc" title="View documentation for surfer.io.read_stc"><span class="n">read_stc</span></a>
+<span class="kn">from</span> <span class="nn">surfer</span> <span class="k">import</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Brain</span></a>
+<span class="kn">from</span> <span class="nn">surfer.io</span> <span class="k">import</span> <a href="../generated/surfer.io.read_stc.html#surfer.io.read_stc" title="surfer.io.read_stc" class="sphx-glr-backref-module-surfer-io sphx-glr-backref-type-py-function"><span class="n">read_stc</span></a>
 
-<span class="k">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">create Brain object for visualization</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span> <span class="o">=</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a><span class="p">(</span><span class="s1">&#39;fsaverage&#39;</span><span class="p">,</span> <span class="s1">&#39;split&#39;</span><span class="p">,</span> <span class="s1">&#39;inflated&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">400</span><span class="p">))</span>
+<span class="n">brain</span> <span class="o">=</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Brain</span></a><span class="p">(</span><span class="s1">&#39;fsaverage&#39;</span><span class="p">,</span> <span class="s1">&#39;split&#39;</span><span class="p">,</span> <span class="s1">&#39;inflated&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">400</span><span class="p">))</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">read and display MNE dSPM inverse solution</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="n">stc_fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;example_data&#39;</span><span class="p">,</span> <span class="s1">&#39;meg_source_estimate-</span><span class="si">%s</span><span class="s1">.stc&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">hemi</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;lh&#39;</span><span class="p">,</span> <span class="s1">&#39;rh&#39;</span><span class="p">]:</span>
-    <span class="n">stc</span> <span class="o">=</span> <a href="../generated/surfer.io.read_stc.html#surfer.io.read_stc" title="View documentation for surfer.io.read_stc"><span class="n">read_stc</span></a><span class="p">(</span><span class="n">stc_fname</span> <span class="o">%</span> <span class="n">hemi</span><span class="p">)</span>
+    <span class="n">stc</span> <span class="o">=</span> <a href="../generated/surfer.io.read_stc.html#surfer.io.read_stc" title="surfer.io.read_stc" class="sphx-glr-backref-module-surfer-io sphx-glr-backref-type-py-function"><span class="n">read_stc</span></a><span class="p">(</span><span class="n">stc_fname</span> <span class="o">%</span> <span class="n">hemi</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">stc</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
-    <span class="n">times</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html#numpy.arange" title="View documentation for numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">stc</span><span class="p">[</span><span class="s1">&#39;tstep&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">stc</span><span class="p">[</span><span class="s1">&#39;tmin&#39;</span><span class="p">]</span>
+    <span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">stc</span><span class="p">[</span><span class="s1">&#39;tstep&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">stc</span><span class="p">[</span><span class="s1">&#39;tmin&#39;</span><span class="p">]</span>
     <span class="n">brain</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;hot&#39;</span><span class="p">,</span> <span class="n">vertices</span><span class="o">=</span><span class="n">stc</span><span class="p">[</span><span class="s1">&#39;vertices&#39;</span><span class="p">],</span>
                    <span class="n">smoothing_steps</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="n">times</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="n">hemi</span><span class="p">,</span>
                    <span class="n">time_label</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> ms&#39;</span> <span class="o">%</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">)))</span>
@@ -107,7 +105,7 @@
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">scale colormap</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">scale_data_colormap</span><span class="p">(</span><span class="n">fmin</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">fmid</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">fmax</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">scale_data_colormap</span><span class="p">(</span><span class="n">fmin</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">fmid</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">fmax</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Save a movie. Use a large value for time_dilation because the sample stc only</span>
@@ -118,15 +116,16 @@
 <span class="n">brain</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong>
-.. _sphx_glr_download_auto_examples_save_movie.py:</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container">
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-save-movie-py">
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../_downloads/6ecf8d80234e2060ced751ba7906a5f8/save_movie.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">save_movie.py</span></code></a></div>
-<div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../_downloads/803e8c25a43975adb6ab0977eaaa9a4f/save_movie.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">save_movie.ipynb</span></code></a></div>
+<p><a class="reference download internal" download="" href="../_downloads/a05b2bfc6ffcf7bf5f49e43c376d77bd/save_movie.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">save_movie.py</span></code></a></p>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/f653a551afb091db8f6fdfc1b8cbc197/save_movie.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">save_movie.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 
 
@@ -147,13 +146,13 @@
         <li class="right" >
           <a href="rotate_animation.html" title="Animate brain and save movie"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >Example gallery</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2012-2018, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/b888962.
+        &#169; Copyright 2012-2020, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0+/4499fda.
     </div>
   </body>
 </html>

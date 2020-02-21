@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.10.0 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery-dataframe.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="surfer.utils.coord_to_label" href="generated/surfer.utils.coord_to_label.html" />
+<link rel="stylesheet" href="_static/navy.css " type="text/css" />
+
+  </head><body>
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+ <a href="index.html">
+  <img src="_static/banner.png" alt="PySurfer logo" height=180px width=600px border="0" />
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="generated/surfer.utils.coord_to_label.html" title="surfer.utils.coord_to_label"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PySurfer 0.10.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#development-version-0-10-dev0">Development version (0.10.dev0)</a></li>
+<li><a class="reference internal" href="#version-0-9">Version 0.9</a></li>
+<li><a class="reference internal" href="#version-0-8">Version 0.8</a></li>
+<li><a class="reference internal" href="#version-0-7">Version 0.7</a></li>
+<li><a class="reference internal" href="#version-0-6">Version 0.6</a></li>
+<li><a class="reference internal" href="#version-0-5">Version 0.5</a></li>
+<li><a class="reference internal" href="#version-0-4">Version 0.4</a><ul>
+<li><a class="reference internal" href="#enhancements">Enhancements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-0-3-1">Version 0.3.1</a><ul>
+<li><a class="reference internal" href="#fixes">Fixes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-0-3">Version 0.3</a><ul>
+<li><a class="reference internal" href="#id1">Enhancements</a></li>
+<li><a class="reference internal" href="#id2">Fixes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="generated/surfer.utils.coord_to_label.html"
+                        title="previous chapter">surfer.utils.coord_to_label</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="development-version-0-10-dev0">
+<h2>Development version (0.10.dev0)<a class="headerlink" href="#development-version-0-10-dev0" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Added an option to smooth to nearest vertex in <a class="reference internal" href="generated/surfer.Brain.html#surfer.Brain.add_data" title="surfer.Brain.add_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Brain.add_data()</span></code></a> using
+<code class="docutils literal notranslate"><span class="pre">smoothing_steps='nearest'</span></code></p></li>
+<li><p>Added options for using offscreen mode</p></li>
+<li><p>Improved integration with Jupyter notebook</p></li>
+<li><p>Avoided view changes when using <a class="reference internal" href="generated/surfer.Brain.html#surfer.Brain.add_foci" title="surfer.Brain.add_foci"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Brain.add_foci()</span></code></a></p></li>
+</ul>
+</div>
+<div class="section" id="version-0-9">
+<h2>Version 0.9<a class="headerlink" href="#version-0-9" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed transparency issues with colormaps with
+<a class="reference internal" href="generated/surfer.Brain.html#surfer.Brain.scale_data_colormap" title="surfer.Brain.scale_data_colormap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Brain.scale_data_colormap()</span></code></a></p></li>
+<li><p>Added an example of using custom colors</p></li>
+<li><p>Added options for choosing units for <a class="reference internal" href="generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain"><code class="xref py py-class docutils literal notranslate"><span class="pre">Brain</span></code></a> (<code class="docutils literal notranslate"><span class="pre">m</span></code> or <code class="docutils literal notranslate"><span class="pre">mm</span></code>)</p></li>
+</ul>
+</div>
+<div class="section" id="version-0-8">
+<h2>Version 0.8<a class="headerlink" href="#version-0-8" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The surface geometry that is displayed can now be changed after initializing
+a <code class="docutils literal notranslate"><span class="pre">Brain</span></code> instance with e.g. <code class="docutils literal notranslate"><span class="pre">brain.set_surf(&quot;smoothwm&quot;)</span></code>.</p></li>
+<li><p>Allowed PySurfer to use custom matplotlib colormap objects or the names of
+custom colormaps that have been registered with matplotlib.</p></li>
+<li><p>Added four new colormaps from <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>: <code class="docutils literal notranslate"><span class="pre">rocket</span></code>, <code class="docutils literal notranslate"><span class="pre">mako</span></code>, <code class="docutils literal notranslate"><span class="pre">icefire</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">vlag</span></code>.</p></li>
+<li><p>Terrain interaction is now possible via the <code class="docutils literal notranslate"><span class="pre">interaction</span></code> keyword argument.</p></li>
+<li><p>An API reference page is now available.</p></li>
+<li><p>Support is now provided for visualizing vector-valued (3 values per vertex)
+data.</p></li>
+</ul>
+</div>
+<div class="section" id="version-0-7">
+<h2>Version 0.7<a class="headerlink" href="#version-0-7" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Support for Python 3.3 and up.</p></li>
+<li><p>A new <code class="docutils literal notranslate"><span class="pre">alpha</span></code> keyword to the <code class="docutils literal notranslate"><span class="pre">Brain</span></code> constructor now controls
+opacity of the rendered brain surface.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">curv</span></code> keyword to the <code class="docutils literal notranslate"><span class="pre">Brain</span></code> constructor has been
+deprecated. To replicate previous behavior when <code class="docutils literal notranslate"><span class="pre">curv</span></code> was set to
+<code class="docutils literal notranslate"><span class="pre">True</span></code> simply omit the <code class="docutils literal notranslate"><span class="pre">curv</span></code> keyword. To replicate previous
+behavior when <code class="docutils literal notranslate"><span class="pre">curv</span></code> was set to <code class="docutils literal notranslate"><span class="pre">False</span></code>, simply set the
+<code class="docutils literal notranslate"><span class="pre">cortex</span></code> keyword to None. To ease transition the <code class="docutils literal notranslate"><span class="pre">curv</span></code> argument
+will still be caught and processed, but it will be removed in a
+future release.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">cortex</span></code> keyword to the <code class="docutils literal notranslate"><span class="pre">Brain</span></code> constructor now also accepts
+a valid color specification (such as a 3-tuple with RGB values or a
+color name) to render the cortical surface in that color without
+rendering binary curvature values. Additionally it now also accepts
+a dictionary with keyword arguments that are passed on to the call
+to <code class="docutils literal notranslate"><span class="pre">mlab.pipeline.surface</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Brain.save_movie</span></code> now uses the <code class="docutils literal notranslate"><span class="pre">imageio</span></code> library, eliminating the need
+to manually install <code class="docutils literal notranslate"><span class="pre">ffmpeg</span></code>. <code class="docutils literal notranslate"><span class="pre">imageio</span></code> has been added as an optional
+dependency which can be installed with
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pysurfer[save_movie]</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Brain.save_image</span></code> now has the option to save with alpha channel and
+antialiasing.</p></li>
+</ul>
+</div>
+<div class="section" id="version-0-6">
+<h2>Version 0.6<a class="headerlink" href="#version-0-6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Values that were previously selected using a <code class="docutils literal notranslate"><span class="pre">config_opts</span></code>
+dictionary in the <code class="docutils literal notranslate"><span class="pre">Brain</span></code> constructor are now keyword arguments.
+This should make it easier to use tab-completion in IPython, and will
+generally simplify your scripts. To ease transition, a <code class="docutils literal notranslate"><span class="pre">config_opts</span></code>
+argument will still be caught, and its entries will be used (overriding
+the keyword arguments), but it will be removed in a future release.</p></li>
+<li><p>The ability to set default values in a config file has been removed.
+While convenient, this approach encourages code that is not fully
+reproducible. While existing code that was written expecting a config
+file will still run, the visualization will fall back to default values.
+These should be updated directly in your plotting scripts.</p></li>
+<li><p>Figure size is now specified only through the <code class="docutils literal notranslate"><span class="pre">size</span></code> keyword argument
+of <a class="reference internal" href="generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain"><code class="xref py py-class docutils literal notranslate"><span class="pre">Brain</span></code></a>. To make a rectangular window, pass a <code class="docutils literal notranslate"><span class="pre">(width,</span> <span class="pre">height)</span></code>
+tuple. Passing a single value to <code class="docutils literal notranslate"><span class="pre">size</span></code> will still make a square window.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">cortex</span></code> keyword argument can now be a mayavi colormap name or
+a <code class="docutils literal notranslate"><span class="pre">(colormap,</span> <span class="pre">min,</span> <span class="pre">max,</span> <span class="pre">reverse)</span></code> tuple for full control.</p></li>
+<li><p>Morphometry plotting was made more flexible with the ability to pass
+a specific colormap and anchor points for that colormap. Additionally,
+the default anchor points now use robust statistics to give better
+values.</p></li>
+<li><p>Contour overlay plotting was made more flexible by adding keyword arguments
+to control whether a colorbar should be shown and whether existing contour
+overlays should be removed before plotting.</p></li>
+</ul>
+</div>
+<div class="section" id="version-0-5">
+<h2>Version 0.5<a class="headerlink" href="#version-0-5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Added control over the width of outlines when plotting the borders of
+annotations or labels.</p></li>
+<li><p>The visual display of the surfaces was improved by using surface normals.</p></li>
+<li><p>Made colormap specification in Brain.add_data and Brain.add_contour_overlay
+more flexible, with better defaults.</p></li>
+<li><p>Brain.save_montage() can now produce 2d grids of views in addition to
+horizontal and vertical arrangements.</p></li>
+<li><p>Fixed some installation issues and added explicit checks for dependencies
+on install.</p></li>
+<li><p>Updated the installation docs with information about getting PySurfer
+running on OSX, and changed the official environment recommendation to
+Anaconda.</p></li>
+</ul>
+</div>
+<div class="section" id="version-0-4">
+<h2>Version 0.4<a class="headerlink" href="#version-0-4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enhancements">
+<h3>Enhancements<a class="headerlink" href="#enhancements" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Display data from both hemispheres simultaneously</p></li>
+<li><p>Display multiple views simultaneously</p></li>
+<li><p>Toggling Mayavi toolbars</p></li>
+<li><p>Use nibabel for IO functions</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="version-0-3-1">
+<h2>Version 0.3.1<a class="headerlink" href="#version-0-3-1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fixes">
+<h3>Fixes<a class="headerlink" href="#fixes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Reverted change in io.py that broke Python 2.6 compatibility</p></li>
+<li><p>Updated traitsui import while keeping backgrounds compatibility</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="version-0-3">
+<h2>Version 0.3<a class="headerlink" href="#version-0-3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Enhancements<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>TimeViewer GUI to control data exploration in the time dimension</p></li>
+<li><p>Support for reading and visualizing MEG data from MNE</p></li>
+<li><p>Function to project volume-based data using mri_vol2surf</p></li>
+<li><p>Label routines can read scalar data and threshold visualization</p></li>
+<li><p>Utility function to smooth overlay data along the cortical manifold</p></li>
+<li><p>Example for displaying parcellation-based ROI analysis results</p></li>
+<li><p>Example for displaying ROI labels</p></li>
+<li><p>Example for plotting probabilistic labels</p></li>
+<li><p>Improved color flexibility using matplotlib for many visualization modes</p></li>
+<li><p>Exposed alpha channel for many visualization modes</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>Fixes<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Big-endian overlay data should now display properly on 64-bit systems.</p></li>
+<li><p>Colorbar text displays properly on light backgrounds</p></li>
+<li><p>Lights are oriented depending on hemisphere so surfaces are equally lit</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="generated/surfer.utils.coord_to_label.html" title="surfer.utils.coord_to_label"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PySurfer 0.10.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2012-2020, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0+/4499fda.
+    </div>
+  </body>
+</html>

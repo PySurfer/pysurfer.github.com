@@ -1,20 +1,20 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.9.0 documentation</title>
+    <meta charset="utf-8" />
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.10.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="plot_label.html" title="Display ROI Labels"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Example gallery</a> &#187;</li> 
       </ul>
     </div>
@@ -53,13 +53,11 @@
   <p class="topless"><a href="plot_meg_inverse_solution.html"
                         title="next chapter">Plot MEG inverse solution</a></p>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -73,8 +71,8 @@
           <div class="body" role="main">
             
   <div class="sphx-glr-download-link-note admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Click <span class="xref std std-ref">here</span> to download the full example code</p>
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-plot-label-foci-py"><span class="std std-ref">here</span></a>     to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="generate-surface-labels">
 <span id="sphx-glr-auto-examples-plot-label-foci-py"></span><h1>Generate Surface Labels<a class="headerlink" href="#generate-surface-labels" title="Permalink to this headline">¶</a></h1>
@@ -88,21 +86,23 @@ Saving label : example_data/coord-lh.label
 Updating smoothing matrix, be patient..
 Smoothing matrix creation, step 1
 Saving label : example_data/coord-lh.label
+
+((180.0, 39.99999999999999, 0.42999999999999994, array([0., 0., 0.])), 90.00000000000001)
 </pre></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">surfer</span> <span class="kn">import</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a><span class="p">,</span> <span class="n">utils</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">surfer</span> <span class="k">import</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-class"><span class="n">Brain</span></a><span class="p">,</span> <span class="n">utils</span>
 
-<span class="k">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
 
 <span class="n">subject_id</span> <span class="o">=</span> <span class="s2">&quot;fsaverage&quot;</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Bring up the visualization.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span> <span class="o">=</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="View documentation for surfer.Brain"><span class="n">Brain</span></a><span class="p">(</span><span class="n">subject_id</span><span class="p">,</span> <span class="s2">&quot;lh&quot;</span><span class="p">,</span> <span class="s2">&quot;inflated&quot;</span><span class="p">,</span> <span class="n">cortex</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="bp">True</span><span class="p">),</span>
+<a href="../generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">brain</span></a> <span class="o">=</span> <a href="../generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-class"><span class="n">Brain</span></a><span class="p">(</span><span class="n">subject_id</span><span class="p">,</span> <span class="s2">&quot;lh&quot;</span><span class="p">,</span> <span class="s2">&quot;inflated&quot;</span><span class="p">,</span> <span class="n">cortex</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
               <span class="n">units</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
@@ -116,15 +116,15 @@ Saving label : example_data/coord-lh.label
 <span class="sd">coordinate in the white surface mesh. The `n_steps` argument controls the size</span>
 <span class="sd">of the resulting label.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<a href="../generated/surfer.utils.coord_to_label.html#surfer.utils.coord_to_label" title="View documentation for surfer.utils.coord_to_label"><span class="n">utils</span><span class="o">.</span><span class="n">coord_to_label</span></a><span class="p">(</span><span class="n">subject_id</span><span class="p">,</span> <span class="n">coord</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;example_data/coord&#39;</span><span class="p">,</span>
+<a href="../generated/surfer.utils.coord_to_label.html#surfer.utils.coord_to_label" title="surfer.utils.coord_to_label" class="sphx-glr-backref-module-surfer-utils sphx-glr-backref-type-py-function"><span class="n">utils</span><span class="o">.</span><span class="n">coord_to_label</span></a><span class="p">(</span><span class="n">subject_id</span><span class="p">,</span> <span class="n">coord</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;example_data/coord&#39;</span><span class="p">,</span>
                      <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;lh&#39;</span><span class="p">,</span> <span class="n">n_steps</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">map_surface</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">add_label</span><span class="p">(</span><span class="s1">&#39;example_data/coord-lh.label&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;darkseagreen&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">8</span><span class="p">)</span>
+<a href="../generated/surfer.Brain.html#surfer.Brain.add_label" title="surfer.Brain.add_label" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-method"><span class="n">brain</span><span class="o">.</span><span class="n">add_label</span></a><span class="p">(</span><span class="s1">&#39;example_data/coord-lh.label&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;darkseagreen&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">8</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Now we plot the focus on the inflated surface at the vertex identified in the</span>
 <span class="sd">previous step.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">add_foci</span><span class="p">([</span><span class="n">coord</span><span class="p">],</span> <span class="n">map_surface</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;mediumseagreen&quot;</span><span class="p">)</span>
+<a href="../generated/surfer.Brain.html#surfer.Brain.add_foci" title="surfer.Brain.add_foci" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-method"><span class="n">brain</span><span class="o">.</span><span class="n">add_foci</span></a><span class="p">([</span><span class="n">coord</span><span class="p">],</span> <span class="n">map_surface</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;mediumseagreen&quot;</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">We can also do this using a vertex index, perhaps defined as the peak</span>
@@ -133,34 +133,35 @@ Saving label : example_data/coord-lh.label
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="n">coord</span> <span class="o">=</span> <span class="mi">0</span>
 
-<a href="../generated/surfer.utils.coord_to_label.html#surfer.utils.coord_to_label" title="View documentation for surfer.utils.coord_to_label"><span class="n">utils</span><span class="o">.</span><span class="n">coord_to_label</span></a><span class="p">(</span><span class="n">subject_id</span><span class="p">,</span> <span class="n">coord</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;example_data/coord&#39;</span><span class="p">,</span>
+<a href="../generated/surfer.utils.coord_to_label.html#surfer.utils.coord_to_label" title="surfer.utils.coord_to_label" class="sphx-glr-backref-module-surfer-utils sphx-glr-backref-type-py-function"><span class="n">utils</span><span class="o">.</span><span class="n">coord_to_label</span></a><span class="p">(</span><span class="n">subject_id</span><span class="p">,</span> <span class="n">coord</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;example_data/coord&#39;</span><span class="p">,</span>
                      <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;lh&#39;</span><span class="p">,</span> <span class="n">n_steps</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">map_surface</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
-                     <span class="n">coord_as_vert</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">add_label</span><span class="p">(</span><span class="s1">&#39;example_data/coord-lh.label&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;royalblue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">8</span><span class="p">)</span>
+                     <span class="n">coord_as_vert</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a href="../generated/surfer.Brain.html#surfer.Brain.add_label" title="surfer.Brain.add_label" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-method"><span class="n">brain</span><span class="o">.</span><span class="n">add_label</span></a><span class="p">(</span><span class="s1">&#39;example_data/coord-lh.label&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;royalblue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">8</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Now we plot the foci on the inflated surface. We will map the foci onto the</span>
 <span class="sd">surface by finding the vertex on the &quot;white&quot; mesh that is closest to the</span>
 <span class="sd">coordinate of the point we want to display.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">add_foci</span><span class="p">([</span><span class="n">coord</span><span class="p">],</span> <span class="n">map_surface</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">coords_as_verts</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+<a href="../generated/surfer.Brain.html#surfer.Brain.add_foci" title="surfer.Brain.add_foci" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-method"><span class="n">brain</span><span class="o">.</span><span class="n">add_foci</span></a><span class="p">([</span><span class="n">coord</span><span class="p">],</span> <span class="n">map_surface</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">coords_as_verts</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                <span class="n">color</span><span class="o">=</span><span class="s2">&quot;mediumblue&quot;</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Set the camera position to show the extent of the labels.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">brain</span><span class="o">.</span><span class="n">show_view</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">elevation</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mf">0.430</span><span class="p">))</span>
+<a href="../generated/surfer.Brain.html#surfer.Brain.show_view" title="surfer.Brain.show_view" class="sphx-glr-backref-module-surfer sphx-glr-backref-type-py-method"><span class="n">brain</span><span class="o">.</span><span class="n">show_view</span></a><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">elevation</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mf">0.430</span><span class="p">))</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong>
-.. _sphx_glr_download_auto_examples_plot_label_foci.py:</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container">
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.346 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-label-foci-py">
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../_downloads/1eff730ee873c6668e34fd405d34dca8/plot_label_foci.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_label_foci.py</span></code></a></div>
-<div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../_downloads/d20daf9142648ab93b57b91d39849c19/plot_label_foci.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_label_foci.ipynb</span></code></a></div>
+<p><a class="reference download internal" download="" href="../_downloads/32b48d33e0c415313bb95248739b01b5/plot_label_foci.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_label_foci.py</span></code></a></p>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/66aaeedf9d9b27bf7d55cd48781a2147/plot_label_foci.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_label_foci.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 
 
@@ -181,13 +182,13 @@ Saving label : example_data/coord-lh.label
         <li class="right" >
           <a href="plot_label.html" title="Display ROI Labels"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >Example gallery</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2012-2018, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/b888962.
+        &#169; Copyright 2012-2020, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0+/4499fda.
     </div>
   </body>
 </html>

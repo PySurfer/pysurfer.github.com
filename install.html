@@ -1,20 +1,20 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.9.0 documentation</title>
+    <meta charset="utf-8" />
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.10.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery-dataframe.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="intro.html" title="What is PySurfer?"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">PySurfer 0.9.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">PySurfer 0.10.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -61,13 +61,11 @@
   <p class="topless"><a href="auto_examples/index.html"
                         title="next chapter">Example gallery</a></p>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -110,11 +108,11 @@ install from your local source directory:</p>
 (Older Python 3 versions will probably work, but are not tested.)</p>
 <p>To use PySurfer, you will need to have the following Python packages:</p>
 <ul class="simple">
-<li><a class="reference external" href="http://www.scipy.org/NumPy">numpy</a></li>
-<li><a class="reference external" href="http://www.scipy.org">scipy</a></li>
-<li><a class="reference external" href="http://nipy.sourceforge.net/nibabel/">nibabel</a></li>
-<li><a class="reference external" href="http://mayavi.sourceforge.net/">mayavi</a></li>
-<li><a class="reference external" href="http://matplotlib.sourceforge.net">matplotlib</a></li>
+<li><p><a class="reference external" href="http://www.scipy.org/NumPy">numpy</a></p></li>
+<li><p><a class="reference external" href="http://www.scipy.org">scipy</a></p></li>
+<li><p><a class="reference external" href="http://nipy.sourceforge.net/nibabel/">nibabel</a></p></li>
+<li><p><a class="reference external" href="http://mayavi.sourceforge.net/">mayavi</a></p></li>
+<li><p><a class="reference external" href="http://matplotlib.sourceforge.net">matplotlib</a></p></li>
 </ul>
 <p>Some input/output functions also make use of the Python Imaging Library (<a class="reference external" href="http://www.pythonware.com/products/pil/">PIL</a>)
 and <code class="docutils literal notranslate"><span class="pre">imageio</span></code>, although they are not mandatory.</p>
@@ -146,6 +144,15 @@ notebook), you have to activate the correct GUI backend, which is probably qt:</
 </div>
 <p>This will allow you to have an open PySurfer window while still being able to
 execute code in the console/notebook.</p>
+<p>It is also possible to embed the PySurfer visualization into a Jupyter notebook.
+This is achieved by leveraging <a class="reference external" href="https://docs.enthought.com/mayavi/mayavi/tips.html#using-mayavi-in-jupyter-notebooks">Mayavi’s notebook integration</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mayavi</span> <span class="k">import</span> <span class="n">mlab</span>
+<span class="n">mlab</span><span class="o">.</span><span class="n">init_notebook</span><span class="p">(</span><span class="n">backend</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">backend</span></code> parameter can either be <code class="docutils literal notranslate"><span class="pre">'png'</span></code> to render the visualization
+as a static PNG image, or <code class="docutils literal notranslate"><span class="pre">'x3d'</span></code> to render it using
+<a class="reference external" href="https://www.x3dom.org">X3D</a> (still experimental).</p>
 <p>If you are having trouble getting started using PySurfer, please describe the problem on the <a class="reference external" href="https://mail.python.org/mailman/listinfo/neuroimaging">nipy mailing list</a>.</p>
 </div>
 </div>
@@ -168,12 +175,12 @@ execute code in the console/notebook.</p>
         <li class="right" >
           <a href="intro.html" title="What is PySurfer?"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">PySurfer 0.9.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">PySurfer 0.10.0 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2012-2018, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/b888962.
+        &#169; Copyright 2012-2020, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0+/4499fda.
     </div>
   </body>
 </html>

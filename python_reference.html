@@ -1,20 +1,20 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.9.0 documentation</title>
+    <meta charset="utf-8" />
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.10.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery-dataframe.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="documentation/split_brain.html" title="Working with a split-screen brain"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">PySurfer 0.9.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">PySurfer 0.10.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -52,13 +52,11 @@
   <p class="topless"><a href="generated/surfer.Brain.html"
                         title="next chapter">surfer.Brain</a></p>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -76,63 +74,63 @@
 <p>This is the reference for classes (<code class="docutils literal notranslate"><span class="pre">CamelCase</span></code> names) and functions
 (<code class="docutils literal notranslate"><span class="pre">underscore_case</span></code> names) of PySurfer.</p>
 <p><a class="reference internal" href="#module-surfer" title="surfer"><code class="xref py py-mod docutils literal notranslate"><span class="pre">surfer</span></code></a>:</p>
-<span class="target" id="module-surfer"></span><table border="1" class="longtable docutils">
+<span class="target" id="module-surfer"></span><table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Brain</span></code></a>(subject_id,&nbsp;hemi,&nbsp;surf[,&nbsp;title,&nbsp;…])</td>
-<td>Class for visualizing a brain using multiple views in mlab</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/surfer.Brain.html#surfer.Brain" title="surfer.Brain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Brain</span></code></a>(subject_id, hemi, surf[, title, …])</p></td>
+<td><p>Class for visualizing a brain using multiple views in mlab</p></td>
 </tr>
 </tbody>
 </table>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/surfer.TimeViewer.html#surfer.TimeViewer" title="surfer.TimeViewer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TimeViewer</span></code></a>(brain)</td>
-<td>TimeViewer object providing a GUI for visualizing time series</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/surfer.TimeViewer.html#surfer.TimeViewer" title="surfer.TimeViewer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TimeViewer</span></code></a>(brain)</p></td>
+<td><p>TimeViewer object providing a GUI for visualizing time series</p></td>
 </tr>
 </tbody>
 </table>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/surfer.project_volume_data.html#surfer.project_volume_data" title="surfer.project_volume_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">project_volume_data</span></code></a>(filepath,&nbsp;hemi[,&nbsp;…])</td>
-<td>Sample MRI volume onto cortical manifold.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/surfer.project_volume_data.html#surfer.project_volume_data" title="surfer.project_volume_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">project_volume_data</span></code></a>(filepath, hemi[, …])</p></td>
+<td><p>Sample MRI volume onto cortical manifold.</p></td>
 </tr>
 </tbody>
 </table>
 <p><a class="reference internal" href="#module-surfer.io" title="surfer.io"><code class="xref py py-mod docutils literal notranslate"><span class="pre">surfer.io</span></code></a>:</p>
-<span class="target" id="module-surfer.io"></span><table border="1" class="longtable docutils">
+<span class="target" id="module-surfer.io"></span><table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/surfer.io.read_scalar_data.html#surfer.io.read_scalar_data" title="surfer.io.read_scalar_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_scalar_data</span></code></a>(filepath)</td>
-<td>Load in scalar data from an image.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/surfer.io.read_scalar_data.html#surfer.io.read_scalar_data" title="surfer.io.read_scalar_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_scalar_data</span></code></a>(filepath)</p></td>
+<td><p>Load in scalar data from an image.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/surfer.io.read_stc.html#surfer.io.read_stc" title="surfer.io.read_stc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_stc</span></code></a>(filepath)</td>
-<td>Read an STC file from the MNE package</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/surfer.io.read_stc.html#surfer.io.read_stc" title="surfer.io.read_stc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_stc</span></code></a>(filepath)</p></td>
+<td><p>Read an STC file from the MNE package</p></td>
 </tr>
 </tbody>
 </table>
 <p><a class="reference internal" href="#module-surfer.utils" title="surfer.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">surfer.utils</span></code></a>:</p>
-<span class="target" id="module-surfer.utils"></span><table border="1" class="longtable docutils">
+<span class="target" id="module-surfer.utils"></span><table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/surfer.utils.coord_to_label.html#surfer.utils.coord_to_label" title="surfer.utils.coord_to_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coord_to_label</span></code></a>(subject_id,&nbsp;coord,&nbsp;label[,&nbsp;…])</td>
-<td>Create label from MNI coordinate</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/surfer.utils.coord_to_label.html#surfer.utils.coord_to_label" title="surfer.utils.coord_to_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coord_to_label</span></code></a>(subject_id, coord, label[, …])</p></td>
+<td><p>Create label from MNI coordinate</p></td>
 </tr>
 </tbody>
 </table>
@@ -156,12 +154,12 @@
         <li class="right" >
           <a href="documentation/split_brain.html" title="Working with a split-screen brain"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">PySurfer 0.9.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">PySurfer 0.10.0 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2012-2018, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/b888962.
+        &#169; Copyright 2012-2020, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0+/4499fda.
     </div>
   </body>
 </html>

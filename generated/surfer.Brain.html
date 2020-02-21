@@ -1,20 +1,20 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.9.0 documentation</title>
+    <meta charset="utf-8" />
+    <title>PySurfer Python Neuroimaging Visualization &#8212; PySurfer 0.10.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="../python_reference.html" title="Python API Reference"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../python_reference.html" accesskey="U">Python API Reference</a> &#187;</li> 
       </ul>
     </div>
@@ -53,13 +53,11 @@
   <p class="topless"><a href="surfer.TimeViewer.html"
                         title="next chapter">surfer.TimeViewer</a></p>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -76,344 +74,189 @@
 <h1>surfer.Brain<a class="headerlink" href="#surfer-brain" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="surfer.Brain">
-<em class="property">class </em><code class="descclassname">surfer.</code><code class="descname">Brain</code><span class="sig-paren">(</span><em>subject_id, hemi, surf, title=None, cortex='classic', alpha=1.0, size=800, background='black', foreground=None, figure=None, subjects_dir=None, views=['lat'], offset=True, show_toolbar=False, offscreen='auto', interaction='trackball', units='mm'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L298-L2765"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">surfer.</code><code class="sig-name descname">Brain</code><span class="sig-paren">(</span><em class="sig-param">subject_id, hemi, surf, title=None, cortex='classic', alpha=1.0, size=800, background='black', foreground=None, figure=None, subjects_dir=None, views=['lat'], offset=True, show_toolbar=False, offscreen='auto', interaction='trackball', units='mm'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L303-L2850"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class for visualizing a brain using multiple views in mlab</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>subject_id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">subject name in Freesurfer subjects dir</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>subject_id</strong><span class="classifier">str</span></dt><dd><p>subject name in Freesurfer subjects dir</p>
 </dd>
-<dt><strong>hemi</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">hemisphere id (ie ‘lh’, ‘rh’, ‘both’, or ‘split’). In the case
+<dt><strong>hemi</strong><span class="classifier">str</span></dt><dd><p>hemisphere id (ie ‘lh’, ‘rh’, ‘both’, or ‘split’). In the case
 of ‘both’, both hemispheres are shown in the same window.
 In the case of ‘split’ hemispheres are displayed side-by-side
 in different viewing panes.</p>
 </dd>
-<dt><strong>surf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">freesurfer surface mesh name (ie ‘white’, ‘inflated’, etc.)</p>
+<dt><strong>surf</strong><span class="classifier">str</span></dt><dd><p>freesurfer surface mesh name (ie ‘white’, ‘inflated’, etc.)</p>
 </dd>
-<dt><strong>title</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">title for the window</p>
+<dt><strong>title</strong><span class="classifier">str</span></dt><dd><p>title for the window</p>
 </dd>
-<dt><strong>cortex</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, tuple, dict, or None</span></dt>
-<dd><p class="first">Specifies how the cortical surface is rendered. Options:</p>
-<blockquote class="last">
+<dt><strong>cortex</strong><span class="classifier">str, tuple, dict, or None</span></dt><dd><p>Specifies how the cortical surface is rendered. Options:</p>
+<blockquote>
 <div><ol class="arabic simple">
-<li>The name of one of the preset cortex styles:
+<li><p>The name of one of the preset cortex styles:
 <code class="docutils literal notranslate"><span class="pre">'classic'</span></code> (default), <code class="docutils literal notranslate"><span class="pre">'high_contrast'</span></code>,
-<code class="docutils literal notranslate"><span class="pre">'low_contrast'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'bone'</span></code>.</li>
-<li>A color-like argument to render the cortex as a single
+<code class="docutils literal notranslate"><span class="pre">'low_contrast'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'bone'</span></code>.</p></li>
+<li><p>A color-like argument to render the cortex as a single
 color, e.g. <code class="docutils literal notranslate"><span class="pre">'red'</span></code> or <code class="docutils literal notranslate"><span class="pre">(0.1,</span> <span class="pre">0.4,</span> <span class="pre">1.)</span></code>. Setting
-this to <code class="docutils literal notranslate"><span class="pre">None</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></code>.</li>
-<li>The name of a colormap used to render binarized
-curvature values, e.g., <code class="docutils literal notranslate"><span class="pre">Grays</span></code>.</li>
-<li>A list of colors used to render binarized curvature
+this to <code class="docutils literal notranslate"><span class="pre">None</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></code>.</p></li>
+<li><p>The name of a colormap used to render binarized
+curvature values, e.g., <code class="docutils literal notranslate"><span class="pre">Grays</span></code>.</p></li>
+<li><p>A list of colors used to render binarized curvature
 values. Only the first and last colors are used. E.g.,
-[‘red’, ‘blue’] or [(1, 0, 0), (0, 0, 1)].</li>
-<li>A container with four entries for colormap (string
+[‘red’, ‘blue’] or [(1, 0, 0), (0, 0, 1)].</p></li>
+<li><p>A container with four entries for colormap (string
 specifiying the name of a colormap), vmin (float
 specifying the minimum value for the colormap), vmax
 (float specifying the maximum value for the colormap),
 and reverse (bool specifying whether the colormap
-should be reversed. E.g., <code class="docutils literal notranslate"><span class="pre">('Greys',</span> <span class="pre">-1,</span> <span class="pre">2,</span> <span class="pre">False)</span></code>.</li>
-<li>A dict of keyword arguments that is passed on to the
-call to surface.</li>
+should be reversed. E.g., <code class="docutils literal notranslate"><span class="pre">('Greys',</span> <span class="pre">-1,</span> <span class="pre">2,</span> <span class="pre">False)</span></code>.</p></li>
+<li><p>A dict of keyword arguments that is passed on to the
+call to surface.</p></li>
 </ol>
 </div></blockquote>
 </dd>
-<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float in [0, 1]</span></dt>
-<dd><p class="first last">Alpha level to control opacity of the cortical surface.</p>
+<dt><strong>alpha</strong><span class="classifier">float in [0, 1]</span></dt><dd><p>Alpha level to control opacity of the cortical surface.</p>
 </dd>
-<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or pair of floats</span></dt>
-<dd><p class="first last">the size of the window, in pixels. can be one number to specify
+<dt><strong>size</strong><span class="classifier">float or pair of floats</span></dt><dd><p>the size of the window, in pixels. can be one number to specify
 a square window, or the (width, height) of a rectangular window.</p>
 </dd>
-<dt><strong>background</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib color</span></dt>
-<dd><p class="first last">Color of the background.</p>
+<dt><strong>background</strong><span class="classifier">matplotlib color</span></dt><dd><p>Color of the background.</p>
 </dd>
-<dt><strong>foreground</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib color</span></dt>
-<dd><p class="first last">Color of the foreground (will be used for colorbars and text).
+<dt><strong>foreground</strong><span class="classifier">matplotlib color</span></dt><dd><p>Color of the foreground (will be used for colorbars and text).
 None (default) will use black or white depending on the value
 of <code class="docutils literal notranslate"><span class="pre">background</span></code>.</p>
 </dd>
-<dt><strong>figure</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of mayavi.core.scene.Scene | None | int</span></dt>
-<dd><p class="first last">If None (default), a new window will be created with the appropriate
+<dt><strong>figure</strong><span class="classifier">list of mayavi.core.scene.Scene | None | int</span></dt><dd><p>If None (default), a new window will be created with the appropriate
 views. For single view plots, the figure can be specified as int to
 retrieve the corresponding Mayavi window.</p>
 </dd>
-<dt><strong>subjects_dir</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str | None</span></dt>
-<dd><p class="first last">If not None, this directory will be used as the subjects directory
+<dt><strong>subjects_dir</strong><span class="classifier">str | None</span></dt><dd><p>If not None, this directory will be used as the subjects directory
 instead of the value set using the SUBJECTS_DIR environment
 variable.</p>
 </dd>
-<dt><strong>views</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list | str</span></dt>
-<dd><p class="first last">views to use</p>
+<dt><strong>views</strong><span class="classifier">list | str</span></dt><dd><p>views to use</p>
 </dd>
-<dt><strong>offset</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">If True, aligs origin with medial wall. Useful for viewing inflated
+<dt><strong>offset</strong><span class="classifier">bool</span></dt><dd><p>If True, aligs origin with medial wall. Useful for viewing inflated
 surface where hemispheres typically overlap (Default: True)</p>
 </dd>
-<dt><strong>show_toolbar</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">If True, toolbars will be shown for each view.</p>
+<dt><strong>show_toolbar</strong><span class="classifier">bool</span></dt><dd><p>If True, toolbars will be shown for each view.</p>
 </dd>
-<dt><strong>offscreen</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool | str</span></dt>
-<dd><p class="first last">If True, rendering will be done offscreen (not shown). Useful
+<dt><strong>offscreen</strong><span class="classifier">bool | str</span></dt><dd><p>If True, rendering will be done offscreen (not shown). Useful
 mostly for generating images or screenshots, but can be buggy.
 Use at your own risk. Can be “auto” (default) to use
 <code class="docutils literal notranslate"><span class="pre">mlab.options.offscreen</span></code>.</p>
 </dd>
-<dt><strong>interaction</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Can be “trackball” (default) or “terrain”, i.e. a turntable-style
+<dt><strong>interaction</strong><span class="classifier">str</span></dt><dd><p>Can be “trackball” (default) or “terrain”, i.e. a turntable-style
 camera.</p>
 </dd>
-<dt><strong>units</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Can be ‘m’ or ‘mm’ (default).</p>
+<dt><strong>units</strong><span class="classifier">str</span></dt><dd><p>Can be ‘m’ or ‘mm’ (default).</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>annot</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">List of annotations.</p>
 </dd>
-<dt><strong>brains</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">List of the underlying brain instances.</p>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>annot</strong><span class="classifier">list</span></dt><dd><p>List of annotations.</p>
 </dd>
-<dt><strong>contour</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">List of the contours.</p>
+<dt><strong>brains</strong><span class="classifier">list</span></dt><dd><p>List of the underlying brain instances.</p>
 </dd>
-<dt><strong>foci</strong> <span class="classifier-delimiter">:</span> <span class="classifier">foci</span></dt>
-<dd><p class="first last">The foci.</p>
+<dt><strong>contour</strong><span class="classifier">list</span></dt><dd><p>List of the contours.</p>
 </dd>
-<dt><strong>labels</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
-<dd><p class="first last">The labels.</p>
+<dt><strong>foci</strong><span class="classifier">foci</span></dt><dd><p>The foci.</p>
 </dd>
-<dt><strong>overlays</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
-<dd><p class="first last">The overlays.</p>
+<dt><strong>labels</strong><span class="classifier">dict</span></dt><dd><p>The labels.</p>
 </dd>
-<dt><strong>texts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
-<dd><p class="first last">The text objects.</p>
+<dt><strong>overlays</strong><span class="classifier">dict</span></dt><dd><p>The overlays.</p>
+</dd>
+<dt><strong>texts</strong><span class="classifier">dict</span></dt><dd><p>The text objects.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.add_annotation" title="surfer.Brain.add_annotation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_annotation</span></code></a>(annot[,&nbsp;borders,&nbsp;alpha,&nbsp;…])</td>
-<td>Add an annotation file.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#surfer.Brain.add_contour_overlay" title="surfer.Brain.add_contour_overlay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_contour_overlay</span></code></a>(source[,&nbsp;min,&nbsp;max,&nbsp;…])</td>
-<td>Add a topographic contour overlay of the positive data.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.add_data" title="surfer.Brain.add_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_data</span></code></a>(array[,&nbsp;min,&nbsp;max,&nbsp;thresh,&nbsp;…])</td>
-<td>Display data from a numpy array on the surface.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#surfer.Brain.add_foci" title="surfer.Brain.add_foci"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_foci</span></code></a>(coords[,&nbsp;coords_as_verts,&nbsp;…])</td>
-<td>Add spherical foci, possibly mapping to displayed surf.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.add_label" title="surfer.Brain.add_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_label</span></code></a>(label[,&nbsp;color,&nbsp;alpha,&nbsp;…])</td>
-<td>Add an ROI label to the image.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#surfer.Brain.add_morphometry" title="surfer.Brain.add_morphometry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_morphometry</span></code></a>(measure[,&nbsp;grayscale,&nbsp;hemi,&nbsp;…])</td>
-<td>Add a morphometry overlay to the image.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.add_overlay" title="surfer.Brain.add_overlay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_overlay</span></code></a>(source[,&nbsp;min,&nbsp;max,&nbsp;sign,&nbsp;name,&nbsp;hemi])</td>
-<td>Add an overlay to the overlay dict from a file or array.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#surfer.Brain.add_text" title="surfer.Brain.add_text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_text</span></code></a>(x,&nbsp;y,&nbsp;text,&nbsp;name[,&nbsp;color,&nbsp;opacity,&nbsp;…])</td>
-<td>Add a text to the visualization</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.animate" title="surfer.Brain.animate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">animate</span></code></a>(views[,&nbsp;n_steps,&nbsp;fname,&nbsp;use_cache,&nbsp;…])</td>
-<td>Animate a rotation.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#surfer.Brain.close" title="surfer.Brain.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</td>
-<td>Close all figures and cleanup data structure.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.get_data_properties" title="surfer.Brain.get_data_properties"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_data_properties</span></code></a>()</td>
-<td>Get properties of the data shown</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#surfer.Brain.hide_colorbar" title="surfer.Brain.hide_colorbar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hide_colorbar</span></code></a>([row,&nbsp;col])</td>
-<td>Hide colorbar(s) for given plot</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.index_for_time" title="surfer.Brain.index_for_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index_for_time</span></code></a>(time[,&nbsp;rounding])</td>
-<td>Find the data time index closest to a specific time point.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#surfer.Brain.remove_data" title="surfer.Brain.remove_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_data</span></code></a>([hemi])</td>
-<td>Remove data shown with <code class="docutils literal notranslate"><span class="pre">Brain.add_data()</span></code>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.remove_foci" title="surfer.Brain.remove_foci"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_foci</span></code></a>([name])</td>
-<td>Remove foci added with <code class="docutils literal notranslate"><span class="pre">Brain.add_foci()</span></code>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#surfer.Brain.remove_labels" title="surfer.Brain.remove_labels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_labels</span></code></a>([labels,&nbsp;hemi])</td>
-<td>Remove one or more previously added labels from the image.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.reset_view" title="surfer.Brain.reset_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_view</span></code></a>()</td>
-<td>Orient camera to display original view</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#surfer.Brain.save_image" title="surfer.Brain.save_image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_image</span></code></a>(filename[,&nbsp;mode,&nbsp;antialiased])</td>
-<td>Save view from all panels to disk</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.save_image_sequence" title="surfer.Brain.save_image_sequence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_image_sequence</span></code></a>(time_idx,&nbsp;fname_pattern)</td>
-<td>Save a temporal image sequence</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#surfer.Brain.save_imageset" title="surfer.Brain.save_imageset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_imageset</span></code></a>(prefix,&nbsp;views[,&nbsp;filetype,&nbsp;…])</td>
-<td>Convenience wrapper for save_image</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.save_montage" title="surfer.Brain.save_montage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_montage</span></code></a>(filename[,&nbsp;order,&nbsp;orientation,&nbsp;…])</td>
-<td>Create a montage from a given order of images</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#surfer.Brain.save_movie" title="surfer.Brain.save_movie"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_movie</span></code></a>(fname[,&nbsp;time_dilation,&nbsp;tmin,&nbsp;…])</td>
-<td>Save a movie (for data with a time axis)</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.save_single_image" title="surfer.Brain.save_single_image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_single_image</span></code></a>(filename[,&nbsp;row,&nbsp;col])</td>
-<td>Save view from one panel to disk</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#surfer.Brain.scale_data_colormap" title="surfer.Brain.scale_data_colormap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale_data_colormap</span></code></a>(fmin,&nbsp;fmid,&nbsp;fmax,&nbsp;…[,&nbsp;…])</td>
-<td>Scale the data colormap.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.screenshot" title="surfer.Brain.screenshot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">screenshot</span></code></a>([mode,&nbsp;antialiased])</td>
-<td>Generate a screenshot of current view.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#surfer.Brain.screenshot_single" title="surfer.Brain.screenshot_single"><code class="xref py py-obj docutils literal notranslate"><span class="pre">screenshot_single</span></code></a>([mode,&nbsp;antialiased,&nbsp;row,&nbsp;col])</td>
-<td>Generate a screenshot of current view from a single panel.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.set_data_smoothing_steps" title="surfer.Brain.set_data_smoothing_steps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_data_smoothing_steps</span></code></a>(smoothing_steps[,&nbsp;…])</td>
-<td>Set the number of smoothing steps</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#surfer.Brain.set_data_time_index" title="surfer.Brain.set_data_time_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_data_time_index</span></code></a>(time_idx[,&nbsp;interpolation])</td>
-<td>Set the data time index to show</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.set_distance" title="surfer.Brain.set_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_distance</span></code></a>([distance])</td>
-<td>Set view distances for all brain plots to the same value</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#surfer.Brain.set_surf" title="surfer.Brain.set_surf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_surf</span></code></a>(surf)</td>
-<td>Change the surface geometry</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.set_time" title="surfer.Brain.set_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_time</span></code></a>(time)</td>
-<td>Set the data time index to the time point closest to time</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#surfer.Brain.show_colorbar" title="surfer.Brain.show_colorbar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_colorbar</span></code></a>([row,&nbsp;col])</td>
-<td>Show colorbar(s) for given plot</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.show_view" title="surfer.Brain.show_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_view</span></code></a>([view,&nbsp;roll,&nbsp;distance,&nbsp;row,&nbsp;col])</td>
-<td>Orient camera to display view</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#surfer.Brain.toggle_toolbars" title="surfer.Brain.toggle_toolbars"><code class="xref py py-obj docutils literal notranslate"><span class="pre">toggle_toolbars</span></code></a>([show])</td>
-<td>Toggle toolbar display</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#surfer.Brain.update_text" title="surfer.Brain.update_text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_text</span></code></a>(text,&nbsp;name[,&nbsp;row,&nbsp;col])</td>
-<td>Update text label</td>
-</tr>
-</tbody>
-</table>
-<dl class="attribute">
+</dd>
+</dl>
+<dl class="method">
 <dt id="surfer.Brain.__hash__">
-<code class="descname">__hash__</code><span class="sig-paren">(</span><em>$self</em>, <em>/</em><span class="sig-paren">)</span><a class="headerlink" href="#surfer.Brain.__hash__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__hash__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#surfer.Brain.__hash__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return hash(self).</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.add_annotation">
-<code class="descname">add_annotation</code><span class="sig-paren">(</span><em>annot</em>, <em>borders=True</em>, <em>alpha=1</em>, <em>hemi=None</em>, <em>remove_existing=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1191-L1292"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.add_annotation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_annotation</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">annot</em>, <em class="sig-param">borders=True</em>, <em class="sig-param">alpha=1</em>, <em class="sig-param">hemi=None</em>, <em class="sig-param">remove_existing=True</em>, <em class="sig-param">color=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1209-L1323"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.add_annotation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add an annotation file.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>annot</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str | tuple</span></dt>
-<dd><p class="first last">Either path to annotation file or annotation name. Alternatively,
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>annot</strong><span class="classifier">str | tuple</span></dt><dd><p>Either path to annotation file or annotation name. Alternatively,
 the annotation can be specified as a <code class="docutils literal notranslate"><span class="pre">(labels,</span> <span class="pre">ctab)</span></code> tuple per
 hemisphere, i.e. <code class="docutils literal notranslate"><span class="pre">annot=(labels,</span> <span class="pre">ctab)</span></code> for a single hemisphere
 or <code class="docutils literal notranslate"><span class="pre">annot=((lh_labels,</span> <span class="pre">lh_ctab),</span> <span class="pre">(rh_labels,</span> <span class="pre">rh_ctab))</span></code> for both
 hemispheres. <code class="docutils literal notranslate"><span class="pre">labels</span></code> and <code class="docutils literal notranslate"><span class="pre">ctab</span></code> should be arrays as returned
-by <a class="reference external" href="http://nipy.org/nibabel/reference/nibabel.freesurfer.html#nibabel.freesurfer.io.read_annot" title="(in NiBabel v2.3.1dev)"><code class="xref py py-func docutils literal notranslate"><span class="pre">nibabel.freesurfer.io.read_annot()</span></code></a>.</p>
+by <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.freesurfer.html#nibabel.freesurfer.io.read_annot" title="(in NiBabel v3.0.2dev)"><code class="xref py py-func docutils literal notranslate"><span class="pre">nibabel.freesurfer.io.read_annot()</span></code></a>.</p>
 </dd>
-<dt><strong>borders</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool | int</span></dt>
-<dd><p class="first last">Show only label borders. If int, specify the number of steps
+<dt><strong>borders</strong><span class="classifier">bool | int</span></dt><dd><p>Show only label borders. If int, specify the number of steps
 (away from the true border) along the cortical mesh to include
 as part of the border definition.</p>
 </dd>
-<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float in [0, 1]</span></dt>
-<dd><p class="first last">Alpha level to control opacity.</p>
+<dt><strong>alpha</strong><span class="classifier">float in [0, 1]</span></dt><dd><p>Alpha level to control opacity.</p>
 </dd>
-<dt><strong>hemi</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str | None</span></dt>
-<dd><p class="first last">If None, it is assumed to belong to the hemipshere being
+<dt><strong>hemi</strong><span class="classifier">str | None</span></dt><dd><p>If None, it is assumed to belong to the hemipshere being
 shown. If two hemispheres are being shown, data must exist
 for both hemispheres.</p>
 </dd>
-<dt><strong>remove_existing</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">If True (default), remove old annotations.</p>
+<dt><strong>remove_existing</strong><span class="classifier">bool</span></dt><dd><p>If True (default), remove old annotations.</p>
+</dd>
+<dt><strong>color</strong><span class="classifier">matplotlib-style color code</span></dt><dd><p>If used, show all annotations in the same (specified) color.
+Probably useful only when showing annotation borders.</p>
+</dd>
+<dt><strong>**kwargs</strong><span class="classifier">additional keyword arguments</span></dt><dd><p>These are passed to the underlying
+<code class="docutils literal notranslate"><span class="pre">mayavi.mlab.pipeline.surface</span></code> call.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.add_contour_overlay">
-<code class="descname">add_contour_overlay</code><span class="sig-paren">(</span><em>source</em>, <em>min=None</em>, <em>max=None</em>, <em>n_contours=7</em>, <em>line_width=1.5</em>, <em>colormap='YlOrRd_r'</em>, <em>hemi=None</em>, <em>remove_existing=True</em>, <em>colorbar=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1675-L1735"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.add_contour_overlay" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_contour_overlay</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">source</em>, <em class="sig-param">min=None</em>, <em class="sig-param">max=None</em>, <em class="sig-param">n_contours=7</em>, <em class="sig-param">line_width=1.5</em>, <em class="sig-param">colormap='YlOrRd_r'</em>, <em class="sig-param">hemi=None</em>, <em class="sig-param">remove_existing=True</em>, <em class="sig-param">colorbar=True</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1716-L1779"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.add_contour_overlay" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a topographic contour overlay of the positive data.</p>
 <p>Note: This visualization will look best when using the “low_contrast”
 cortical curvature colorscheme.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>source</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or array</span></dt>
-<dd><p class="first last">path to the overlay file or numpy array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>source</strong><span class="classifier">str or array</span></dt><dd><p>path to the overlay file or numpy array</p>
 </dd>
-<dt><strong>min</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">threshold for overlay display</p>
+<dt><strong>min</strong><span class="classifier">float</span></dt><dd><p>threshold for overlay display</p>
 </dd>
-<dt><strong>max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">saturation point for overlay display</p>
+<dt><strong>max</strong><span class="classifier">float</span></dt><dd><p>saturation point for overlay display</p>
 </dd>
-<dt><strong>n_contours</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">number of contours to use in the display</p>
+<dt><strong>n_contours</strong><span class="classifier">int</span></dt><dd><p>number of contours to use in the display</p>
 </dd>
-<dt><strong>line_width</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">width of contour lines</p>
+<dt><strong>line_width</strong><span class="classifier">float</span></dt><dd><p>width of contour lines</p>
 </dd>
-<dt><strong>colormap</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string, list of colors, or array</span></dt>
-<dd><p class="first last">name of matplotlib colormap to use, a list of matplotlib colors,
+<dt><strong>colormap</strong><span class="classifier">string, list of colors, or array</span></dt><dd><p>name of matplotlib colormap to use, a list of matplotlib colors,
 or a custom look up table (an n x 4 array coded with RBGA values
 between 0 and 255).</p>
 </dd>
-<dt><strong>hemi</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str | None</span></dt>
-<dd><p class="first last">If None, it is assumed to belong to the hemipshere being
+<dt><strong>hemi</strong><span class="classifier">str | None</span></dt><dd><p>If None, it is assumed to belong to the hemipshere being
 shown. If two hemispheres are being shown, an error will
 be thrown.</p>
 </dd>
-<dt><strong>remove_existing</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">If there is an existing contour overlay, remove it before plotting.</p>
+<dt><strong>remove_existing</strong><span class="classifier">bool</span></dt><dd><p>If there is an existing contour overlay, remove it before plotting.</p>
 </dd>
-<dt><strong>colorbar</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">If True, show the colorbar for the scalar value.</p>
+<dt><strong>colorbar</strong><span class="classifier">bool</span></dt><dd><p>If True, show the colorbar for the scalar value.</p>
+</dd>
+<dt><strong>**kwargs</strong><span class="classifier">additional keyword arguments</span></dt><dd><p>These are passed to the underlying
+<code class="docutils literal notranslate"><span class="pre">mayavi.mlab.pipeline.contour_surface</span></code> call.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.add_data">
-<code class="descname">add_data</code><span class="sig-paren">(</span><em>array</em>, <em>min=None</em>, <em>max=None</em>, <em>thresh=None</em>, <em>colormap='auto'</em>, <em>alpha=1</em>, <em>vertices=None</em>, <em>smoothing_steps=20</em>, <em>time=None</em>, <em>time_label='time index=%d'</em>, <em>colorbar=True</em>, <em>hemi=None</em>, <em>remove_existing=False</em>, <em>time_label_size=14</em>, <em>initial_time=None</em>, <em>scale_factor=None</em>, <em>vector_alpha=None</em>, <em>mid=None</em>, <em>center=None</em>, <em>transparent=False</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/utils.py#L947-L1189"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.add_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_data</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">array</em>, <em class="sig-param">min=None</em>, <em class="sig-param">max=None</em>, <em class="sig-param">thresh=None</em>, <em class="sig-param">colormap='auto'</em>, <em class="sig-param">alpha=1</em>, <em class="sig-param">vertices=None</em>, <em class="sig-param">smoothing_steps=20</em>, <em class="sig-param">time=None</em>, <em class="sig-param">time_label='time index=%d'</em>, <em class="sig-param">colorbar=True</em>, <em class="sig-param">hemi=None</em>, <em class="sig-param">remove_existing=False</em>, <em class="sig-param">time_label_size=14</em>, <em class="sig-param">initial_time=None</em>, <em class="sig-param">scale_factor=None</em>, <em class="sig-param">vector_alpha=None</em>, <em class="sig-param">mid=None</em>, <em class="sig-param">center=None</em>, <em class="sig-param">transparent=False</em>, <em class="sig-param">verbose=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/utils.py#L957-L1207"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.add_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display data from a numpy array on the surface.</p>
 <p>This provides a similar interface to
 <a class="reference internal" href="#surfer.Brain.add_overlay" title="surfer.Brain.add_overlay"><code class="xref py py-meth docutils literal notranslate"><span class="pre">surfer.Brain.add_overlay()</span></code></a>, but it displays
@@ -422,104 +265,85 @@ colormap, and provides a way to display four-dimensional data
 (i.e., a timecourse) or five-dimensional data (i.e., a
 vector-valued timecourse).</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">min</span></code> sets the low end of the colormap, and is separate
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">min</span></code> sets the low end of the colormap, and is separate
 from thresh (this is a different convention from
 <a class="reference internal" href="#surfer.Brain.add_overlay" title="surfer.Brain.add_overlay"><code class="xref py py-meth docutils literal notranslate"><span class="pre">surfer.Brain.add_overlay()</span></code></a>).</p>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>array</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array, shape (n_vertices[, 3][, n_times])</span></dt>
-<dd><p class="first last">Data array. For the data to be understood as vector-valued
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>array</strong><span class="classifier">numpy array, shape (n_vertices[, 3][, n_times])</span></dt><dd><p>Data array. For the data to be understood as vector-valued
 (3 values per vertex corresponding to X/Y/Z surface RAS),
 then <code class="docutils literal notranslate"><span class="pre">array</span></code> must be have all 3 dimensions.
 If vectors with no time dimension are desired, consider using a
 singleton (e.g., <code class="docutils literal notranslate"><span class="pre">np.newaxis</span></code>) to create a “time” dimension
 and pass <code class="docutils literal notranslate"><span class="pre">time_label=None</span></code>.</p>
 </dd>
-<dt><strong>min</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">min value in colormap (uses real min if None)</p>
+<dt><strong>min</strong><span class="classifier">float</span></dt><dd><p>min value in colormap (uses real min if None)</p>
 </dd>
-<dt><strong>mid</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">intermediate value in colormap (middle between min and max if None)</p>
+<dt><strong>mid</strong><span class="classifier">float</span></dt><dd><p>intermediate value in colormap (middle between min and max if None)</p>
 </dd>
-<dt><strong>max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">max value in colormap (uses real max if None)</p>
+<dt><strong>max</strong><span class="classifier">float</span></dt><dd><p>max value in colormap (uses real max if None)</p>
 </dd>
-<dt><strong>thresh</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or float</span></dt>
-<dd><p class="first last">if not None, values below thresh will not be visible</p>
+<dt><strong>thresh</strong><span class="classifier">None or float</span></dt><dd><p>if not None, values below thresh will not be visible</p>
 </dd>
-<dt><strong>center</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or None</span></dt>
-<dd><p class="first last">if not None, center of a divergent colormap, changes the meaning of
+<dt><strong>center</strong><span class="classifier">float or None</span></dt><dd><p>if not None, center of a divergent colormap, changes the meaning of
 min, max and mid, see <a class="reference internal" href="#surfer.Brain.scale_data_colormap" title="surfer.Brain.scale_data_colormap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">scale_data_colormap()</span></code></a> for further info.</p>
 </dd>
-<dt><strong>transparent</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">if True: use a linear transparency between fmin and fmid and make
+<dt><strong>transparent</strong><span class="classifier">bool</span></dt><dd><p>if True: use a linear transparency between fmin and fmid and make
 values below fmin fully transparent (symmetrically for divergent
 colormaps)</p>
 </dd>
-<dt><strong>colormap</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string, list of colors, or array</span></dt>
-<dd><p class="first last">name of matplotlib colormap to use, a list of matplotlib colors,
+<dt><strong>colormap</strong><span class="classifier">string, list of colors, or array</span></dt><dd><p>name of matplotlib colormap to use, a list of matplotlib colors,
 or a custom look up table (an n x 4 array coded with RBGA values
 between 0 and 255), the default “auto” chooses a default divergent
 colormap, if “center” is given (currently “icefire”), otherwise a
 default sequential colormap (currently “rocket”).</p>
 </dd>
-<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float in [0, 1]</span></dt>
-<dd><p class="first last">alpha level to control opacity of the overlay.</p>
+<dt><strong>alpha</strong><span class="classifier">float in [0, 1]</span></dt><dd><p>alpha level to control opacity of the overlay.</p>
 </dd>
-<dt><strong>vertices</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
-<dd><p class="first last">vertices for which the data is defined (needed if len(data) &lt; nvtx)</p>
+<dt><strong>vertices</strong><span class="classifier">numpy array</span></dt><dd><p>vertices for which the data is defined (needed if len(data) &lt; nvtx)</p>
 </dd>
-<dt><strong>smoothing_steps</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or None</span></dt>
-<dd><p class="first last">number of smoothing steps (smoothing is used if len(data) &lt; nvtx)
-Default : 20</p>
+<dt><strong>smoothing_steps</strong><span class="classifier">int | str | None</span></dt><dd><p>Number of smoothing steps (if data come from surface subsampling).
+Can be None to use the fewest steps that result in all vertices
+taking on data values, or “nearest” such that each high resolution
+vertex takes the value of the its nearest (on the sphere)
+low-resolution vertex. Default is 20.</p>
 </dd>
-<dt><strong>time</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
-<dd><p class="first last">time points in the data array (if data is 2D or 3D)</p>
+<dt><strong>time</strong><span class="classifier">numpy array</span></dt><dd><p>time points in the data array (if data is 2D or 3D)</p>
 </dd>
-<dt><strong>time_label</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str | callable | None</span></dt>
-<dd><p class="first last">format of the time label (a format string, a function that maps
+<dt><strong>time_label</strong><span class="classifier">str | callable | None</span></dt><dd><p>format of the time label (a format string, a function that maps
 floating point time values to strings, or None for no label)</p>
 </dd>
-<dt><strong>colorbar</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">whether to add a colorbar to the figure</p>
+<dt><strong>colorbar</strong><span class="classifier">bool</span></dt><dd><p>whether to add a colorbar to the figure</p>
 </dd>
-<dt><strong>hemi</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str | None</span></dt>
-<dd><p class="first last">If None, it is assumed to belong to the hemisphere being
+<dt><strong>hemi</strong><span class="classifier">str | None</span></dt><dd><p>If None, it is assumed to belong to the hemisphere being
 shown. If two hemispheres are being shown, an error will
 be thrown.</p>
 </dd>
-<dt><strong>remove_existing</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Remove surface added by previous “add_data” call. Useful for
+<dt><strong>remove_existing</strong><span class="classifier">bool</span></dt><dd><p>Remove surface added by previous “add_data” call. Useful for
 conserving memory when displaying different data in a loop.</p>
 </dd>
-<dt><strong>time_label_size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Font size of the time label (default 14)</p>
+<dt><strong>time_label_size</strong><span class="classifier">int</span></dt><dd><p>Font size of the time label (default 14)</p>
 </dd>
-<dt><strong>initial_time</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float | None</span></dt>
-<dd><p class="first last">Time initially shown in the plot. <code class="docutils literal notranslate"><span class="pre">None</span></code> to use the first time
+<dt><strong>initial_time</strong><span class="classifier">float | None</span></dt><dd><p>Time initially shown in the plot. <code class="docutils literal notranslate"><span class="pre">None</span></code> to use the first time
 sample (default).</p>
 </dd>
-<dt><strong>scale_factor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float | None (default)</span></dt>
-<dd><p class="first last">The scale factor to use when displaying glyphs for vector-valued
+<dt><strong>scale_factor</strong><span class="classifier">float | None (default)</span></dt><dd><p>The scale factor to use when displaying glyphs for vector-valued
 data.</p>
 </dd>
-<dt><strong>vector_alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float | None</span></dt>
-<dd><p class="first last">alpha level to control opacity of the arrows. Only used for
+<dt><strong>vector_alpha</strong><span class="classifier">float | None</span></dt><dd><p>alpha level to control opacity of the arrows. Only used for
 vector-valued data. If None (default), <code class="docutils literal notranslate"><span class="pre">alpha</span></code> is used.</p>
 </dd>
-<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, str, int, or None</span></dt>
-<dd><p class="first last">If not None, override default verbose level (see surfer.verbose).</p>
+<dt><strong>verbose</strong><span class="classifier">bool, str, int, or None</span></dt><dd><p>If not None, override default verbose level (see surfer.verbose).</p>
+</dd>
+<dt><strong>**kwargs</strong><span class="classifier">additional keyword arguments</span></dt><dd><p>These are passed to the underlying
+<code class="docutils literal notranslate"><span class="pre">mayavi.mlab.pipeline.surface</span></code> call.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>If the data is defined for a subset of vertices (specified
 by the “vertices” parameter), a smoothing method is used to interpolate
@@ -533,303 +357,246 @@ clamped to be strictly &lt; 1.</p>
 
 <dl class="method">
 <dt id="surfer.Brain.add_foci">
-<code class="descname">add_foci</code><span class="sig-paren">(</span><em>coords</em>, <em>coords_as_verts=False</em>, <em>map_surface=None</em>, <em>scale_factor=1</em>, <em>color='white'</em>, <em>alpha=1</em>, <em>name=None</em>, <em>hemi=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1604-L1673"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.add_foci" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_foci</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">coords</em>, <em class="sig-param">coords_as_verts=False</em>, <em class="sig-param">map_surface=None</em>, <em class="sig-param">scale_factor=1</em>, <em class="sig-param">color='white'</em>, <em class="sig-param">alpha=1</em>, <em class="sig-param">name=None</em>, <em class="sig-param">hemi=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1641-L1714"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.add_foci" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add spherical foci, possibly mapping to displayed surf.</p>
 <p>The foci spheres can be displayed at the coordinates given, or
 mapped through a surface geometry. In other words, coordinates
 from a volume-based analysis in MNI space can be displayed on an
 inflated average surface by finding the closest vertex on the
 white surface and mapping to that vertex on the inflated mesh.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>coords</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
-<dd><p class="first last">x, y, z coordinates in stereotaxic space (default) or array of
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>coords</strong><span class="classifier">numpy array</span></dt><dd><p>x, y, z coordinates in stereotaxic space (default) or array of
 vertex ids (with <code class="docutils literal notranslate"><span class="pre">coord_as_verts=True</span></code>)</p>
 </dd>
-<dt><strong>coords_as_verts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">whether the coords parameter should be interpreted as vertex ids</p>
+<dt><strong>coords_as_verts</strong><span class="classifier">bool</span></dt><dd><p>whether the coords parameter should be interpreted as vertex ids</p>
 </dd>
-<dt><strong>map_surface</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Freesurfer surf or None</span></dt>
-<dd><p class="first last">surface to map coordinates through, or None to use raw coords</p>
+<dt><strong>map_surface</strong><span class="classifier">Freesurfer surf or None</span></dt><dd><p>surface to map coordinates through, or None to use raw coords</p>
 </dd>
-<dt><strong>scale_factor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Controls the size of the foci spheres (relative to 1cm).</p>
+<dt><strong>scale_factor</strong><span class="classifier">float</span></dt><dd><p>Controls the size of the foci spheres (relative to 1cm).</p>
 </dd>
-<dt><strong>color</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib color code</span></dt>
-<dd><p class="first last">HTML name, RBG tuple, or hex code</p>
+<dt><strong>color</strong><span class="classifier">matplotlib color code</span></dt><dd><p>HTML name, RBG tuple, or hex code</p>
 </dd>
-<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float in [0, 1]</span></dt>
-<dd><p class="first last">opacity of focus gylphs</p>
+<dt><strong>alpha</strong><span class="classifier">float in [0, 1]</span></dt><dd><p>opacity of focus gylphs</p>
 </dd>
-<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">internal name to use</p>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>internal name to use</p>
 </dd>
-<dt><strong>hemi</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str | None</span></dt>
-<dd><p class="first last">If None, it is assumed to belong to the hemipshere being
+<dt><strong>hemi</strong><span class="classifier">str | None</span></dt><dd><p>If None, it is assumed to belong to the hemipshere being
 shown. If two hemispheres are being shown, an error will
 be thrown.</p>
 </dd>
+<dt><strong>**kwargs</strong><span class="classifier">additional keyword arguments</span></dt><dd><dl class="simple">
+<dt>These are passed to the underlying</dt><dd><p><a class="reference external" href="https://docs.enthought.com/mayavi/mayavi/auto/mlab_helper_functions.html#mayavi.mlab.points3d" title="(in mayavi v4.7.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mayavi.mlab.points3d()</span></code></a> call.</p>
+</dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.add_label">
-<code class="descname">add_label</code><span class="sig-paren">(</span><em>label</em>, <em>color=None</em>, <em>alpha=1</em>, <em>scalar_thresh=None</em>, <em>borders=False</em>, <em>hemi=None</em>, <em>subdir=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1294-L1413"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.add_label" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_label</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">label</em>, <em class="sig-param">color=None</em>, <em class="sig-param">alpha=1</em>, <em class="sig-param">scalar_thresh=None</em>, <em class="sig-param">borders=False</em>, <em class="sig-param">hemi=None</em>, <em class="sig-param">subdir=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1325-L1447"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.add_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add an ROI label to the image.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>label</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str | instance of Label</span></dt>
-<dd><p class="first last">label filepath or name. Can also be an instance of
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label</strong><span class="classifier">str | instance of Label</span></dt><dd><p>label filepath or name. Can also be an instance of
 an object with attributes “hemi”, “vertices”, “name”, and
 optionally “color” and “values” (if scalar_thresh is not None).</p>
 </dd>
-<dt><strong>color</strong> <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib-style color | None</span></dt>
-<dd><p class="first last">anything matplotlib accepts: string, RGB, hex, etc. (default
+<dt><strong>color</strong><span class="classifier">matplotlib-style color | None</span></dt><dd><p>anything matplotlib accepts: string, RGB, hex, etc. (default
 “crimson”)</p>
 </dd>
-<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float in [0, 1]</span></dt>
-<dd><p class="first last">alpha level to control opacity</p>
+<dt><strong>alpha</strong><span class="classifier">float in [0, 1]</span></dt><dd><p>alpha level to control opacity</p>
 </dd>
-<dt><strong>scalar_thresh</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or number</span></dt>
-<dd><p class="first last">threshold the label ids using this value in the label
+<dt><strong>scalar_thresh</strong><span class="classifier">None or number</span></dt><dd><p>threshold the label ids using this value in the label
 file’s scalar field (i.e. label only vertices with
 scalar &gt;= thresh)</p>
 </dd>
-<dt><strong>borders</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool | int</span></dt>
-<dd><p class="first last">Show only label borders. If int, specify the number of steps
+<dt><strong>borders</strong><span class="classifier">bool | int</span></dt><dd><p>Show only label borders. If int, specify the number of steps
 (away from the true border) along the cortical mesh to include
 as part of the border definition.</p>
 </dd>
-<dt><strong>hemi</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str | None</span></dt>
-<dd><p class="first last">If None, it is assumed to belong to the hemipshere being
+<dt><strong>hemi</strong><span class="classifier">str | None</span></dt><dd><p>If None, it is assumed to belong to the hemipshere being
 shown. If two hemispheres are being shown, an error will
 be thrown.</p>
 </dd>
-<dt><strong>subdir</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None | str</span></dt>
-<dd><p class="first last">If a label is specified as name, subdir can be used to indicate
+<dt><strong>subdir</strong><span class="classifier">None | str</span></dt><dd><p>If a label is specified as name, subdir can be used to indicate
 that the label file is in a sub-directory of the subject’s
 label directory rather than in the label directory itself (e.g.
 for <code class="docutils literal notranslate"><span class="pre">$SUBJECTS_DIR/$SUBJECT/label/aparc/lh.cuneus.label</span></code>
 <code class="docutils literal notranslate"><span class="pre">brain.add_label('cuneus',</span> <span class="pre">subdir='aparc')</span></code>).</p>
 </dd>
+<dt><strong>**kwargs</strong><span class="classifier">additional keyword arguments</span></dt><dd><p>These are passed to the underlying
+<code class="docutils literal notranslate"><span class="pre">mayavi.mlab.pipeline.surface</span></code> call.</p>
+</dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>To remove previously added labels, run Brain.remove_labels().</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.add_morphometry">
-<code class="descname">add_morphometry</code><span class="sig-paren">(</span><em>measure</em>, <em>grayscale=False</em>, <em>hemi=None</em>, <em>remove_existing=True</em>, <em>colormap=None</em>, <em>min=None</em>, <em>max=None</em>, <em>colorbar=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1516-L1602"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.add_morphometry" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_morphometry</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">measure</em>, <em class="sig-param">grayscale=False</em>, <em class="sig-param">hemi=None</em>, <em class="sig-param">remove_existing=True</em>, <em class="sig-param">colormap=None</em>, <em class="sig-param">min=None</em>, <em class="sig-param">max=None</em>, <em class="sig-param">colorbar=True</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1550-L1639"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.add_morphometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a morphometry overlay to the image.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>measure</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{‘area’ | ‘curv’ | ‘jacobian_white’ | ‘sulc’ | ‘thickness’}</span></dt>
-<dd><p class="first last">which measure to load</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>measure</strong><span class="classifier">{‘area’ | ‘curv’ | ‘jacobian_white’ | ‘sulc’ | ‘thickness’}</span></dt><dd><p>which measure to load</p>
 </dd>
-<dt><strong>grayscale</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">whether to load the overlay with a grayscale colormap</p>
+<dt><strong>grayscale</strong><span class="classifier">bool</span></dt><dd><p>whether to load the overlay with a grayscale colormap</p>
 </dd>
-<dt><strong>hemi</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str | None</span></dt>
-<dd><p class="first last">If None, it is assumed to belong to the hemipshere being
+<dt><strong>hemi</strong><span class="classifier">str | None</span></dt><dd><p>If None, it is assumed to belong to the hemipshere being
 shown. If two hemispheres are being shown, data must exist
 for both hemispheres.</p>
 </dd>
-<dt><strong>remove_existing</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">If True (default), remove old annotations.</p>
+<dt><strong>remove_existing</strong><span class="classifier">bool</span></dt><dd><p>If True (default), remove old annotations.</p>
 </dd>
-<dt><strong>colormap</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Mayavi colormap name, or None to use a sensible default.</p>
+<dt><strong>colormap</strong><span class="classifier">str</span></dt><dd><p>Mayavi colormap name, or None to use a sensible default.</p>
 </dd>
-<dt><strong>min, max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">floats</span></dt>
-<dd><p class="first last">Endpoints for the colormap; if not provided the robust range
+<dt><strong>min, max</strong><span class="classifier">floats</span></dt><dd><p>Endpoints for the colormap; if not provided the robust range
 of the data is used.</p>
 </dd>
-<dt><strong>colorbar</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">If True, show a colorbar corresponding to the overlay data.</p>
+<dt><strong>colorbar</strong><span class="classifier">bool</span></dt><dd><p>If True, show a colorbar corresponding to the overlay data.</p>
+</dd>
+<dt><strong>**kwargs</strong><span class="classifier">additional keyword arguments</span></dt><dd><p>These are passed to the underlying
+<code class="docutils literal notranslate"><span class="pre">mayavi.mlab.pipeline.surface</span></code> call.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.add_overlay">
-<code class="descname">add_overlay</code><span class="sig-paren">(</span><em>source</em>, <em>min=2</em>, <em>max='robust_max'</em>, <em>sign='abs'</em>, <em>name=None</em>, <em>hemi=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L909-L945"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.add_overlay" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_overlay</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">source</em>, <em class="sig-param">min=2</em>, <em class="sig-param">max='robust_max'</em>, <em class="sig-param">sign='abs'</em>, <em class="sig-param">name=None</em>, <em class="sig-param">hemi=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L915-L955"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.add_overlay" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add an overlay to the overlay dict from a file or array.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>source</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or numpy array</span></dt>
-<dd><p class="first last">path to the overlay file or numpy array with data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>source</strong><span class="classifier">str or numpy array</span></dt><dd><p>path to the overlay file or numpy array with data</p>
 </dd>
-<dt><strong>min</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">threshold for overlay display</p>
+<dt><strong>min</strong><span class="classifier">float</span></dt><dd><p>threshold for overlay display</p>
 </dd>
-<dt><strong>max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">saturation point for overlay display</p>
+<dt><strong>max</strong><span class="classifier">float</span></dt><dd><p>saturation point for overlay display</p>
 </dd>
-<dt><strong>sign</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{‘abs’ | ‘pos’ | ‘neg’}</span></dt>
-<dd><p class="first last">whether positive, negative, or both values should be displayed</p>
+<dt><strong>sign</strong><span class="classifier">{‘abs’ | ‘pos’ | ‘neg’}</span></dt><dd><p>whether positive, negative, or both values should be displayed</p>
 </dd>
-<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">name for the overlay in the internal dictionary</p>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>name for the overlay in the internal dictionary</p>
 </dd>
-<dt><strong>hemi</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str | None</span></dt>
-<dd><p class="first last">If None, it is assumed to belong to the hemipshere being
+<dt><strong>hemi</strong><span class="classifier">str | None</span></dt><dd><p>If None, it is assumed to belong to the hemipshere being
 shown. If two hemispheres are being shown, an error will
 be thrown.</p>
 </dd>
+<dt><strong>**kwargs</strong><span class="classifier">additional keyword arguments</span></dt><dd><p>These are passed to the underlying
+<code class="docutils literal notranslate"><span class="pre">mayavi.mlab.pipeline.surface</span></code> call.</p>
+</dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.add_text">
-<code class="descname">add_text</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>text</em>, <em>name</em>, <em>color=None</em>, <em>opacity=1.0</em>, <em>row=-1</em>, <em>col=-1</em>, <em>font_size=None</em>, <em>justification=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1737-L1771"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.add_text" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_text</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">text</em>, <em class="sig-param">name</em>, <em class="sig-param">color=None</em>, <em class="sig-param">opacity=1.0</em>, <em class="sig-param">row=-1</em>, <em class="sig-param">col=-1</em>, <em class="sig-param">font_size=None</em>, <em class="sig-param">justification=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1781-L1819"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.add_text" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a text to the visualization</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>x</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Float</span></dt>
-<dd><p class="first last">x coordinate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">Float</span></dt><dd><p>x coordinate</p>
 </dd>
-<dt><strong>y</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Float</span></dt>
-<dd><p class="first last">y coordinate</p>
+<dt><strong>y</strong><span class="classifier">Float</span></dt><dd><p>y coordinate</p>
 </dd>
-<dt><strong>text</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Text to add</p>
+<dt><strong>text</strong><span class="classifier">str</span></dt><dd><p>Text to add</p>
 </dd>
-<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Name of the text (text label can be updated using update_text())</p>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name of the text (text label can be updated using update_text())</p>
 </dd>
-<dt><strong>color</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Tuple</span></dt>
-<dd><p class="first last">Color of the text. Default is the foreground color set during
+<dt><strong>color</strong><span class="classifier">Tuple</span></dt><dd><p>Color of the text. Default is the foreground color set during
 initialization (default is black or white depending on the
 background color).</p>
 </dd>
-<dt><strong>opacity</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Float</span></dt>
-<dd><p class="first last">Opacity of the text. Default: 1.0</p>
+<dt><strong>opacity</strong><span class="classifier">Float</span></dt><dd><p>Opacity of the text. Default: 1.0</p>
 </dd>
-<dt><strong>row</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Row index of which brain to use</p>
+<dt><strong>row</strong><span class="classifier">int</span></dt><dd><p>Row index of which brain to use</p>
 </dd>
-<dt><strong>col</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Column index of which brain to use</p>
+<dt><strong>col</strong><span class="classifier">int</span></dt><dd><p>Column index of which brain to use</p>
+</dd>
+<dt><strong>**kwargs</strong><span class="classifier">additional keyword arguments</span></dt><dd><p>These are passed to the underlying
+<a class="reference external" href="https://docs.enthought.com/mayavi/mayavi/auto/mlab_other_functions.html#mayavi.mlab.text3d" title="(in mayavi v4.7.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mayavi.mlab.text3d()</span></code></a> call.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.animate">
-<code class="descname">animate</code><span class="sig-paren">(</span><em>views</em>, <em>n_steps=180.0</em>, <em>fname=None</em>, <em>use_cache=False</em>, <em>row=-1</em>, <em>col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2699-L2765"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.animate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">animate</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">views</em>, <em class="sig-param">n_steps=180.0</em>, <em class="sig-param">fname=None</em>, <em class="sig-param">use_cache=False</em>, <em class="sig-param">row=-1</em>, <em class="sig-param">col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2767-L2833"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.animate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Animate a rotation.</p>
 <p>Currently only rotations through the axial plane are allowed.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>views: sequence</strong></dt>
-<dd><p class="first last">views to animate through</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>views: sequence</strong></dt><dd><p>views to animate through</p>
 </dd>
-<dt><strong>n_steps: float</strong></dt>
-<dd><p class="first last">number of steps to take in between</p>
+<dt><strong>n_steps: float</strong></dt><dd><p>number of steps to take in between</p>
 </dd>
-<dt><strong>fname: string</strong></dt>
-<dd><p class="first last">If not None, it saves the animation as a movie.
+<dt><strong>fname: string</strong></dt><dd><p>If not None, it saves the animation as a movie.
 fname should end in ‘.avi’ as only the AVI format is supported</p>
 </dd>
-<dt><strong>use_cache: bool</strong></dt>
-<dd><p class="first last">Use previously generated images in <code class="docutils literal notranslate"><span class="pre">./.tmp/</span></code></p>
+<dt><strong>use_cache: bool</strong></dt><dd><p>Use previously generated images in <code class="docutils literal notranslate"><span class="pre">./.tmp/</span></code></p>
 </dd>
-<dt><strong>row</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Row index of the brain to use</p>
+<dt><strong>row</strong><span class="classifier">int</span></dt><dd><p>Row index of the brain to use</p>
 </dd>
-<dt><strong>col</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Column index of the brain to use</p>
+<dt><strong>col</strong><span class="classifier">int</span></dt><dd><p>Column index of the brain to use</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.close">
-<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2234-L2246"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.close" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2297-L2316"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.close" title="Permalink to this definition">¶</a></dt>
 <dd><p>Close all figures and cleanup data structure.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="surfer.Brain.data_dict">
-<code class="descname">data_dict</code><a class="headerlink" href="#surfer.Brain.data_dict" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">data_dict</code><a class="headerlink" href="#surfer.Brain.data_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>For backwards compatibility</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="surfer.Brain.data_time_index">
-<code class="descname">data_time_index</code><a class="headerlink" href="#surfer.Brain.data_time_index" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">data_time_index</code><a class="headerlink" href="#surfer.Brain.data_time_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieve the currently displayed data time index</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>time_idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Current time index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>time_idx</strong><span class="classifier">int</span></dt><dd><p>Current time index.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>Raises a RuntimeError if the Brain instance has not data overlay.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.get_data_properties">
-<code class="descname">get_data_properties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L658-L688"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.get_data_properties" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_data_properties</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L664-L694"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.get_data_properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get properties of the data shown</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>props</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
-<dd><p class="first">Dictionary with data properties</p>
-<p class="last">props[“fmin”] : minimum colormap
+<dl class="field-list">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl>
+<dt><strong>props</strong><span class="classifier">dict</span></dt><dd><p>Dictionary with data properties</p>
+<p>props[“fmin”] : minimum colormap
 props[“fmid”] : midpoint colormap
 props[“fmax”] : maximum colormap
 props[“transparent”] : lower part of colormap transparent?
@@ -838,167 +605,129 @@ props[“time_idx”] : current time index
 props[“smoothing_steps”] : number of smoothing steps</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.hide_colorbar">
-<code class="descname">hide_colorbar</code><span class="sig-paren">(</span><em>row=-1</em>, <em>col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2222-L2232"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.hide_colorbar" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">hide_colorbar</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">row=-1</em>, <em class="sig-param">col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2285-L2295"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.hide_colorbar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hide colorbar(s) for given plot</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>row</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Row index of which brain to use</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>row</strong><span class="classifier">int</span></dt><dd><p>Row index of which brain to use</p>
 </dd>
-<dt><strong>col</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Column index of which brain to use</p>
+<dt><strong>col</strong><span class="classifier">int</span></dt><dd><p>Column index of which brain to use</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.index_for_time">
-<code class="descname">index_for_time</code><span class="sig-paren">(</span><em>time</em>, <em>rounding='closest'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2131-L2169"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.index_for_time" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">index_for_time</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">time</em>, <em class="sig-param">rounding='closest'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2194-L2232"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.index_for_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the data time index closest to a specific time point.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>time</strong> <span class="classifier-delimiter">:</span> <span class="classifier">scalar</span></dt>
-<dd><p class="first last">Time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>time</strong><span class="classifier">scalar</span></dt><dd><p>Time.</p>
 </dd>
-<dt><strong>rounding</strong> <span class="classifier-delimiter">:</span> <span class="classifier">‘closest’ | ‘up’ | ‘down’</span></dt>
-<dd><p class="first last">How to round if the exact time point is not an index.</p>
+<dt><strong>rounding</strong><span class="classifier">‘closest’ | ‘up’ | ‘down’</span></dt><dd><p>How to round if the exact time point is not an index.</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>index</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Data time index closest to time.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>index</strong><span class="classifier">int</span></dt><dd><p>Data time index closest to time.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="surfer.Brain.labels_dict">
-<code class="descname">labels_dict</code><a class="headerlink" href="#surfer.Brain.labels_dict" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">labels_dict</code><a class="headerlink" href="#surfer.Brain.labels_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>For backwards compatibility</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.remove_data">
-<code class="descname">remove_data</code><span class="sig-paren">(</span><em>hemi=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1436-L1455"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.remove_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">remove_data</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">hemi=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1470-L1489"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.remove_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove data shown with <code class="docutils literal notranslate"><span class="pre">Brain.add_data()</span></code>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>hemi</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str | None</span></dt>
-<dd><p class="first last">Hemisphere from which to remove data (default is all shown
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>hemi</strong><span class="classifier">str | None</span></dt><dd><p>Hemisphere from which to remove data (default is all shown
 hemispheres).</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.remove_foci">
-<code class="descname">remove_foci</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1457-L1483"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.remove_foci" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">remove_foci</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">name=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1491-L1517"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.remove_foci" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove foci added with <code class="docutils literal notranslate"><span class="pre">Brain.add_foci()</span></code>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str | list of str | None</span></dt>
-<dd><p class="first last">Names of the foci to remove (if None, remove all).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name</strong><span class="classifier">str | list of str | None</span></dt><dd><p>Names of the foci to remove (if None, remove all).</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>Only foci added with a unique names can be removed.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.remove_labels">
-<code class="descname">remove_labels</code><span class="sig-paren">(</span><em>labels=None</em>, <em>hemi=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1485-L1514"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.remove_labels" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">remove_labels</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">labels=None</em>, <em class="sig-param">hemi=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1519-L1548"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.remove_labels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove one or more previously added labels from the image.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>labels</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None | str | list of str</span></dt>
-<dd><p class="first last">Labels to remove. Can be a string naming a single label, or None to
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>labels</strong><span class="classifier">None | str | list of str</span></dt><dd><p>Labels to remove. Can be a string naming a single label, or None to
 remove all labels. Possible names can be found in the Brain.labels
 attribute.</p>
 </dd>
-<dt><strong>hemi</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None</span></dt>
-<dd><p class="first last">Deprecated parameter, do not use.</p>
+<dt><strong>hemi</strong><span class="classifier">None</span></dt><dd><p>Deprecated parameter, do not use.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.reset_view">
-<code class="descname">reset_view</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1789-L1793"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.reset_view" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">reset_view</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1837-L1841"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.reset_view" title="Permalink to this definition">¶</a></dt>
 <dd><p>Orient camera to display original view</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.save_image">
-<code class="descname">save_image</code><span class="sig-paren">(</span><em>filename</em>, <em>mode='rgb'</em>, <em>antialiased=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2298-L2324"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.save_image" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save_image</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">filename</em>, <em class="sig-param">mode='rgb'</em>, <em class="sig-param">antialiased=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2366-L2392"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.save_image" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save view from all panels to disk</p>
 <p>Only mayavi image types are supported:
 (png jpg bmp tiff ps eps pdf rib  oogl iv  vrml obj</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>filename: string</strong></dt>
-<dd><p class="first last">path to new image file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>filename: string</strong></dt><dd><p>path to new image file</p>
 </dd>
-<dt><strong>mode</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
-<dd><p class="first last">Either ‘rgb’ (default) to render solid background, or ‘rgba’ to
+<dt><strong>mode</strong><span class="classifier">string</span></dt><dd><p>Either ‘rgb’ (default) to render solid background, or ‘rgba’ to
 include alpha channel for transparent background.</p>
 </dd>
-<dt><strong>antialiased</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Antialias the image (see <a class="reference external" href="http://docs.enthought.com/mayavi/mayavi/auto/mlab_figure.html#mayavi.mlab.screenshot" title="(in mayavi v4.6.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mayavi.mlab.screenshot()</span></code></a>
+<dt><strong>antialiased</strong><span class="classifier">bool</span></dt><dd><p>Antialias the image (see <a class="reference external" href="https://docs.enthought.com/mayavi/mayavi/auto/mlab_figure.html#mayavi.mlab.screenshot" title="(in mayavi v4.7.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mayavi.mlab.screenshot()</span></code></a>
 for details; see default False).</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>Due to limitations in TraitsUI, if multiple views or hemi=’split’
 is used, there is no guarantee painting of the windows will
@@ -1010,35 +739,27 @@ script plotting commands.</p>
 
 <dl class="method">
 <dt id="surfer.Brain.save_image_sequence">
-<code class="descname">save_image_sequence</code><span class="sig-paren">(</span><em>time_idx</em>, <em>fname_pattern</em>, <em>use_abs_idx=True</em>, <em>row=-1</em>, <em>col=-1</em>, <em>montage='single'</em>, <em>border_size=15</em>, <em>colorbar='auto'</em>, <em>interpolation='quadratic'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2458-L2518"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.save_image_sequence" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save_image_sequence</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">time_idx</em>, <em class="sig-param">fname_pattern</em>, <em class="sig-param">use_abs_idx=True</em>, <em class="sig-param">row=-1</em>, <em class="sig-param">col=-1</em>, <em class="sig-param">montage='single'</em>, <em class="sig-param">border_size=15</em>, <em class="sig-param">colorbar='auto'</em>, <em class="sig-param">interpolation='quadratic'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2526-L2586"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.save_image_sequence" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save a temporal image sequence</p>
 <p>The files saved are named <code class="docutils literal notranslate"><span class="pre">fname_pattern</span> <span class="pre">%</span> <span class="pre">pos</span></code> where <code class="docutils literal notranslate"><span class="pre">pos</span></code> is a
 relative or absolute index (controlled by <code class="docutils literal notranslate"><span class="pre">use_abs_idx</span></code>).</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>time_idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array_like</span></dt>
-<dd><p class="first last">Time indices to save. Non-integer values will be displayed using
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>time_idx</strong><span class="classifier">array_like</span></dt><dd><p>Time indices to save. Non-integer values will be displayed using
 interpolation between samples.</p>
 </dd>
-<dt><strong>fname_pattern</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Filename pattern, e.g. ‘movie-frame_%0.4d.png’.</p>
+<dt><strong>fname_pattern</strong><span class="classifier">str</span></dt><dd><p>Filename pattern, e.g. ‘movie-frame_%0.4d.png’.</p>
 </dd>
-<dt><strong>use_abs_idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">If True the indices given by <code class="docutils literal notranslate"><span class="pre">time_idx</span></code> are used in the filename
+<dt><strong>use_abs_idx</strong><span class="classifier">bool</span></dt><dd><p>If True the indices given by <code class="docutils literal notranslate"><span class="pre">time_idx</span></code> are used in the filename
 if False the index in the filename starts at zero and is
 incremented by one for each image (Default: True).</p>
 </dd>
-<dt><strong>row</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Row index of the brain to use.</p>
+<dt><strong>row</strong><span class="classifier">int</span></dt><dd><p>Row index of the brain to use.</p>
 </dd>
-<dt><strong>col</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Column index of the brain to use.</p>
+<dt><strong>col</strong><span class="classifier">int</span></dt><dd><p>Column index of the brain to use.</p>
 </dd>
-<dt><strong>montage</strong> <span class="classifier-delimiter">:</span> <span class="classifier">‘current’ | ‘single’ | list</span></dt>
-<dd><p class="first last">Views to include in the images: ‘current’ uses the currently
+<dt><strong>montage</strong><span class="classifier">‘current’ | ‘single’ | list</span></dt><dd><p>Views to include in the images: ‘current’ uses the currently
 displayed image; ‘single’ (default) uses a single view, specified
 by the <code class="docutils literal notranslate"><span class="pre">row</span></code> and <code class="docutils literal notranslate"><span class="pre">col</span></code> parameters; a 1 or 2 dimensional list
 can be used to specify a complete montage. Examples:
@@ -1046,181 +767,141 @@ can be used to specify a complete montage. Examples:
 <code class="docutils literal notranslate"><span class="pre">[['fro'],</span> <span class="pre">['ven']]</span></code> frontal and ventral views ordered
 vertically.</p>
 </dd>
-<dt><strong>border_size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Size of image border (more or less space between images).</p>
+<dt><strong>border_size</strong><span class="classifier">int</span></dt><dd><p>Size of image border (more or less space between images).</p>
 </dd>
-<dt><strong>colorbar</strong> <span class="classifier-delimiter">:</span> <span class="classifier">‘auto’ | int | list of int | None</span></dt>
-<dd><p class="first last">For ‘auto’, the colorbar is shown in the middle view (default).
+<dt><strong>colorbar</strong><span class="classifier">‘auto’ | int | list of int | None</span></dt><dd><p>For ‘auto’, the colorbar is shown in the middle view (default).
 For int or list of int, the colorbar is shown in the specified
 views. For <code class="docutils literal notranslate"><span class="pre">None</span></code>, no colorbar is shown.</p>
 </dd>
-<dt><strong>interpolation</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Interpolation method (<code class="docutils literal notranslate"><span class="pre">scipy.interpolate.interp1d</span></code> parameter,
+<dt><strong>interpolation</strong><span class="classifier">str</span></dt><dd><p>Interpolation method (<code class="docutils literal notranslate"><span class="pre">scipy.interpolate.interp1d</span></code> parameter,
 one of ‘linear’ | ‘nearest’ | ‘zero’ | ‘slinear’ | ‘quadratic’ |
 ‘cubic’, default ‘quadratic’). Interpolation is only used for
 non-integer indexes.</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>images_written</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">All filenames written.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>images_written</strong><span class="classifier">list</span></dt><dd><p>All filenames written.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.save_imageset">
-<code class="descname">save_imageset</code><span class="sig-paren">(</span><em>prefix</em>, <em>views</em>, <em>filetype='png'</em>, <em>colorbar='auto'</em>, <em>row=-1</em>, <em>col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2403-L2456"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.save_imageset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save_imageset</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">prefix</em>, <em class="sig-param">views</em>, <em class="sig-param">filetype='png'</em>, <em class="sig-param">colorbar='auto'</em>, <em class="sig-param">row=-1</em>, <em class="sig-param">col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2471-L2524"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.save_imageset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convenience wrapper for save_image</p>
 <p>Files created are prefix+’_$view’+filetype</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>prefix: string | None</strong></dt>
-<dd><p class="first last">filename prefix for image to be created. If None, a list of
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>prefix: string | None</strong></dt><dd><p>filename prefix for image to be created. If None, a list of
 arrays representing images is returned (not saved to disk).</p>
 </dd>
-<dt><strong>views: list</strong></dt>
-<dd><p class="first last">desired views for images</p>
+<dt><strong>views: list</strong></dt><dd><p>desired views for images</p>
 </dd>
-<dt><strong>filetype: string</strong></dt>
-<dd><p class="first last">image type</p>
+<dt><strong>filetype: string</strong></dt><dd><p>image type</p>
 </dd>
-<dt><strong>colorbar: ‘auto’ | int | list of int | None</strong></dt>
-<dd><p class="first last">For ‘auto’, the colorbar is shown in the middle view (default).
+<dt><strong>colorbar: ‘auto’ | int | list of int | None</strong></dt><dd><p>For ‘auto’, the colorbar is shown in the middle view (default).
 For int or list of int, the colorbar is shown in the specified
 views. For <code class="docutils literal notranslate"><span class="pre">None</span></code>, no colorbar is shown.</p>
 </dd>
-<dt><strong>row</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">row index of the brain to use</p>
+<dt><strong>row</strong><span class="classifier">int</span></dt><dd><p>row index of the brain to use</p>
 </dd>
-<dt><strong>col</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">column index of the brain to use</p>
+<dt><strong>col</strong><span class="classifier">int</span></dt><dd><p>column index of the brain to use</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>images_written: list</strong></dt>
-<dd><p class="first last">all filenames written</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>images_written: list</dt><dd><p>all filenames written</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.save_montage">
-<code class="descname">save_montage</code><span class="sig-paren">(</span><em>filename, order=['lat', 'ven', 'med'], orientation='h', border_size=15, colorbar='auto', row=-1, col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2520-L2599"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.save_montage" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save_montage</code><span class="sig-paren">(</span><em class="sig-param">self, filename, order=['lat', 'ven', 'med'], orientation='h', border_size=15, colorbar='auto', row=-1, col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2588-L2667"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.save_montage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a montage from a given order of images</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>filename: string | None</strong></dt>
-<dd><p class="first last">path to final image. If None, the image will not be saved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>filename: string | None</strong></dt><dd><p>path to final image. If None, the image will not be saved.</p>
 </dd>
-<dt><strong>order: list</strong></dt>
-<dd><p class="first last">list of views: order of views to build montage (default
+<dt><strong>order: list</strong></dt><dd><p>list of views: order of views to build montage (default
 <code class="docutils literal notranslate"><span class="pre">['lat',</span> <span class="pre">'ven',</span> <span class="pre">'med']</span></code>; nested list of views to specify
 views in a 2-dimensional grid (e.g,
 <code class="docutils literal notranslate"><span class="pre">[['lat',</span> <span class="pre">'ven'],</span> <span class="pre">['med',</span> <span class="pre">'fro']]</span></code>)</p>
 </dd>
-<dt><strong>orientation: {‘h’ | ‘v’}</strong></dt>
-<dd><p class="first last">montage image orientation (horizontal of vertical alignment; only
+<dt><strong>orientation: {‘h’ | ‘v’}</strong></dt><dd><p>montage image orientation (horizontal of vertical alignment; only
 applies if <code class="docutils literal notranslate"><span class="pre">order</span></code> is a flat list)</p>
 </dd>
-<dt><strong>border_size: int</strong></dt>
-<dd><p class="first last">Size of image border (more or less space between images)</p>
+<dt><strong>border_size: int</strong></dt><dd><p>Size of image border (more or less space between images)</p>
 </dd>
-<dt><strong>colorbar: ‘auto’ | int | list of int | None</strong></dt>
-<dd><p class="first last">For ‘auto’, the colorbar is shown in the middle view (default).
+<dt><strong>colorbar: ‘auto’ | int | list of int | None</strong></dt><dd><p>For ‘auto’, the colorbar is shown in the middle view (default).
 For int or list of int, the colorbar is shown in the specified
 views. For <code class="docutils literal notranslate"><span class="pre">None</span></code>, no colorbar is shown.</p>
 </dd>
-<dt><strong>row</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">row index of the brain to use</p>
+<dt><strong>row</strong><span class="classifier">int</span></dt><dd><p>row index of the brain to use</p>
 </dd>
-<dt><strong>col</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">column index of the brain to use</p>
+<dt><strong>col</strong><span class="classifier">int</span></dt><dd><p>column index of the brain to use</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>out</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array</span></dt>
-<dd><p class="first last">The montage image, usable with <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="(in Matplotlib v3.0.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.imshow()</span></code></a>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>out</strong><span class="classifier">array</span></dt><dd><p>The montage image, usable with <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="(in Matplotlib v3.1.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.imshow()</span></code></a>.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.save_movie">
-<code class="descname">save_movie</code><span class="sig-paren">(</span><em>fname</em>, <em>time_dilation=4.0</em>, <em>tmin=None</em>, <em>tmax=None</em>, <em>framerate=24</em>, <em>interpolation='quadratic'</em>, <em>codec=None</em>, <em>bitrate=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2601-L2697"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.save_movie" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save_movie</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">fname</em>, <em class="sig-param">time_dilation=4.0</em>, <em class="sig-param">tmin=None</em>, <em class="sig-param">tmax=None</em>, <em class="sig-param">framerate=24</em>, <em class="sig-param">interpolation='quadratic'</em>, <em class="sig-param">codec=None</em>, <em class="sig-param">bitrate=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2669-L2765"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.save_movie" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save a movie (for data with a time axis)</p>
-<p>The movie is created through the <a class="reference external" href="https://imageio.readthedocs.io/en/latest/index.html#module-imageio" title="(in imageio v2.4)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imageio</span></code></a> module. The format is
+<p>The movie is created through the <a class="reference external" href="https://imageio.readthedocs.io/en/latest/index.html#module-imageio" title="(in imageio v2.8)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imageio</span></code></a> module. The format is
 determined by the extension, and additional options can be specified
 through keyword arguments that depend on the format. For available
 formats and corresponding parameters see the imageio documentation:
 <a class="reference external" href="http://imageio.readthedocs.io/en/latest/formats.html#multiple-images">http://imageio.readthedocs.io/en/latest/formats.html#multiple-images</a></p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This method assumes that time is specified in seconds when adding
+<p class="admonition-title">Warning</p>
+<p>This method assumes that time is specified in seconds when adding
 data. If time is specified in milliseconds this will result in
 movies 1000 times longer than expected.</p>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>fname</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Path at which to save the movie. The extension determines the
-format (e.g., <cite>‘*.mov’</cite>, <cite>‘*.gif’</cite>, …; see the <a class="reference external" href="https://imageio.readthedocs.io/en/latest/index.html#module-imageio" title="(in imageio v2.4)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imageio</span></code></a>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fname</strong><span class="classifier">str</span></dt><dd><p>Path at which to save the movie. The extension determines the
+format (e.g., <cite>‘*.mov’</cite>, <cite>‘*.gif’</cite>, …; see the <a class="reference external" href="https://imageio.readthedocs.io/en/latest/index.html#module-imageio" title="(in imageio v2.8)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imageio</span></code></a>
 documenttion for available formats).</p>
 </dd>
-<dt><strong>time_dilation</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Factor by which to stretch time (default 4). For example, an epoch
+<dt><strong>time_dilation</strong><span class="classifier">float</span></dt><dd><p>Factor by which to stretch time (default 4). For example, an epoch
 from -100 to 600 ms lasts 700 ms. With <code class="docutils literal notranslate"><span class="pre">time_dilation=4</span></code> this
 would result in a 2.8 s long movie.</p>
 </dd>
-<dt><strong>tmin</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">First time point to include (default: all data).</p>
+<dt><strong>tmin</strong><span class="classifier">float</span></dt><dd><p>First time point to include (default: all data).</p>
 </dd>
-<dt><strong>tmax</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Last time point to include (default: all data).</p>
+<dt><strong>tmax</strong><span class="classifier">float</span></dt><dd><p>Last time point to include (default: all data).</p>
 </dd>
-<dt><strong>framerate</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Framerate of the movie (frames per second, default 24).</p>
+<dt><strong>framerate</strong><span class="classifier">float</span></dt><dd><p>Framerate of the movie (frames per second, default 24).</p>
 </dd>
-<dt><strong>interpolation</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Interpolation method (<code class="docutils literal notranslate"><span class="pre">scipy.interpolate.interp1d</span></code> parameter,
+<dt><strong>interpolation</strong><span class="classifier">str</span></dt><dd><p>Interpolation method (<code class="docutils literal notranslate"><span class="pre">scipy.interpolate.interp1d</span></code> parameter,
 one of ‘linear’ | ‘nearest’ | ‘zero’ | ‘slinear’ | ‘quadratic’ |
 ‘cubic’, default ‘quadratic’).</p>
 </dd>
-<dt><strong>**kwargs :</strong></dt>
-<dd><p class="first last">Specify additional options for <a class="reference external" href="https://imageio.readthedocs.io/en/latest/index.html#module-imageio" title="(in imageio v2.4)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imageio</span></code></a>.</p>
+<dt><strong>**kwargs :</strong></dt><dd><p>Specify additional options for <a class="reference external" href="https://imageio.readthedocs.io/en/latest/index.html#module-imageio" title="(in imageio v2.8)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imageio</span></code></a>.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>Requires imageio package, which can be installed together with
 PySurfer with:</p>
@@ -1231,46 +912,33 @@ PySurfer with:</p>
 
 <dl class="method">
 <dt id="surfer.Brain.save_single_image">
-<code class="descname">save_single_image</code><span class="sig-paren">(</span><em>filename</em>, <em>row=-1</em>, <em>col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2255-L2286"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.save_single_image" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save_single_image</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">filename</em>, <em class="sig-param">row=-1</em>, <em class="sig-param">col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2323-L2354"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.save_single_image" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save view from one panel to disk</p>
 <p>Only mayavi image types are supported:
 (png jpg bmp tiff ps eps pdf rib  oogl iv  vrml obj</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>filename: string</strong></dt>
-<dd><p class="first last">path to new image file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>filename: string</strong></dt><dd><p>path to new image file</p>
 </dd>
-<dt><strong>row</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">row index of the brain to use</p>
+<dt><strong>row</strong><span class="classifier">int</span></dt><dd><p>row index of the brain to use</p>
 </dd>
-<dt><strong>col</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">column index of the brain to use</p>
+<dt><strong>col</strong><span class="classifier">int</span></dt><dd><p>column index of the brain to use</p>
 </dd>
-<dt><strong>Due to limitations in TraitsUI, if multiple views or hemi=’split’</strong></dt>
-<dd></dd>
-<dt><strong>is used, there is no guarantee painting of the windows will</strong></dt>
-<dd></dd>
-<dt><strong>complete before control is returned to the command line. Thus</strong></dt>
-<dd></dd>
-<dt><strong>we strongly recommend using only one figure window (which uses</strong></dt>
-<dd></dd>
-<dt><strong>a Mayavi figure to plot instead of TraitsUI) if you intend to</strong></dt>
-<dd></dd>
-<dt><strong>script plotting commands.</strong></dt>
-<dd></dd>
+<dt><strong>Due to limitations in TraitsUI, if multiple views or hemi=’split’</strong></dt><dd></dd>
+<dt><strong>is used, there is no guarantee painting of the windows will</strong></dt><dd></dd>
+<dt><strong>complete before control is returned to the command line. Thus</strong></dt><dd></dd>
+<dt><strong>we strongly recommend using only one figure window (which uses</strong></dt><dd></dd>
+<dt><strong>a Mayavi figure to plot instead of TraitsUI) if you intend to</strong></dt><dd></dd>
+<dt><strong>script plotting commands.</strong></dt><dd></dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.scale_data_colormap">
-<code class="descname">scale_data_colormap</code><span class="sig-paren">(</span><em>fmin</em>, <em>fmid</em>, <em>fmax</em>, <em>transparent</em>, <em>center=None</em>, <em>alpha=1.0</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/utils.py#L1904-L2004"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.scale_data_colormap" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">scale_data_colormap</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">fmin</em>, <em class="sig-param">fmid</em>, <em class="sig-param">fmax</em>, <em class="sig-param">transparent</em>, <em class="sig-param">center=None</em>, <em class="sig-param">alpha=1.0</em>, <em class="sig-param">data=None</em>, <em class="sig-param">hemi=None</em>, <em class="sig-param">verbose=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/utils.py#L1952-L2063"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.scale_data_colormap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Scale the data colormap.</p>
 <p>The colormap may be sequential or divergent. When the colormap is
 divergent indicate this by providing a value for ‘center’. The
@@ -1290,71 +958,59 @@ divergent colormaps the colormap is characterised by:</p>
 <p>i.e., values between center-fmin and center+fmin will not be shown
 while center-fmid will map to the middle of the first half of the
 original colormap and center-fmid to the middle of the second half.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>fmin</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">minimum value for colormap</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fmin</strong><span class="classifier">float</span></dt><dd><p>minimum value for colormap</p>
 </dd>
-<dt><strong>fmid</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">value corresponding to color midpoint</p>
+<dt><strong>fmid</strong><span class="classifier">float</span></dt><dd><p>value corresponding to color midpoint</p>
 </dd>
-<dt><strong>fmax</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">maximum value for colormap</p>
+<dt><strong>fmax</strong><span class="classifier">float</span></dt><dd><p>maximum value for colormap</p>
 </dd>
-<dt><strong>transparent</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
-<dd><p class="first last">if True: use a linear transparency between fmin and fmid and make
+<dt><strong>transparent</strong><span class="classifier">boolean</span></dt><dd><p>if True: use a linear transparency between fmin and fmid and make
 values below fmin fully transparent (symmetrically for divergent
 colormaps)</p>
 </dd>
-<dt><strong>center</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">if not None, gives the data value that should be mapped to the
+<dt><strong>center</strong><span class="classifier">float</span></dt><dd><p>if not None, gives the data value that should be mapped to the
 center of the (divergent) colormap</p>
 </dd>
-<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">sets the overall opacity of colors, maintains transparent regions</p>
+<dt><strong>alpha</strong><span class="classifier">float</span></dt><dd><p>sets the overall opacity of colors, maintains transparent regions</p>
 </dd>
-<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, str, int, or None</span></dt>
-<dd><p class="first last">If not None, override default verbose level (see surfer.verbose).</p>
+<dt><strong>data</strong><span class="classifier">dict | None</span></dt><dd><p>The data entry for which to scale the colormap.
+If None, will use the data dict from either the left or right
+hemisphere (in that order).</p>
+</dd>
+<dt><strong>hemi</strong><span class="classifier">str | None</span></dt><dd><p>If None, all hemispheres will be scaled.</p>
+</dd>
+<dt><strong>verbose</strong><span class="classifier">bool, str, int, or None</span></dt><dd><p>If not None, override default verbose level (see surfer.verbose).</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.screenshot">
-<code class="descname">screenshot</code><span class="sig-paren">(</span><em>mode='rgb'</em>, <em>antialiased=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2326-L2362"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.screenshot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">screenshot</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">mode='rgb'</em>, <em class="sig-param">antialiased=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2394-L2430"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.screenshot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a screenshot of current view.</p>
-<p>Wraps to <a class="reference external" href="http://docs.enthought.com/mayavi/mayavi/auto/mlab_figure.html#mayavi.mlab.screenshot" title="(in mayavi v4.6.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mayavi.mlab.screenshot()</span></code></a> for ease of use.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>mode</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
-<dd><p class="first last">Either ‘rgb’ or ‘rgba’ for values to return.</p>
+<p>Wraps to <a class="reference external" href="https://docs.enthought.com/mayavi/mayavi/auto/mlab_figure.html#mayavi.mlab.screenshot" title="(in mayavi v4.7.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mayavi.mlab.screenshot()</span></code></a> for ease of use.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>mode</strong><span class="classifier">string</span></dt><dd><p>Either ‘rgb’ or ‘rgba’ for values to return.</p>
 </dd>
-<dt><strong>antialiased</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Antialias the image (see <a class="reference external" href="http://docs.enthought.com/mayavi/mayavi/auto/mlab_figure.html#mayavi.mlab.screenshot" title="(in mayavi v4.6.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mayavi.mlab.screenshot()</span></code></a>
+<dt><strong>antialiased</strong><span class="classifier">bool</span></dt><dd><p>Antialias the image (see <a class="reference external" href="https://docs.enthought.com/mayavi/mayavi/auto/mlab_figure.html#mayavi.mlab.screenshot" title="(in mayavi v4.7.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mayavi.mlab.screenshot()</span></code></a>
 for details; default False).</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>screenshot</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array</span></dt>
-<dd><p class="first last">Image pixel values.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>screenshot</strong><span class="classifier">array</span></dt><dd><p>Image pixel values.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>Due to limitations in TraitsUI, if multiple views or <code class="docutils literal notranslate"><span class="pre">hemi='split'</span></code>
 is used, there is no guarantee painting of the windows will
@@ -1366,39 +1022,30 @@ script plotting commands.</p>
 
 <dl class="method">
 <dt id="surfer.Brain.screenshot_single">
-<code class="descname">screenshot_single</code><span class="sig-paren">(</span><em>mode='rgb'</em>, <em>antialiased=False</em>, <em>row=-1</em>, <em>col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2364-L2401"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.screenshot_single" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">screenshot_single</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">mode='rgb'</em>, <em class="sig-param">antialiased=False</em>, <em class="sig-param">row=-1</em>, <em class="sig-param">col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2432-L2469"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.screenshot_single" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a screenshot of current view from a single panel.</p>
-<p>Wraps to <a class="reference external" href="http://docs.enthought.com/mayavi/mayavi/auto/mlab_figure.html#mayavi.mlab.screenshot" title="(in mayavi v4.6.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mayavi.mlab.screenshot()</span></code></a> for ease of use.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>mode: string</strong></dt>
-<dd><p class="first last">Either ‘rgb’ or ‘rgba’ for values to return</p>
+<p>Wraps to <a class="reference external" href="https://docs.enthought.com/mayavi/mayavi/auto/mlab_figure.html#mayavi.mlab.screenshot" title="(in mayavi v4.7.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mayavi.mlab.screenshot()</span></code></a> for ease of use.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>mode: string</strong></dt><dd><p>Either ‘rgb’ or ‘rgba’ for values to return</p>
 </dd>
-<dt><strong>antialiased: bool</strong></dt>
-<dd><p class="first last">Antialias the image (see <a class="reference external" href="http://docs.enthought.com/mayavi/mayavi/auto/mlab_figure.html#mayavi.mlab.screenshot" title="(in mayavi v4.6.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mayavi.mlab.screenshot()</span></code></a>
+<dt><strong>antialiased: bool</strong></dt><dd><p>Antialias the image (see <a class="reference external" href="https://docs.enthought.com/mayavi/mayavi/auto/mlab_figure.html#mayavi.mlab.screenshot" title="(in mayavi v4.7.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mayavi.mlab.screenshot()</span></code></a>
 for details).</p>
 </dd>
-<dt><strong>row</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">row index of the brain to use</p>
+<dt><strong>row</strong><span class="classifier">int</span></dt><dd><p>row index of the brain to use</p>
 </dd>
-<dt><strong>col</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">column index of the brain to use</p>
+<dt><strong>col</strong><span class="classifier">int</span></dt><dd><p>column index of the brain to use</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>screenshot: array</strong></dt>
-<dd><p class="first last">Image pixel values</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>screenshot: array</dt><dd><p>Image pixel values</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>Due to limitations in TraitsUI, if multiple views or hemi=’split’
 is used, there is no guarantee painting of the windows will
@@ -1410,223 +1057,171 @@ script plotting commands.</p>
 
 <dl class="method">
 <dt id="surfer.Brain.set_data_smoothing_steps">
-<code class="descname">set_data_smoothing_steps</code><span class="sig-paren">(</span><em>smoothing_steps</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/utils.py#L2094-L2129"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.set_data_smoothing_steps" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_data_smoothing_steps</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">smoothing_steps=20</em>, <em class="sig-param">verbose=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/utils.py#L2153-L2192"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.set_data_smoothing_steps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the number of smoothing steps</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>smoothing_steps</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of smoothing steps</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>smoothing_steps</strong><span class="classifier">int | str | None</span></dt><dd><p>Number of smoothing steps (if data come from surface subsampling).
+Can be None to use the fewest steps that result in all vertices
+taking on data values, or “nearest” such that each high resolution
+vertex takes the value of the its nearest (on the sphere)
+low-resolution vertex. Default is 20.</p>
 </dd>
-<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, str, int, or None</span></dt>
-<dd><p class="first last">If not None, override default verbose level (see surfer.verbose).</p>
+<dt><strong>verbose</strong><span class="classifier">bool, str, int, or None</span></dt><dd><p>If not None, override default verbose level (see surfer.verbose).</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.set_data_time_index">
-<code class="descname">set_data_time_index</code><span class="sig-paren">(</span><em>time_idx</em>, <em>interpolation='quadratic'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2006-L2072"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.set_data_time_index" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_data_time_index</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">time_idx</em>, <em class="sig-param">interpolation='quadratic'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2065-L2131"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.set_data_time_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the data time index to show</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>time_idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int | float</span></dt>
-<dd><p class="first last">Time index. Non-integer values will be displayed using
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>time_idx</strong><span class="classifier">int | float</span></dt><dd><p>Time index. Non-integer values will be displayed using
 interpolation between samples.</p>
 </dd>
-<dt><strong>interpolation</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Interpolation method (<code class="docutils literal notranslate"><span class="pre">scipy.interpolate.interp1d</span></code> parameter,
+<dt><strong>interpolation</strong><span class="classifier">str</span></dt><dd><p>Interpolation method (<code class="docutils literal notranslate"><span class="pre">scipy.interpolate.interp1d</span></code> parameter,
 one of ‘linear’ | ‘nearest’ | ‘zero’ | ‘slinear’ | ‘quadratic’ |
 ‘cubic’, default ‘quadratic’). Interpolation is only used for
 non-integer indexes.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.set_distance">
-<code class="descname">set_distance</code><span class="sig-paren">(</span><em>distance=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1822-L1852"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.set_distance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_distance</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">distance=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1870-L1900"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.set_distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set view distances for all brain plots to the same value</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>distance</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float | None</span></dt>
-<dd><p class="first last">Distance to use. If None, brains are set to the farthest
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>distance</strong><span class="classifier">float | None</span></dt><dd><p>Distance to use. If None, brains are set to the farthest
 “best fit” distance across all current views; note that
 the underlying “best fit” function can be buggy.</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>distance</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The distance used.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>distance</strong><span class="classifier">float</span></dt><dd><p>The distance used.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.set_surf">
-<code class="descname">set_surf</code><span class="sig-paren">(</span><em>surf</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1854-L1887"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.set_surf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_surf</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">surf</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1902-L1935"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.set_surf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change the surface geometry</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>surf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">freesurfer surface mesh name (ie ‘white’, ‘inflated’, etc.)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>surf</strong><span class="classifier">str</span></dt><dd><p>freesurfer surface mesh name (ie ‘white’, ‘inflated’, etc.)</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.set_time">
-<code class="descname">set_time</code><span class="sig-paren">(</span><em>time</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2171-L2180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.set_time" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_time</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">time</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2234-L2243"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.set_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the data time index to the time point closest to time</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>time</strong> <span class="classifier-delimiter">:</span> <span class="classifier">scalar</span></dt>
-<dd><p class="first last">Time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>time</strong><span class="classifier">scalar</span></dt><dd><p>Time.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.show_colorbar">
-<code class="descname">show_colorbar</code><span class="sig-paren">(</span><em>row=-1</em>, <em>col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2210-L2220"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.show_colorbar" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">show_colorbar</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">row=-1</em>, <em class="sig-param">col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L2273-L2283"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.show_colorbar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show colorbar(s) for given plot</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>row</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Row index of which brain to use</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>row</strong><span class="classifier">int</span></dt><dd><p>Row index of which brain to use</p>
 </dd>
-<dt><strong>col</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Column index of which brain to use</p>
+<dt><strong>col</strong><span class="classifier">int</span></dt><dd><p>Column index of which brain to use</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.show_view">
-<code class="descname">show_view</code><span class="sig-paren">(</span><em>view=None</em>, <em>roll=None</em>, <em>distance=None</em>, <em>row=-1</em>, <em>col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1795-L1820"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.show_view" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">show_view</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">view=None</em>, <em class="sig-param">roll=None</em>, <em class="sig-param">distance=None</em>, <em class="sig-param">row=-1</em>, <em class="sig-param">col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1843-L1868"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.show_view" title="Permalink to this definition">¶</a></dt>
 <dd><p>Orient camera to display view</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>view</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str | dict</span></dt>
-<dd><p class="first last">brain surface to view (one of ‘lateral’, ‘medial’, ‘rostral’,
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>view</strong><span class="classifier">str | dict</span></dt><dd><p>brain surface to view (one of ‘lateral’, ‘medial’, ‘rostral’,
 ‘caudal’, ‘dorsal’, ‘ventral’, ‘frontal’, ‘parietal’) or kwargs to
-pass to <a class="reference external" href="http://docs.enthought.com/mayavi/mayavi/auto/mlab_camera.html#mayavi.mlab.view" title="(in mayavi v4.6.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mayavi.mlab.view()</span></code></a>.</p>
+pass to <a class="reference external" href="https://docs.enthought.com/mayavi/mayavi/auto/mlab_camera.html#mayavi.mlab.view" title="(in mayavi v4.7.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mayavi.mlab.view()</span></code></a>.</p>
 </dd>
-<dt><strong>roll</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">camera roll</p>
+<dt><strong>roll</strong><span class="classifier">float</span></dt><dd><p>camera roll</p>
 </dd>
-<dt><strong>distance</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float | ‘auto’ | None</span></dt>
-<dd><p class="first last">distance from the origin</p>
+<dt><strong>distance</strong><span class="classifier">float | ‘auto’ | None</span></dt><dd><p>distance from the origin</p>
 </dd>
-<dt><strong>row</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Row index of which brain to use</p>
+<dt><strong>row</strong><span class="classifier">int</span></dt><dd><p>Row index of which brain to use</p>
 </dd>
-<dt><strong>col</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Column index of which brain to use</p>
+<dt><strong>col</strong><span class="classifier">int</span></dt><dd><p>Column index of which brain to use</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>view</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
-<dd><p class="first last">tuple returned from mlab.view</p>
 </dd>
-<dt><strong>roll</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">camera roll returned from mlab.roll</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>view</strong><span class="classifier">tuple</span></dt><dd><p>tuple returned from mlab.view</p>
+</dd>
+<dt><strong>roll</strong><span class="classifier">float</span></dt><dd><p>camera roll returned from mlab.roll</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.toggle_toolbars">
-<code class="descname">toggle_toolbars</code><span class="sig-paren">(</span><em>show=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L690-L721"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.toggle_toolbars" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">toggle_toolbars</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">show=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L696-L727"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.toggle_toolbars" title="Permalink to this definition">¶</a></dt>
 <dd><p>Toggle toolbar display</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>show</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool | None</span></dt>
-<dd><p class="first last">If None, the state is toggled. If True, the toolbar will
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>show</strong><span class="classifier">bool | None</span></dt><dd><p>If None, the state is toggled. If True, the toolbar will
 be shown, if False, hidden.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="surfer.Brain.update_text">
-<code class="descname">update_text</code><span class="sig-paren">(</span><em>text</em>, <em>name</em>, <em>row=-1</em>, <em>col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1773-L1785"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.update_text" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update_text</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">text</em>, <em class="sig-param">name</em>, <em class="sig-param">row=-1</em>, <em class="sig-param">col=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/nipy/PySurfer/blob/master/surfer/viz.py#L1821-L1833"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surfer.Brain.update_text" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update text label</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>text</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">New text for label</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>text</strong><span class="classifier">str</span></dt><dd><p>New text for label</p>
 </dd>
-<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Name of text label</p>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name of text label</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -1651,13 +1246,13 @@ be shown, if False, hidden.</p>
         <li class="right" >
           <a href="../python_reference.html" title="Python API Reference"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PySurfer 0.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../python_reference.html" >Python API Reference</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2012-2018, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/b888962.
+        &#169; Copyright 2012-2020, Michael Waskom, Alexandre Gramfort, Scott Burns, Martin Luessi, Eric Larson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0+/4499fda.
     </div>
   </body>
 </html>

@@ -1,5 +1,9 @@
 :orphan:
 
+
+
+.. _sphx_glr_auto_examples:
+
 .. _examples:
 
 Example gallery
@@ -25,9 +29,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_basics_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_basics_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_basics.py`
+     :ref:`sphx_glr_auto_examples_plot_basics.py`
 
 .. raw:: html
 
@@ -45,9 +49,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_custom_colors_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_custom_colors_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_custom_colors.py`
+     :ref:`sphx_glr_auto_examples_plot_custom_colors.py`
 
 .. raw:: html
 
@@ -65,9 +69,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_fmri_activation_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_fmri_activation_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_fmri_activation.py`
+     :ref:`sphx_glr_auto_examples_plot_fmri_activation.py`
 
 .. raw:: html
 
@@ -85,9 +89,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_fmri_activation_volume_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_fmri_activation_volume_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_fmri_activation_volume.py`
+     :ref:`sphx_glr_auto_examples_plot_fmri_activation_volume.py`
 
 .. raw:: html
 
@@ -105,9 +109,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_fmri_conjunction_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_fmri_conjunction_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_fmri_conjunction.py`
+     :ref:`sphx_glr_auto_examples_plot_fmri_conjunction.py`
 
 .. raw:: html
 
@@ -125,9 +129,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_foci_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_foci_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_foci.py`
+     :ref:`sphx_glr_auto_examples_plot_foci.py`
 
 .. raw:: html
 
@@ -145,9 +149,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_freesurfer_normalization_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_freesurfer_normalization_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_freesurfer_normalization.py`
+     :ref:`sphx_glr_auto_examples_plot_freesurfer_normalization.py`
 
 .. raw:: html
 
@@ -165,9 +169,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_label_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_label_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_label.py`
+     :ref:`sphx_glr_auto_examples_plot_label.py`
 
 .. raw:: html
 
@@ -185,9 +189,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_label_foci_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_label_foci_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_label_foci.py`
+     :ref:`sphx_glr_auto_examples_plot_label_foci.py`
 
 .. raw:: html
 
@@ -205,9 +209,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_meg_inverse_solution_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_meg_inverse_solution_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_meg_inverse_solution.py`
+     :ref:`sphx_glr_auto_examples_plot_meg_inverse_solution.py`
 
 .. raw:: html
 
@@ -225,9 +229,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_morphometry_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_morphometry_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_morphometry.py`
+     :ref:`sphx_glr_auto_examples_plot_morphometry.py`
 
 .. raw:: html
 
@@ -245,9 +249,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_parc_values_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_parc_values_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_parc_values.py`
+     :ref:`sphx_glr_auto_examples_plot_parc_values.py`
 
 .. raw:: html
 
@@ -265,9 +269,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_parcellation_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_parcellation_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_parcellation.py`
+     :ref:`sphx_glr_auto_examples_plot_parcellation.py`
 
 .. raw:: html
 
@@ -285,9 +289,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_probabilistic_label_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_probabilistic_label_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_probabilistic_label.py`
+     :ref:`sphx_glr_auto_examples_plot_probabilistic_label.py`
 
 .. raw:: html
 
@@ -305,9 +309,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_resting_correlations_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_resting_correlations_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_resting_correlations.py`
+     :ref:`sphx_glr_auto_examples_plot_resting_correlations.py`
 
 .. raw:: html
 
@@ -325,9 +329,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_topographic_contours_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_topographic_contours_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_topographic_contours.py`
+     :ref:`sphx_glr_auto_examples_plot_topographic_contours.py`
 
 .. raw:: html
 
@@ -345,9 +349,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_transparent_brain_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_transparent_brain_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_transparent_brain.py`
+     :ref:`sphx_glr_auto_examples_plot_transparent_brain.py`
 
 .. raw:: html
 
@@ -365,9 +369,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_vector_meg_inverse_solution_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_vector_meg_inverse_solution_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_vector_meg_inverse_solution.py`
+     :ref:`sphx_glr_auto_examples_plot_vector_meg_inverse_solution.py`
 
 .. raw:: html
 
@@ -385,9 +389,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_rotate_animation_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_rotate_animation_thumb.png
 
-        :ref:`sphx_glr_auto_examples_rotate_animation.py`
+     :ref:`sphx_glr_auto_examples_rotate_animation.py`
 
 .. raw:: html
 
@@ -405,9 +409,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_save_movie_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_save_movie_thumb.png
 
-        :ref:`sphx_glr_auto_examples_save_movie.py`
+     :ref:`sphx_glr_auto_examples_save_movie.py`
 
 .. raw:: html
 
@@ -425,9 +429,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_save_views_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_save_views_thumb.png
 
-        :ref:`sphx_glr_auto_examples_save_views.py`
+     :ref:`sphx_glr_auto_examples_save_views.py`
 
 .. raw:: html
 
@@ -445,9 +449,9 @@ covered here, please contribute_ it!
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_show_views_thumb.png
+ .. figure:: /auto_examples/images/thumb/sphx_glr_show_views_thumb.png
 
-        :ref:`sphx_glr_auto_examples_show_views.py`
+     :ref:`sphx_glr_auto_examples_show_views.py`
 
 .. raw:: html
 
@@ -460,7 +464,24 @@ covered here, please contribute_ it!
    /auto_examples/show_views
 .. raw:: html
 
-    <div style='clear:both'></div>
+    <div class="sphx-glr-clear"></div>
+
+
+
+.. _sphx_glr_auto_examples_example_data:
+
+:orphan:
+
+PySurfer Example Data
+=====================
+
+This directory contains a few lightweight files that support the automatic
+examples for PySurfer.
+
+
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
 
 
 
@@ -485,4 +506,4 @@ covered here, please contribute_ it!
 
  .. rst-class:: sphx-glr-signature
 
-    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.readthedocs.io>`_
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_
